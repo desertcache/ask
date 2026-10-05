@@ -1,6 +1,7 @@
 // Drive index.html in an isolated headless Chrome (own temp profile): load, ask questions, tap a
 // chip, and screenshot at desktop and phone widths. Reports bytes transferred and console errors.
-// Needs `node scripts/serve.mjs 8093 [--gzip]` running. Usage: node scripts/ui-check.mjs <outdir>
+// Needs `node scripts/serve.mjs 8093 [--gzip]` running, or BASE=<url> for a deployed copy.
+// Usage: [BASE=https://desertcache.github.io/ask/] node scripts/ui-check.mjs <outdir>
 
 import { chromium } from 'playwright-core';
 import { mkdirSync } from 'node:fs';
@@ -21,7 +22,7 @@ try {
     cdp.on('Network.loadingFinished', (e) => { bytes += e.encodedDataLength; });
 
     const t0 = Date.now();
-    await page.goto('http://localhost:8093/');
+    await page.goto(process.env.BASE ?? 'http://localhost:8093/');
     await page.waitForSelector('body.is-ready', { timeout: 30_000 });
     console.log(`${name}: ready in ${Date.now() - t0} ms, ${(bytes / 1e6).toFixed(2)} MB transferred`);
     await page.screenshot({ path: `${outDir}/${name}-1-ready.png` });
