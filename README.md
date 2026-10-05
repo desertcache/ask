@@ -24,6 +24,15 @@ ready in well under a second, matching in under a millisecond.
   pacing. Answers go in with `textContent`, and every answer offers two related questions as chips.
   `?embed=1` is the mode the portfolio's Lab card uses.
 
+## Used by the portfolio
+
+The portfolio's glass ask bar (desertcache/portfolio, `js/ask.js`) imports `js/embed.js`,
+`js/match.js` and `js/config.js` from the deployed site and fetches `data/bank.json`,
+`models/vocab.txt` and `models/<MODEL>.bin`. Treat those as a public API: keep
+`createEmbedder(...).{dim, pieces, embed}`, `createMatcher(...).{size, rank}` (each result with
+`entry`, `score`, `matched`, `vector`) and the config exports compatible, or update the portfolio in
+step. A push here deploys there too.
+
 ## The answer bank
 
 `qa.md` is the single source. Each entry has sample phrasings ("Asks like"), the answer and a link
