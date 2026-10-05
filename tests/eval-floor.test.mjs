@@ -1,5 +1,6 @@
 // The shipped configuration must keep its held-out score. Editing qa.md (new phrasings, reworded
-// answers) can quietly make matching worse; this catches it. Floors are the 2026-10-04 scores.
+// answers) can quietly make matching worse; this catches it. Floors are the 2026-10-04 scores
+// (v3 = bank v2 with highlights and six new entries; v3 is the set to quote).
 // Raise them when the bank improves. Never lower them to get a change through, and never edit the
 // question files to pass (tests/bank.test.mjs keeps phrasings from copying them).
 import { test } from 'node:test';
@@ -19,6 +20,7 @@ const { entries } = parseBank(readFileSync(new URL('qa.md', root), 'utf8'));
 const matcher = createMatcher(entries, embedder, MATCH_OPTIONS);
 
 const FLOORS = {
+  'eval/questions-v3.json': { right: 47, right3: 54, rejected: 10 },
   'eval/questions-v2.json': { right: 52, right3: 59, rejected: 5 },
   'eval/questions.json': { right: 69, right3: 78, rejected: 8 },
 };

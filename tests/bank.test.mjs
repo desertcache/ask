@@ -23,7 +23,7 @@ test('no phrasing copies or nearly copies a held-out test question', () => {
   // The eval sets measure how well the bank generalizes. A phrasing lifted from them makes the
   // score a lie, so near-duplicates (same words, any order, at most one word different) fail too.
   const hits = [];
-  for (const file of ['eval/questions.json', 'eval/questions-v2.json']) {
+  for (const file of ['eval/questions.json', 'eval/questions-v2.json', 'eval/questions-v3.json']) {
     const { inScope, offTopic } = JSON.parse(readFileSync(new URL(file, root), 'utf8'));
     const held = [...inScope.map((x) => x.q), ...offTopic];
     for (const e of entries) {

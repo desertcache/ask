@@ -1,0 +1,373 @@
+{
+  "_note": "Third held-out set, written 2026-10-04 for bank v2 (highlights, curated follow-ups, six new entries), BEFORE its final phrasing edits were scored on it. v1 and v2 have been seen while tuning (v2's misses informed two phrasing edits), so this is the number to quote for bank v2. Mixed style: full recruiter questions, fragments, typos. Never add these strings to qa.md and never edit them to make a model pass. Three questions were replaced after the first run because the no-copy guard showed they nearly copied phrasings that predate this file (so they were never held out): \"first responder background\", \"why did anthropic recognize him\", \"is he married\".",
+  "inScope": [
+    {
+      "q": "can you tell me about sam",
+      "expect": [
+        "who-is-sam"
+      ]
+    },
+    {
+      "q": "what's sam doing at doordash these days",
+      "expect": [
+        "current-role"
+      ]
+    },
+    {
+      "q": "what timezone should i schedule in for him",
+      "expect": [
+        "location"
+      ]
+    },
+    {
+      "q": "how did he go from medicine to software engineering",
+      "expect": [
+        "career-path"
+      ]
+    },
+    {
+      "q": "did he ever work in emergency services",
+      "expect": [
+        "emt",
+        "career-path",
+        "pressure"
+      ]
+    },
+    {
+      "q": "where did sam study",
+      "expect": [
+        "education"
+      ]
+    },
+    {
+      "q": "what jobs has he held at doordash over the years",
+      "expect": [
+        "doordash-history"
+      ]
+    },
+    {
+      "q": "what are his hobbies outside of tech",
+      "expect": [
+        "hobbies"
+      ]
+    },
+    {
+      "q": "is sam actually a coder",
+      "expect": [
+        "can-he-code"
+      ]
+    },
+    {
+      "q": "does he do people management or individual contribution",
+      "expect": [
+        "engineer-or-manager",
+        "leadership"
+      ]
+    },
+    {
+      "q": "which frameworks and languages does he use",
+      "expect": [
+        "tech-stack"
+      ]
+    },
+    {
+      "q": "has he deployed llms in production",
+      "expect": [
+        "ai-experience",
+        "copilot"
+      ]
+    },
+    {
+      "q": "retrieval with citations",
+      "expect": [
+        "rag"
+      ]
+    },
+    {
+      "q": "how does sam work with claude code",
+      "expect": [
+        "claude-code"
+      ]
+    },
+    {
+      "q": "what did the claude code team send him",
+      "expect": [
+        "power-user"
+      ]
+    },
+    {
+      "q": "mcp experience",
+      "expect": [
+        "mcp"
+      ]
+    },
+    {
+      "q": "link to his open source code",
+      "expect": [
+        "github"
+      ]
+    },
+    {
+      "q": "is he strong in sql",
+      "expect": [
+        "data"
+      ]
+    },
+    {
+      "q": "what's the copilot project",
+      "expect": [
+        "copilot"
+      ]
+    },
+    {
+      "q": "how did the outsourced team go live",
+      "expect": [
+        "rollout"
+      ]
+    },
+    {
+      "q": "how many people has he trained on ai",
+      "expect": [
+        "enablement"
+      ]
+    },
+    {
+      "q": "tell me about the pos migration program",
+      "expect": [
+        "api-migration"
+      ]
+    },
+    {
+      "q": "the merchant mapping tool",
+      "expect": [
+        "mapping-engine"
+      ]
+    },
+    {
+      "q": "queue and staffing dashboard",
+      "expect": [
+        "workforce-platform"
+      ]
+    },
+    {
+      "q": "what was wrong with the support chatbot",
+      "expect": [
+        "chatbot"
+      ]
+    },
+    {
+      "q": "cost of support work model",
+      "expect": [
+        "cost-model"
+      ]
+    },
+    {
+      "q": "can i see the internal apps he built",
+      "expect": [
+        "screenshots"
+      ]
+    },
+    {
+      "q": "has he ever led a team",
+      "expect": [
+        "leadership"
+      ]
+    },
+    {
+      "q": "what awards has sam won",
+      "expect": [
+        "awards"
+      ]
+    },
+    {
+      "q": "what principles guide his work",
+      "expect": [
+        "how-he-works"
+      ]
+    },
+    {
+      "q": "does he advise senior leaders",
+      "expect": [
+        "executives"
+      ]
+    },
+    {
+      "q": "what was the toughest problem he worked on",
+      "expect": [
+        "hardest-problem"
+      ]
+    },
+    {
+      "q": "tell me about a hard bug he fixed",
+      "expect": [
+        "hardest-problem",
+        "mapping-engine"
+      ]
+    },
+    {
+      "q": "how does he know if a project worked",
+      "expect": [
+        "measurement"
+      ]
+    },
+    {
+      "q": "what success metrics does he track",
+      "expect": [
+        "measurement"
+      ]
+    },
+    {
+      "q": "how does he check that ai answers are right",
+      "expect": [
+        "ai-quality",
+        "rag"
+      ]
+    },
+    {
+      "q": "does he run evaluations on models",
+      "expect": [
+        "ai-quality"
+      ]
+    },
+    {
+      "q": "can he talk to non engineers",
+      "expect": [
+        "non-technical"
+      ]
+    },
+    {
+      "q": "is he good at explaining things",
+      "expect": [
+        "non-technical"
+      ]
+    },
+    {
+      "q": "how does he handle high stress situations",
+      "expect": [
+        "pressure"
+      ]
+    },
+    {
+      "q": "escalation handling experience",
+      "expect": [
+        "pressure"
+      ]
+    },
+    {
+      "q": "what has he built on the side",
+      "expect": [
+        "side-projects"
+      ]
+    },
+    {
+      "q": "what is velvet",
+      "expect": [
+        "side-projects"
+      ]
+    },
+    {
+      "q": "tell me about the 3d starship",
+      "expect": [
+        "starship"
+      ]
+    },
+    {
+      "q": "what is the orb in the corner",
+      "expect": [
+        "orb"
+      ]
+    },
+    {
+      "q": "is there a pacman game here",
+      "expect": [
+        "arcade"
+      ]
+    },
+    {
+      "q": "congress stock trading tracker",
+      "expect": [
+        "hill-money-watch"
+      ]
+    },
+    {
+      "q": "is an llm writing these answers",
+      "expect": [
+        "this-box"
+      ]
+    },
+    {
+      "q": "what was this portfolio built with",
+      "expect": [
+        "this-site"
+      ]
+    },
+    {
+      "q": "what's the best email for sam",
+      "expect": [
+        "contact"
+      ]
+    },
+    {
+      "q": "pdf of his resume",
+      "expect": [
+        "resume"
+      ]
+    },
+    {
+      "q": "is sam open to new opportunities",
+      "expect": [
+        "availability"
+      ]
+    },
+    {
+      "q": "what salary does he want",
+      "expect": [
+        "salary"
+      ]
+    },
+    {
+      "q": "would he work remotely",
+      "expect": [
+        "remote"
+      ]
+    },
+    {
+      "q": "why should we hire sam",
+      "expect": [
+        "why-hire"
+      ]
+    },
+    {
+      "q": "does sam have a wife",
+      "expect": [
+        "personal",
+        "none"
+      ]
+    },
+    {
+      "q": "wat languages does he code in",
+      "expect": [
+        "tech-stack",
+        "can-he-code"
+      ]
+    },
+    {
+      "q": "experiance with rag",
+      "expect": [
+        "rag"
+      ]
+    }
+  ],
+  "offTopic": [
+    "how do i fix my wifi",
+    "what is the population of tokyo",
+    "write a haiku about the ocean",
+    "how many calories are in an apple",
+    "who painted the mona lisa",
+    "convert 10 miles to kilometers",
+    "what's a good name for a dog",
+    "explain how vaccines work",
+    "zxcvbn",
+    "what year did world war two end"
+  ]
+}

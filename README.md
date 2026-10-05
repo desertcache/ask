@@ -1,8 +1,8 @@
 # Ask about my work
 
 An answer finder for [Sam Bates's portfolio](https://desertcache.github.io/portfolio/). A 3.9 MB
-embedding model runs on the visitor's device and matches their question, by meaning, to one of 44
-answers Sam reviewed and approved. Nothing is generated, so it cannot invent a fact, and the
+embedding model runs on the visitor's device and matches their question, by meaning, to one of 50
+answers Sam reviewed and approved (each a lead, 2 to 4 highlights and two curated follow-ups). Nothing is generated, so it cannot invent a fact, and the
 question never leaves the browser. No server, no API key, no inference engine: about 4.3 MB total,
 ready in well under a second, matching in under a millisecond.
 
@@ -44,8 +44,10 @@ the portfolio doesn't already say.
 ## Evaluation (2026-10-04)
 
 Two held-out question sets, both written before the runs they score:
-`eval/questions.json` (88 in-scope + 15 off-topic) and `eval/questions-v2.json` (66 + 10, written
-before the phrasing pass, so it is the honest number). A guard test fails if any phrasing in `qa.md`
+`eval/questions.json` (88 in-scope + 15 off-topic), `eval/questions-v2.json` (66 + 10) and
+`eval/questions-v3.json` (58 + 10, written for bank v2 before its final edits were scored: the number
+to quote). On v3 the shipped bank puts the right answer first 47/58 (81%), in the top 3 54/58 (93%),
+and declines 10/10 off-topic questions. A guard test fails if any phrasing in `qa.md`
 copies or nearly copies a test question.
 
 | Model (shipped size) | v2: right first | v2: right in top 3 | v2: off-topic declined |

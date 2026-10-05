@@ -1,13 +1,14 @@
 // The chat UI. Every answer comes from data/bank.json (built from the reviewed qa.md); nothing is
 // generated. The trace under each question shows what the model really did (its word pieces, its
-// vector, the comparison, the top matches and their scores), paced so a person can read it; the
-// summary line reports the real compute time. Text goes in via textContent, never innerHTML.
+// vector, the comparison, the ranked matches and the confidence check), paced so a person can
+// follow it (~3 s); the summary line reports the real compute time. Text goes in via textContent,
+// never innerHTML.
 
 import { createEmbedder } from './embed.js';
 import { createMatcher } from './match.js';
 import { MODEL, MODEL_MB, THRESHOLD, MATCH_OPTIONS, PORTFOLIO, STARTERS } from './config.js';
 
-/** @typedef {{ id: string, asks: string[], answer: string, link: string | null }} Entry */
+/** @typedef {{ id: string, asks: string[], answer: string, points?: string[], next?: string[], link: string | null }} Entry */
 
 const $ = (sel) => /** @type {HTMLElement} */ (document.querySelector(sel));
 const log = $('#log');
@@ -15,8 +16,8 @@ const form = /** @type {HTMLFormElement} */ ($('#ask'));
 const input = /** @type {HTMLInputElement} */ ($('#q'));
 const send = /** @type {HTMLButtonElement} */ ($('#send'));
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const STEP_MS = 340;
-const WORD_MS = 16;
+const STEP_MS = 620;
+const WORD_MS = 22;
 
 if (new URLSearchParams(location.search).has('embed')) document.body.classList.add('is-embed');
 
@@ -51,13 +52,30 @@ function userRow(text) {
   log.append(row);
 }
 
-/**
- * Answer text, word by word (CSS staggers them in), with the email address as a mailto link.
- * @param {string} text
- */
-function answerText(text) {
+/** The answer: its lead, then its highlights as a list. @param {string} lead @param {string[]} [points] */
+function answerBlock(lead, points = []) {
+  const box = el('div', 'answer-block');
   const p = el('p', 'answer');
-  let i = 0;
+  let i = words(p, lead, 0);
+  box.append(p);
+  if (points.length) {
+    const ul = el('ul', 'points');
+    for (const pt of points) {
+      const li = el('li');
+      i = words(li, pt, i);
+      ul.append(li);
+    }
+    box.append(ul);
+  }
+  return { box, words: i };
+}
+
+/**
+ * Text as words for the CSS stagger (each word takes the next --i), with any email address as a
+ * mailto link. Returns the next free index.
+ * @param {HTMLElement} p @param {string} text @param {number} i
+ */
+function words(p, text, i) {
   for (const [k, part] of text.split(/([\w.+-]+@[\w-]+\.[\w.]+)/).entries()) {
     if (k % 2) {
       const a = /** @type {HTMLAnchorElement} */ (el('a', 'w', part));
@@ -74,7 +92,7 @@ function answerText(text) {
       p.append(s);
     }
   }
-  return { p, words: i };
+  return i;
 }
 
 /** @param {string} link */
@@ -230,8 +248,8 @@ async function main() {
     await wait(STEP_MS);
     s.done(el('span', 'detail', `${entries.length} answers · cosine similarity`));
 
-    // 4. The top matches.
-    s = step(list, hit ? 'Closest matches' : 'Nothing close enough');
+    // 4. The ranked matches.
+    s = step(list, 'Ranked the closest answers');
     await wait(STEP_MS);
     const table = el('ul', 'matches');
     for (const r of ranked.slice(0, 3)) {
@@ -241,22 +259,30 @@ async function main() {
       li.append(el('span', 'm-text', `“${r.matched}”`), bar, el('span', 'm-score', r.score.toFixed(2)));
       table.append(li);
     }
-    if (!hit) table.append(el('li', 'm-note', `The best score is under the ${THRESHOLD} bar, so I won't guess.`));
     s.done(table);
-    await wait(STEP_MS * 0.6);
+
+    // 5. The confidence check against the threshold.
+    s = step(list, hit ? 'Confident in the best match' : 'Not confident enough to answer');
+    await wait(STEP_MS * 0.8);
+    s.done(el('span', 'detail', hit
+      ? `${top.score.toFixed(2)} clears the ${THRESHOLD} bar`
+      : `${top.score.toFixed(2)} is under the ${THRESHOLD} bar, so I won't guess`));
+    await wait(STEP_MS * 0.7);
 
     trace.open = false;
     trace.classList.add('is-done');
     sumText.textContent = `Searched ${matcher.size} phrasings · ${ms < 1 ? '<1' : ms.toFixed(1)} ms`;
 
     const entry = hit ? top.entry : null;
-    const { p, words } = answerText(entry ? entry.answer : bank.fallback);
-    p.style.setProperty('--wms', `${WORD_MS}ms`);
-    bubble.append(p);
+    const { box, words: n } = answerBlock(entry ? entry.answer : bank.fallback, entry?.points);
+    box.style.setProperty('--wms', `${WORD_MS}ms`);
+    bubble.append(box);
     scrollDown();
-    await wait(words * WORD_MS + 200);
+    await wait(n * WORD_MS + 250);
     if (entry?.link) bubble.append(moreLink(entry.link));
-    bubble.append(chipRow(entry ? ranked.slice(1, 3).map((r) => r.entry) : starters, ask));
+    // Follow-ups: the two Sam picked for this answer, else the next-closest matches.
+    const picked = /** @type {Entry[]} */ ((entry?.next ?? []).map((id) => byId.get(id)).filter(Boolean));
+    bubble.append(chipRow(entry ? (picked.length ? picked : ranked.slice(1, 3).map((r) => r.entry)) : starters, ask));
     scrollDown();
 
     log.setAttribute('aria-busy', 'false');

@@ -45,7 +45,7 @@ try {
         await page.waitForSelector(`${lastBot} .step:nth-child(3)`);
         await page.screenshot({ path: `${outDir}/${name}-2-thinking.png` });
       }
-      await page.waitForSelector(`${lastBot} .chips`, { timeout: 15_000 });
+      await page.waitForSelector(`${lastBot} .chips`, { timeout: 30_000 });
       const took = Date.now() - t1;
       await page.waitForTimeout(450);
       const shown = await page.textContent(`${lastBot} .answer`);
