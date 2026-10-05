@@ -1,0 +1,427 @@
+{
+  "_note": "Second held-out set, written 2026-10-04 BEFORE the phrasing pass on qa.md, in a different style from v1 (longer recruiter-style sentences, keyword fragments, typos). Never add these strings to qa.md and never edit them to make a model pass. This is the number to quote. Changed after the phrasing pass, before any v2 scoring of it: \"model context protocol servers\" nearly copied the approved phrasing \"Model Context Protocol?\" that predates this file, so it was never held out; replaced with a fresh question for the same entry.",
+  "inScope": [
+    {
+      "q": "hi, can you give me a rundown of who sam bates is",
+      "expect": [
+        "who-is-sam"
+      ]
+    },
+    {
+      "q": "sam bates background summary",
+      "expect": [
+        "who-is-sam",
+        "career-path"
+      ]
+    },
+    {
+      "q": "what does sam currently do for a living",
+      "expect": [
+        "current-role",
+        "who-is-sam"
+      ]
+    },
+    {
+      "q": "current employer and title",
+      "expect": [
+        "current-role"
+      ]
+    },
+    {
+      "q": "is he located in phoenix",
+      "expect": [
+        "location"
+      ]
+    },
+    {
+      "q": "what state does sam live in",
+      "expect": [
+        "location"
+      ]
+    },
+    {
+      "q": "how did a former emt end up writing software",
+      "expect": [
+        "career-path"
+      ]
+    },
+    {
+      "q": "career history",
+      "expect": [
+        "career-path",
+        "doordash-history"
+      ]
+    },
+    {
+      "q": "what did he do with phoenix fire department",
+      "expect": [
+        "emt"
+      ]
+    },
+    {
+      "q": "medical scribe experience",
+      "expect": [
+        "emt",
+        "career-path"
+      ]
+    },
+    {
+      "q": "did sam finish college",
+      "expect": [
+        "education"
+      ]
+    },
+    {
+      "q": "highest level of education",
+      "expect": [
+        "education"
+      ]
+    },
+    {
+      "q": "how many years has he been with doordash",
+      "expect": [
+        "doordash-history"
+      ]
+    },
+    {
+      "q": "list of his roles at doordash",
+      "expect": [
+        "doordash-history"
+      ]
+    },
+    {
+      "q": "what does he enjoy doing on weekends",
+      "expect": [
+        "hobbies"
+      ]
+    },
+    {
+      "q": "outdoor activities",
+      "expect": [
+        "hobbies"
+      ]
+    },
+    {
+      "q": "is sam a software engineer",
+      "expect": [
+        "can-he-code",
+        "engineer-or-manager"
+      ]
+    },
+    {
+      "q": "how much code has he actually written",
+      "expect": [
+        "can-he-code",
+        "engineer-or-manager"
+      ]
+    },
+    {
+      "q": "is his role technical or managerial",
+      "expect": [
+        "engineer-or-manager"
+      ]
+    },
+    {
+      "q": "does he review other peoples code",
+      "expect": [
+        "engineer-or-manager",
+        "leadership"
+      ]
+    },
+    {
+      "q": "what tech does he use day to day",
+      "expect": [
+        "tech-stack"
+      ]
+    },
+    {
+      "q": "experience with node and react",
+      "expect": [
+        "tech-stack"
+      ]
+    },
+    {
+      "q": "has he deployed ai into production",
+      "expect": [
+        "ai-experience",
+        "copilot"
+      ]
+    },
+    {
+      "q": "machine learning background",
+      "expect": [
+        "ai-experience"
+      ]
+    },
+    {
+      "q": "has he done rag with citations",
+      "expect": [
+        "rag"
+      ]
+    },
+    {
+      "q": "how does he ground llm answers in documents",
+      "expect": [
+        "rag"
+      ]
+    },
+    {
+      "q": "what's his claude code setup like",
+      "expect": [
+        "claude-code"
+      ]
+    },
+    {
+      "q": "does he use ai to write code",
+      "expect": [
+        "claude-code",
+        "can-he-code"
+      ]
+    },
+    {
+      "q": "what did anthropic say about him",
+      "expect": [
+        "power-user"
+      ]
+    },
+    {
+      "q": "has he connected llm agents to outside tools",
+      "expect": [
+        "mcp"
+      ]
+    },
+    {
+      "q": "where can i see his open source work",
+      "expect": [
+        "github"
+      ]
+    },
+    {
+      "q": "snowflake and sql skills",
+      "expect": [
+        "data"
+      ]
+    },
+    {
+      "q": "what's the copilot he built at doordash",
+      "expect": [
+        "copilot"
+      ]
+    },
+    {
+      "q": "biggest project",
+      "expect": [
+        "copilot"
+      ]
+    },
+    {
+      "q": "has he taken an ai tool from pilot to launch with real users",
+      "expect": [
+        "rollout",
+        "copilot"
+      ]
+    },
+    {
+      "q": "how did he train the vendor agents",
+      "expect": [
+        "rollout",
+        "enablement"
+      ]
+    },
+    {
+      "q": "has he taught people to use ai",
+      "expect": [
+        "enablement"
+      ]
+    },
+    {
+      "q": "size of his training sessions",
+      "expect": [
+        "enablement"
+      ]
+    },
+    {
+      "q": "tell me about the revenue he saved on the migration",
+      "expect": [
+        "api-migration"
+      ]
+    },
+    {
+      "q": "point of sale partner deprecation",
+      "expect": [
+        "api-migration"
+      ]
+    },
+    {
+      "q": "what did he build with fastify",
+      "expect": [
+        "mapping-engine"
+      ]
+    },
+    {
+      "q": "sla and queue health dashboard",
+      "expect": [
+        "workforce-platform"
+      ]
+    },
+    {
+      "q": "vendor staffing platform",
+      "expect": [
+        "workforce-platform"
+      ]
+    },
+    {
+      "q": "why did agents stop using the chatbot",
+      "expect": [
+        "chatbot"
+      ]
+    },
+    {
+      "q": "unit cost of support work",
+      "expect": [
+        "cost-model"
+      ]
+    },
+    {
+      "q": "are there pictures of the internal tools",
+      "expect": [
+        "screenshots"
+      ]
+    },
+    {
+      "q": "has he led a team before",
+      "expect": [
+        "leadership"
+      ]
+    },
+    {
+      "q": "people leadership",
+      "expect": [
+        "leadership"
+      ]
+    },
+    {
+      "q": "excellence award",
+      "expect": [
+        "awards"
+      ]
+    },
+    {
+      "q": "how does sam approach his work",
+      "expect": [
+        "how-he-works"
+      ]
+    },
+    {
+      "q": "who does he work with in senior leadership",
+      "expect": [
+        "executives"
+      ]
+    },
+    {
+      "q": "first person starship game",
+      "expect": [
+        "starship"
+      ]
+    },
+    {
+      "q": "audio reactive orb",
+      "expect": [
+        "orb"
+      ]
+    },
+    {
+      "q": "retro games",
+      "expect": [
+        "arcade"
+      ]
+    },
+    {
+      "q": "congressional stock trading digest",
+      "expect": [
+        "hill-money-watch"
+      ]
+    },
+    {
+      "q": "is this an llm",
+      "expect": [
+        "this-box"
+      ]
+    },
+    {
+      "q": "does this site use react",
+      "expect": [
+        "this-site"
+      ]
+    },
+    {
+      "q": "best way to reach sam",
+      "expect": [
+        "contact"
+      ]
+    },
+    {
+      "q": "download resume",
+      "expect": [
+        "resume"
+      ]
+    },
+    {
+      "q": "is he available for hire",
+      "expect": [
+        "availability"
+      ]
+    },
+    {
+      "q": "his compensation",
+      "expect": [
+        "salary"
+      ]
+    },
+    {
+      "q": "willing to work in office",
+      "expect": [
+        "remote"
+      ]
+    },
+    {
+      "q": "why would a company want sam",
+      "expect": [
+        "why-hire"
+      ]
+    },
+    {
+      "q": "whats his age",
+      "expect": [
+        "personal",
+        "none"
+      ]
+    },
+    {
+      "q": "wat does sam do",
+      "expect": [
+        "who-is-sam",
+        "current-role"
+      ]
+    },
+    {
+      "q": "experiance with ai agents",
+      "expect": [
+        "ai-experience",
+        "claude-code"
+      ]
+    }
+  ],
+  "offTopic": [
+    "how do i change a flat tire",
+    "what time is it in tokyo",
+    "who is the president",
+    "give me a recipe for tacos",
+    "what is the meaning of life",
+    "write python code to sort a list",
+    "how many legs does a spider have",
+    "best laptop for gaming",
+    "qwerty uiop",
+    "what is bitcoin worth"
+  ]
+}

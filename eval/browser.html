@@ -1,0 +1,50 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>ask-box eval</title>
+<pre id="out">running…</pre>
+<script type="module">
+  // Scores the transformer candidates in a real browser on the WASM engine (CPU), the way a visitor
+  // would run them. Serve the repo root over http, open /eval/browser.html[?q=questions-v2.json],
+  // and read window.__done / #out. Models come from models-src/ (not shipped).
+  import { pipeline, env } from '../node_modules/@huggingface/transformers/dist/transformers.min.js';
+  import { createMatcher } from '../js/match.js';
+  import { score, sweep, formatSweep, misses } from './score.js';
+
+  env.allowRemoteModels = false;
+  env.allowLocalModels = true;
+  env.localModelPath = '/models-src/';
+  env.backends.onnx.wasm.wasmPaths = '/node_modules/onnxruntime-web/dist/';
+
+  const out = document.getElementById('out');
+  const qfile = new URLSearchParams(location.search).get('q') || 'questions.json';
+  const { entries } = await (await fetch('/data/bank.json')).json();
+  const questions = await (await fetch(`/eval/${qfile}`)).json();
+  const texts = [...new Set([...entries.flatMap((e) => [...e.asks, e.answer]),
+    ...questions.inScope.map((x) => x.q), ...questions.offTopic])];
+
+  const candidates = [
+    ['MiniLM-L6 (q8)', 'Xenova/all-MiniLM-L6-v2', 'mean'],
+    ['MiniLM-L3 (q8)', 'Xenova/paraphrase-MiniLM-L3-v2', 'mean'],
+    ['bge-small (q8)', 'Xenova/bge-small-en-v1.5', 'cls'],
+  ];
+  const report = [];
+  for (const [name, id, pooling] of candidates) {
+    const t0 = performance.now();
+    const extract = await pipeline('feature-extraction', id, { dtype: 'q8', device: 'wasm' });
+    const loadMs = performance.now() - t0;
+    const cache = new Map();
+    const t1 = performance.now();
+    for (const t of texts) cache.set(t, (await extract(t, { pooling, normalize: true })).data);
+    const perText = (performance.now() - t1) / texts.length;
+    const embedder = { tokens: () => [], embed: (t) => cache.get(t) };
+    for (const answers of [false, true]) {
+      const s = score(createMatcher(entries, embedder, { idf: false, answers }), questions);
+      const rows = sweep(s);
+      report.push(formatSweep(`${name}  [${answers ? 'answers' : 'plain'}]  load ${loadMs.toFixed(0)} ms, ${perText.toFixed(1)} ms/question`, rows));
+      const best = rows.reduce((a, r) => (r.total > a.total ? r : a));
+      report.push(misses(s, Number(best.th)));
+    }
+    out.textContent = report.join('\n');
+  }
+  window.__done = true;
+</script>

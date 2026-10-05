@@ -1,0 +1,6 @@
+node_modules/
+models-src/
+# Only the shipped model is committed; the others are rebuilt from models-src/ for evals.
+models/potion-base-2M.bin
+models/potion-base-8M.bin
+eval/*.txt
