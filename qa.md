@@ -368,10 +368,10 @@ It's the orb in this bar: it idles while you read, turns violet while it searche
 **Link:** #lab
 
 ### 40. arcade
-**Asks like:** What's the arcade? · Pac-Man? · Can I play a game? · Games · Pac-Man · Arcade games · Canvas games
-**Answer:** Five games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild with the authentic ghost AI.
+**Asks like:** What's the arcade? · Pac-Man? · Can I play a game? · Games · Pac-Man · Arcade games · Canvas games · Can I watch an AI play? · Four in a Row
+**Answer:** Ten games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild and three titles where you can watch an AI think.
 **Detail:**
-The original ghost targeting is in there, overflow bug included, and it went from first commit to live in a day.
+The Pac-Man has the original ghost targeting, overflow bug included, and it went from first commit to live in a day.
 **Next:** starship, claude-code
 **Link:** arcade.html
 
@@ -400,39 +400,49 @@ The contour map up top and the mountains above the footer are real: Camelback an
 **Next:** starship, this-box
 **Link:** #top
 
+### 44. start-here
+**Asks like:** Where should I start? · What should I look at first? · Give me the highlights · Quick tour of the site · Where do I begin on this site? · What's worth seeing here? · Show me the best stuff · I only have two minutes · What matters most here? · Best place to start · Walk me through this site · What shouldn't I miss? · Is there a recommended order? · Help me get oriented · What should I click first? · Greatest hits · Top three things to see · First time here
+**Answer:** If you only have a few minutes, see these three, in this order.
+**Highlights:**
+- The AI copilot he built, and the outsourced support team he took live on it. It's the featured program, right below the intro.
+- His AI enablement program: 800+ people trained to put AI to work, with adoption counted instead of attendance.
+- This box: a model of about 4 MB that answers without generating anything. The Lab has its write-up.
+**Next:** copilot, enablement
+**Link:** #featured
+
 ## F. Contact and logistics
 
-### 44. contact
+### 45. contact
 **Asks like:** How do I contact him? · Email? · LinkedIn? · How do I reach Sam? · Reach out · Get in touch · Email address · Message him
 **Answer:** Email is fastest: batessambates@gmail.com. He's also on LinkedIn as samuel-b-343205133 and on GitHub as @desertcache.
 **Next:** resume, why-hire
 **Link:** #contact
 
-### 45. resume
+### 46. resume
 **Asks like:** Resume? · CV? · Can I download his resume? · Résumé PDF · Curriculum vitae
 **Answer:** His résumé is a PDF linked at the top and bottom of this page.
 **Next:** contact, career-path
 **Link:** Samuel_Bates_CV.pdf
 
-### 46. availability
+### 47. availability
 **Asks like:** Is he looking for a job? · Is he open to work? · Is he hiring? · Can we interview him? · Open to opportunities? · Job search · Hiring him · Recruiting · New job · Interested in roles
 **Answer:** That's a question for Sam directly: batessambates@gmail.com.
 **Next:** contact, why-hire
 **Link:** #contact
 
-### 47. salary
+### 48. salary
 **Asks like:** What's his salary? · Compensation expectations? · How much does he make? · Pay · Salary expectations · Money
 **Answer:** That's a conversation for Sam directly: batessambates@gmail.com.
 **Next:** contact, why-hire
 **Link:** #contact
 
-### 48. remote
+### 49. remote
 **Asks like:** Is he open to remote? · Would he move? · Would he relocate? · Can he work on-site? · Remote work · Hybrid · In-office · Relocate · Move for a job · Work location
 **Answer:** He's based in Phoenix. For anything about work arrangements, email Sam directly: batessambates@gmail.com.
 **Next:** contact, location
 **Link:** #contact
 
-### 49. why-hire
+### 50. why-hire
 **Asks like:** Why should I hire him? · What makes him different? · What's his edge? · Why him? · Strengths · Why him over others · Unique value · Selling points
 **Answer:** He builds production AI, takes it live with the people who use it, and teaches organizations to adopt it.
 **Detail:**
@@ -440,7 +450,7 @@ Most engineers don't have his path: every role he held ran the operations the ne
 **Next:** copilot, how-he-works
 **Link:** #featured
 
-### 50. personal
+### 51. personal
 **Asks like:** How old is he? · Is he married? · Politics? · Personal life? · Age · Married · Family · Religion · Girlfriend
 **Answer:** This box only answers questions about Sam's work. For anything else, reach out to him directly.
 **Next:** hobbies, contact
@@ -448,21 +458,21 @@ Most engineers don't have his path: every role he held ran the operations the ne
 
 ## G. Small talk
 
-### 51. greeting
+### 52. greeting
 **Kind:** chat
 **Asks like:** Hi · Hello · Hey · Hey there · Good morning · Good afternoon · Howdy · Yo
 **Answer:** Hi! I'm the little model behind this chat. Ask me anything about Sam's work: what he's built, how he leads, or how he got from the ER to production code.
 **Next:** who-is-sam, copilot
 **Link:** none
 
-### 52. how-are-you
+### 53. how-are-you
 **Kind:** chat
 **Asks like:** How are you? · How's it going? · What's up? · How are you doing today? · How's your day?
 **Answer:** Running at about 4 MB and under a millisecond a question, so honestly, great. What would you like to know about Sam?
 **Next:** who-is-sam, this-box
 **Link:** none
 
-### 53. capabilities
+### 54. capabilities
 **Kind:** chat
 **Asks like:** What can you do? · What do you know? · What can I ask you? · Help · What topics do you cover? · What should I ask?
 **Answer:** I know Sam's work inside out: his AI projects, his DoorDash programs, how he leads and builds with AI agents, his background, and the demos on this site.
@@ -471,7 +481,7 @@ What I don't know is everything else. No weather, no sports, no trivia, and I ne
 **Next:** copilot, career-path
 **Link:** none
 
-### 54. creator
+### 55. creator
 **Kind:** chat
 **Asks like:** Who built you? · Who made this bot? · Who programmed you? · Where did you come from?
 **Answer:** Sam built me with his fleet of AI coding agents, and every answer I can give is one he approved.
@@ -480,7 +490,7 @@ There's a build note in the Lab if you want the whole story: how the model was c
 **Next:** this-box, claude-code
 **Link:** work/answer-finder.html
 
-### 55. joke
+### 56. joke
 **Kind:** chat
 **Asks like:** Got any jokes? · Say something funny · Make me laugh · Joke please · Are you funny?
 **Answer:** I'd tell you one, but I can only say things Sam approved, and he's still workshopping the material.
@@ -489,7 +499,7 @@ Here's something fun instead: there's a dot-for-dot Pac-Man down in the Lab, ori
 **Next:** arcade, starship
 **Link:** arcade.html
 
-### 56. compliment
+### 57. compliment
 **Kind:** chat
 **Asks like:** This is cool · Impressive · Love it · Very cool · This is awesome · Wow · Well done
 **Answer:** Thank you! I'll pass that along.
@@ -498,21 +508,21 @@ If you want the story behind it, the starship and this bar both have build notes
 **Next:** starship, this-box
 **Link:** none
 
-### 57. thanks
+### 58. thanks
 **Kind:** chat
 **Asks like:** Thanks · Thank you · Appreciate it · Thanks a lot · Cheers · Helpful
 **Answer:** Anytime. If something here caught your eye, Sam's always happy to talk it through: batessambates@gmail.com.
 **Next:** contact, why-hire
 **Link:** none
 
-### 58. goodbye
+### 59. goodbye
 **Kind:** chat
 **Asks like:** Bye · Goodbye · See you · That's all · I'm done · Gotta go
 **Answer:** Thanks for stopping by. If you want to keep the conversation going, email Sam: batessambates@gmail.com.
 **Next:** contact, resume
 **Link:** none
 
-### 59. no-match (fallback, shown when nothing scores above the threshold; one is picked at random)
+### 60. no-match (fallback, shown when nothing scores above the threshold; one is picked at random)
 **Answer:** No answer for that one yet. Try asking about his work, his AI projects or his background, or email Sam: batessambates@gmail.com.
 **Also:**
 That one's outside what I know. I only know Sam's work, but I know it well. Try one of these:

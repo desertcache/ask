@@ -1,0 +1,31 @@
+{
+  "_note": "Held-out navigation set, written 2026-10-05 by an agent that never saw qa.md, AFTER the start-here phrasings were final. Two earlier blind sets were seen while those phrasings were written (the second one's misses added the walk-through, order, orientation and don't-miss phrasings), so neither counts as held out and neither is kept. This is the number to quote. inScope asks to be oriented on the site (start-here); offTopic are near misses that share its words but want something else. Never add these strings to qa.md and never edit them to make a model pass.",
+  "inScope": [
+    { "q": "Where do I start?", "expect": ["start-here"] },
+    { "q": "first time here what should i look at first", "expect": ["start-here"] },
+    { "q": "Quick tour?", "expect": ["start-here"] },
+    { "q": "What are the highlights of this portfolio?", "expect": ["start-here"] },
+    { "q": "I've only got a couple of minutes. What's actually worth my time on this site?", "expect": ["start-here"] },
+    { "q": "Which section would you recommend I open first?", "expect": ["start-here"] },
+    { "q": "What shouldn't I miss while I'm here?", "expect": ["start-here"] },
+    { "q": "Walk me through this site like I'm a first-time visitor.", "expect": ["start-here"] },
+    { "q": "Is there a suggested order to go through everything, or can I just jump around?", "expect": ["start-here"] },
+    { "q": "just tell me where to begin i dont have all day", "expect": ["start-here"] },
+    { "q": "Can you reccomend a good starting point for someone new to the site?", "expect": ["start-here"] },
+    { "q": "Kindly direct me to the most representative section of this portfolio for a first impression.", "expect": ["start-here"] },
+    { "q": "Must-see stuff only please, I'm skimming.", "expect": ["start-here"] },
+    { "q": "How is this place layed out? I'd like to get my bearings before I click around.", "expect": ["start-here"] },
+    { "q": "Hi there! I just landed on the page and I'm not sure where to look first. Any suggestions for a good way in?", "expect": ["start-here"] },
+    { "q": "Suggest a path through the site for someone with ten minutes.", "expect": ["start-here"] }
+  ],
+  "offTopic": [
+    "Where's the best place to start learning Spanish?",
+    "I'm a first-time visitor in Lisbon with only one afternoon. What are the can't-miss highlights?",
+    "What should I check first when buying a used car?",
+    "What matters most when planting a vegetable garden for the first time?",
+    "Give me a quick tour of how a volcano erupts.",
+    "what should i read first to understand ancient rome",
+    "Best order to watch the Star Wars movies?",
+    "What should I put first in a photography portfolio for an art school application?"
+  ]
+}

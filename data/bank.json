@@ -940,12 +940,14 @@
     "Games",
     "Pac-Man",
     "Arcade games",
-    "Canvas games"
+    "Canvas games",
+    "Can I watch an AI play?",
+    "Four in a Row"
    ],
-   "answer": "Five games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild with the authentic ghost AI.",
+   "answer": "Ten games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild and three titles where you can watch an AI think.",
    "points": [],
    "detail": [
-    "The original ghost targeting is in there, overflow bug included, and it went from first commit to live in a day."
+    "The Pac-Man has the original ghost targeting, overflow bug included, and it went from first commit to live in a day."
    ],
    "next": [
     "starship",
@@ -1021,6 +1023,41 @@
     "this-box"
    ],
    "link": "#top"
+  },
+  {
+   "id": "start-here",
+   "asks": [
+    "Where should I start?",
+    "What should I look at first?",
+    "Give me the highlights",
+    "Quick tour of the site",
+    "Where do I begin on this site?",
+    "What's worth seeing here?",
+    "Show me the best stuff",
+    "I only have two minutes",
+    "What matters most here?",
+    "Best place to start",
+    "Walk me through this site",
+    "What shouldn't I miss?",
+    "Is there a recommended order?",
+    "Help me get oriented",
+    "What should I click first?",
+    "Greatest hits",
+    "Top three things to see",
+    "First time here"
+   ],
+   "answer": "If you only have a few minutes, see these three, in this order.",
+   "points": [
+    "The AI copilot he built, and the outsourced support team he took live on it. It's the featured program, right below the intro.",
+    "His AI enablement program: 800+ people trained to put AI to work, with adoption counted instead of attendance.",
+    "This box: a model of about 4 MB that answers without generating anything. The Lab has its write-up."
+   ],
+   "detail": [],
+   "next": [
+    "copilot",
+    "enablement"
+   ],
+   "link": "#featured"
   },
   {
    "id": "contact",
