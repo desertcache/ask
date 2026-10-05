@@ -1,0 +1,274 @@
+{
+  "_note": "Held-out set 3, written 2026-10-05 by a blind agent from topics.md (answer text only, never the phrasings or any other set). Scored once, after every phrasing and threshold was final. Never tune on it, never add its strings to qa.md, and never edit it to make a model pass.",
+  "followups": [
+    {
+      "type": "same",
+      "turns": [
+        { "q": "what's the copilot he built", "expect": ["copilot"] },
+        { "q": "how many other systems does it pull from", "expect": ["copilot"], "says": "half a dozen internal systems" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "Tell me about the AI training he runs.", "expect": ["enablement"] },
+        { "q": "what do they walk away with?", "expect": ["enablement"], "says": "a skill, a template" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "what was the big migration project he ran at DoorDash?", "expect": ["api-migration"] },
+        { "q": "and did it cut down the escalations?", "expect": ["api-migration"], "says": "daily to a few a week" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "what's the workforce platform?", "expect": ["workforce-platform"] },
+        { "q": "who checked its numbers", "expect": ["workforce-platform"], "says": "operations lead outside the team" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "did he work on a support chatbot?", "expect": ["chatbot"] },
+        { "q": "has anyone else picked up that approach?", "expect": ["chatbot"], "says": "other agents now reuse the template" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "what's the cost model about?", "expect": ["cost-model"] },
+        { "q": "how do they keep the pay data private", "expect": ["cost-model"], "says": "small groups are suppressed" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "how does he use claude code day to day", "expect": ["claude-code"] },
+        { "q": "what happens if it keeps repeating the same error?", "expect": ["claude-code"], "says": "becomes a written rule" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "what's the glowing orb on this page", "expect": ["orb"] },
+        { "q": "why did it just turn purple?", "expect": ["orb"], "says": "turns violet while it searches" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "How does this ask box work?", "expect": ["this-box"] },
+        { "q": "and how often does it get it right?", "expect": ["this-box"], "says": "about four times in five" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "was he ever an EMT?", "expect": ["emt"] },
+        { "q": "what was he doing before that?", "expect": ["emt"], "says": "four Banner Health emergency departments" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "what did anthropic say about him", "expect": ["power-user"] },
+        { "q": "did they send him anything?", "expect": ["power-user"], "says": "a plush, a pin, stickers" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "what does he do for fun?", "expect": ["hobbies"] },
+        { "q": "wait, what's that last bit about skincare", "expect": ["hobbies"], "says": "run like an ops program" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "what's his job at DoorDash right now?", "expect": ["current-role"] },
+        { "q": "what does he actually own there?", "expect": ["current-role"], "says": "roadmap and access model" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "can he teach people who aren't technical?", "expect": ["non-technical"] },
+        { "q": "what happened when one of them got stuck?", "expect": ["non-technical"], "says": "fixed the path with screenshots" }
+      ]
+    },
+    {
+      "type": "same",
+      "turns": [
+        { "q": "what's his tech stack", "expect": ["tech-stack"] },
+        { "q": "and which libraries on the front end?", "expect": ["tech-stack"], "says": "Zustand, React Query, Recharts, Vite" }
+      ]
+    },
+    {
+      "type": "related",
+      "turns": [
+        { "q": "tell me about the mapping engine", "expect": ["mapping-engine"] },
+        { "q": "can i see what it actually looks like?", "expect": ["screenshots"], "says": "schematics and case studies" }
+      ]
+    },
+    {
+      "type": "related",
+      "turns": [
+        { "q": "walk me through his career timeline", "expect": ["career-path"] },
+        { "q": "is there a pdf of all that i can download?", "expect": ["resume"], "says": "a PDF linked at the top" }
+      ]
+    },
+    {
+      "type": "related",
+      "turns": [
+        { "q": "what's the starship project", "expect": ["starship"] },
+        { "q": "is the code public?", "expect": ["github"], "says": "public work is on GitHub" }
+      ]
+    },
+    {
+      "type": "related",
+      "turns": [
+        { "q": "where does he live?", "expect": ["location"] },
+        { "q": "would he work remotely from there?", "expect": ["remote"], "says": "email Sam directly" }
+      ]
+    },
+    {
+      "type": "related",
+      "turns": [
+        { "q": "how can i get in touch with him", "expect": ["contact"] },
+        { "q": "is he even looking for something new right now?", "expect": ["availability"], "says": "a question for Sam directly" }
+      ]
+    },
+    {
+      "type": "switch",
+      "turns": [
+        { "q": "how does he test his AI work?", "expect": ["ai-quality"] },
+        { "q": "so what timezone is he in, and does it change in summer", "expect": ["location"] }
+      ]
+    },
+    {
+      "type": "switch",
+      "turns": [
+        { "q": "does he work with data?", "expect": ["data"] },
+        { "q": "what is this site built with, a framework or is it all hand coded?", "expect": ["this-site"] }
+      ]
+    },
+    {
+      "type": "switch",
+      "turns": [
+        { "q": "what does he build on the side?", "expect": ["side-projects"] },
+        { "q": "do directors at DoorDash come to him for help, and what do they ask about?", "expect": ["executives"] }
+      ]
+    },
+    {
+      "type": "switch",
+      "turns": [
+        { "q": "does he use MCP servers?", "expect": ["mcp"] },
+        { "q": "and has he won any awards?", "expect": ["awards"] }
+      ]
+    },
+    {
+      "type": "switch",
+      "turns": [
+        { "q": "who is Sam Bates?", "expect": ["who-is-sam"] },
+        { "q": "so what does he want to get paid?", "expect": ["salary"] }
+      ]
+    },
+    {
+      "type": "none",
+      "turns": [
+        { "q": "what's his educational background?", "expect": ["education"] },
+        { "q": "what was his GPA there?", "expect": ["none"] }
+      ]
+    },
+    {
+      "type": "none",
+      "turns": [
+        { "q": "what's this congress stock trade digest he made?", "expect": ["hill-money-watch"] },
+        { "q": "did copying those trades actually make money?", "expect": ["none"] }
+      ]
+    },
+    {
+      "type": "none",
+      "turns": [
+        { "q": "has he done any RAG work?", "expect": ["rag"] },
+        { "q": "which vector database is it using?", "expect": ["none"] }
+      ]
+    },
+    {
+      "type": "none",
+      "turns": [
+        { "q": "walk me through his roles at DoorDash", "expect": ["doordash-history"] },
+        { "q": "and who was his manager back then?", "expect": ["none"] }
+      ]
+    },
+    {
+      "type": "none",
+      "turns": [
+        { "q": "does he have any games on here?", "expect": ["arcade"] },
+        { "q": "does the pac-man one have sound?", "expect": ["none"] }
+      ]
+    }
+  ],
+  "twoPart": [
+    { "q": "which city does he live in, and what's his email", "expect": [["location"], ["contact"]] },
+    { "q": "i'm short on time, where should i start? Also what's his tech stack", "expect": [["start-here"], ["tech-stack"]] },
+    { "q": "quick q, what's the starship game about and how does this ask box work", "expect": [["starship"], ["this-box"]] },
+    { "q": "Did he go to college; what does he like to do for fun", "expect": [["education"], ["hobbies"]] },
+    { "q": "tell me about the cost model he made? And is any of his code public", "expect": [["cost-model"], ["github"]] },
+    { "q": "does he write real production code also is there a resume pdf somewhere", "expect": [["can-he-code"], ["resume"]] },
+    { "q": "How does the workforce platform get its data? Has he won any awards?", "expect": [["workforce-platform"], ["awards"]] },
+    { "q": "why would you hire him and what's he asking for salary wise", "expect": [["why-hire"], ["salary"]] },
+    { "q": "what's his AI adoption program like? and does the congress trading digest ever call anyone a crook", "expect": [["enablement"], ["hill-money-watch"]] },
+    { "q": "what did he do on the pos api migration, and how does he measure whether his work is succeeding", "expect": [["api-migration"], ["measurement"]] },
+    { "q": "is he open to remote work; what's that glowing orb on the page", "expect": [["remote"], ["orb"]] },
+    { "q": "what retrieval approach does the copilot use also what did anthropic send him", "expect": [["rag"], ["power-user"]] },
+    { "q": "has he ever led a team, and what's the mapping engine", "expect": [["leadership"], ["mapping-engine"]] },
+    { "q": "What did he change about the support chatbot? Also is he available for new roles", "expect": [["chatbot"], ["availability"]] },
+    { "q": "how is this website built? is he calm under pressure?", "expect": [["this-site"], ["pressure"]] }
+  ],
+  "andSingles": [
+    { "q": "tell me about the orb and why it changes color", "expect": ["orb"] },
+    { "q": "what's the copilot and who is it actually for", "expect": ["copilot"] },
+    { "q": "is he hands-on or more of a people manager", "expect": ["engineer-or-manager"] },
+    { "q": "what's the starship game and how was it made", "expect": ["starship"] },
+    { "q": "what happened with the pos api sunset and how did he protect the revenue", "expect": ["api-migration"] },
+    { "q": "should i email or message him on linkedin", "expect": ["contact"] },
+    { "q": "what is the cost model also how does it keep pay data private", "expect": ["cost-model"] },
+    { "q": "what principles guide how he works and what do they look like in practice", "expect": ["how-he-works"] }
+  ],
+  "typos": [
+    { "q": "what is the copliot he built", "expect": ["copilot"], "intended": "what is the copilot he built" },
+    { "q": "did he serve as a volunter EMT", "expect": ["emt"], "intended": "did he serve as a volunteer EMT" },
+    { "q": "whats his tech stak", "expect": ["tech-stack"], "intended": "what's his tech stack" },
+    { "q": "where did he go to colege", "expect": ["education"], "intended": "where did he go to college" },
+    { "q": "whats his experiance with AI", "expect": ["ai-experience"], "intended": "what's his experience with AI" },
+    { "q": "does he have anything public on githhub", "expect": ["github"], "intended": "does he have anything public on github" },
+    { "q": "tell me about the starsgip game", "expect": ["starship"], "intended": "tell me about the starship game" },
+    { "q": "what is the mapping enginne", "expect": ["mapping-engine"], "intended": "what is the mapping engine" },
+    { "q": "what is the wrokforce platfrom", "expect": ["workforce-platform"], "intended": "what is the workforce platform" },
+    { "q": "how did he fix the chatbot adoptoin problem", "expect": ["chatbot"], "intended": "how did he fix the chatbot adoption problem" },
+    { "q": "has he won any awrds", "expect": ["awards"], "intended": "has he won any awards" },
+    { "q": "tell me about the api migraton program", "expect": ["api-migration"], "intended": "tell me about the api migration program" },
+    { "q": "is he open to remite work", "expect": ["remote"], "intended": "is he open to remote work" },
+    { "q": "whats the best way to emial him", "expect": ["contact"], "intended": "what's the best way to email him" },
+    { "q": "how did he get the outsourced team past the acces errors", "expect": ["rollout", "hardest-problem"], "intended": "how did he get the outsourced team past the access errors" },
+    { "q": "what does the congresional trading digset do", "expect": ["hill-money-watch"], "intended": "what does the congressional trading digest do" },
+    { "q": "does this box genrate text or just mathc", "expect": ["this-box"], "intended": "does this box generate text or just match" },
+    { "q": "has he built retreival systems for the copilt", "expect": ["rag"], "intended": "has he built retrieval systems for the copilot" }
+  ],
+  "offTopic": [
+    { "q": "what's the capital of australia", "near": false },
+    { "q": "How do I reverse a string in Rust?", "near": false },
+    { "q": "who won the nba finals last year??", "near": false },
+    { "q": "easy banana bread recipe?", "near": false },
+    { "q": "how tall is lebron james", "near": false },
+    { "q": "hey random, how would i get into rock climbing as a total beginner", "near": true },
+    { "q": "how should I study for the NREMT exam?", "near": true },
+    { "q": "can u explain how erlang c works for call centers", "near": true },
+    { "q": "whats a good prompt for claude code to refactor my react app", "near": true },
+    { "q": "what's the weather like in phoenix in july?", "near": true }
+  ]
+}

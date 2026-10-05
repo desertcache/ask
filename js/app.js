@@ -1,17 +1,16 @@
 // The chat UI. Every answer comes from data/bank.json (built from the reviewed qa.md); nothing is
-// generated. The trace under each question shows what the model really did (its word pieces, its
-// vector, the comparison, the ranked matches and the confidence check), paced so a person can
-// follow it (~3 s); the summary line reports the real compute time. Text goes in via textContent,
-// never innerHTML.
+// generated. js/converse.js decides each turn (a plain match, a follow-up, two questions in one, a
+// typo repair, a "did you mean") and lists the steps it really took; the trace under each question
+// shows them, paced so a person can follow (~3 s), and the summary reports the real compute time.
+// Text goes in via textContent, never innerHTML.
 
 import { createEmbedder } from './embed.js';
 import { createMatcher, bestMatch } from './match.js';
+import { createConversation } from './converse.js';
 import { MODEL, MODEL_MB, THRESHOLD, CHAT_MIN, MATCH_OPTIONS, PORTFOLIO, STARTERS } from './config.js';
 
-// Phrases that mean "keep going": they continue the last answer through its first follow-up.
-const MORE = /^(?:tell me more|more|go on|keep going|continue|elaborate|what else|anything else|and then|say more)\W*$/i;
-
 /** @typedef {{ id: string, asks: string[], answer: string, points?: string[], detail?: string[], next?: string[], link: string | null }} Entry */
+/** @typedef {import('./converse.js').Step} Step */
 
 const $ = (sel) => /** @type {HTMLElement} */ (document.querySelector(sel));
 const log = $('#log');
@@ -19,6 +18,9 @@ const form = /** @type {HTMLFormElement} */ ($('#ask'));
 const input = /** @type {HTMLInputElement} */ ($('#q'));
 const send = /** @type {HTMLButtonElement} */ ($('#send'));
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// The whole trace takes about this long however many steps a turn has, so a follow-up or a split
+// question reads at the same pace as a plain one.
+const TRACE_MS = 3100;
 const STEP_MS = 620;
 const WORD_MS = 22;
 
@@ -58,12 +60,12 @@ function userRow(text) {
 /**
  * The answer: its lead, then either prose paragraphs (detail) or a list (points), whichever shape
  * the bank gives it. Most answers are prose; lists are only for content that is a list.
- * @param {string} lead @param {string[]} [points] @param {string[]} [detail]
+ * @param {string} lead @param {string[]} [points] @param {string[]} [detail] @param {number} [start] first word index
  */
-function answerBlock(lead, points = [], detail = []) {
+function answerBlock(lead, points = [], detail = [], start = 0) {
   const box = el('div', 'answer-block');
   const p = el('p', 'answer');
-  let i = words(p, lead, 0);
+  let i = words(p, lead, start);
   box.append(p);
   for (const para of detail) {
     const more = el('p', 'answer');
@@ -172,6 +174,38 @@ function step(list, title) {
   };
 }
 
+/**
+ * What a step shows under its title: the word pieces, the vector, the ranked matches, or a line.
+ * @param {Step} s @param {{ pieces(t: string): { text: string, known: boolean }[] }} embedder
+ */
+function stepDetail(s, embedder) {
+  const v = s.view;
+  if (v?.type === 'pieces') {
+    // A "##" piece continues the word before it ("emt" is em + ##t), so it is drawn joined to it.
+    const pieces = embedder.pieces(v.text);
+    const chips = el('div', 'pieces');
+    for (const p of pieces.slice(0, 14)) {
+      const cont = p.text.startsWith('##');
+      chips.append(el('code', [p.known ? '' : 'unk', cont ? 'cont' : ''].join(' ').trim(), cont ? p.text.slice(2) : p.text));
+    }
+    if (pieces.length > 14) chips.append(el('span', 'more-pieces', `+${pieces.length - 14}`));
+    return pieces.length ? chips : el('span', 'detail', 'No words the model knows.');
+  }
+  if (v?.type === 'vector') return vectorStrip(v.vector);
+  if (v?.type === 'ranked') {
+    const table = el('ul', 'matches');
+    for (const r of v.rows) {
+      const li = el('li', r.best ? 'is-best' : '');
+      const bar = el('span', 'bar');
+      bar.style.setProperty('--w', `${Math.max(0, Math.min(1, r.score)) * 100}%`);
+      li.append(el('span', 'm-text', `“${r.text}”`), bar, el('span', 'm-score', (Math.floor(r.score * 100) / 100).toFixed(2)));
+      table.append(li);
+    }
+    return table;
+  }
+  return s.detail ? el('span', 'detail', s.detail) : undefined;
+}
+
 async function main() {
   const bank = await (await fetch('data/bank.json')).json();
   /** @type {Entry[]} */
@@ -207,14 +241,14 @@ async function main() {
 
   const embedder = createEmbedder(bytes.buffer, await (await fetch('models/vocab.txt')).text());
   const matcher = createMatcher(entries, embedder, MATCH_OPTIONS);
+  const convo = createConversation({
+    entries, matcher, embedder, threshold: THRESHOLD, chatMin: CHAT_MIN, bestMatch,
+    fallbacks: bank.fallbacks?.length ? bank.fallbacks : [bank.fallback], starters, voice: 'first',
+  });
   loading.remove();
   document.body.classList.add('is-ready');
 
   let asking = false;
-  /** @type {Set<string>} answers already given in this conversation */
-  const answered = new Set();
-  /** @type {Entry | null} the last answer given, for "tell me more" */
-  let lastEntry = null;
   /** @param {string} q */
   const ask = async (q) => {
     if (asking || !q.trim()) return;
@@ -224,14 +258,7 @@ async function main() {
     userRow(q);
     input.value = '';
 
-    // "Tell me more" and friends continue the last answer through its first follow-up.
-    const followUp = MORE.test(q.trim()) && lastEntry?.next?.length ? byId.get(lastEntry.next[0]) ?? null : null;
-
-    const t0 = performance.now();
-    const ranked = matcher.rank(followUp ? followUp.asks[0] : q);
-    const ms = performance.now() - t0;
-    const top = ranked[0];
-    const best = followUp ? ranked.find((r) => r.entry.id === followUp.id) ?? null : bestMatch(ranked, THRESHOLD, CHAT_MIN);
+    const turn = convo.turn(q);
 
     const bubble = botRow();
     const trace = /** @type {HTMLDetailsElement} */ (el('details', 'trace'));
@@ -244,81 +271,42 @@ async function main() {
     bubble.append(trace);
     scrollDown();
 
-    let s;
-    if (followUp && lastEntry) {
-      s = step(list, 'Picked up the thread');
-      await wait(STEP_MS);
-      s.done(el('span', 'detail', `continuing from “${lastEntry.asks[0]}”`));
-      s = step(list, 'Found the next part of the story');
-      await wait(STEP_MS);
-      s.done(el('span', 'detail', `“${followUp.asks[0]}”`));
-    } else {
-    // 1. The word pieces the tokenizer produced.
-    s = step(list, 'Read your question');
-    await wait(STEP_MS);
-    const pieces = embedder.pieces(q);
-    const chips = el('div', 'pieces');
-    // A "##" piece continues the word before it ("emt" is em + ##t), so it is drawn joined to it.
-    for (const p of pieces.slice(0, 14)) {
-      const cont = p.text.startsWith('##');
-      chips.append(el('code', [p.known ? '' : 'unk', cont ? 'cont' : ''].join(' ').trim(), cont ? p.text.slice(2) : p.text));
-    }
-    if (pieces.length > 14) chips.append(el('span', 'more-pieces', `+${pieces.length - 14}`));
-    s.done(pieces.length ? chips : el('span', 'detail', 'No words the model knows.'));
-
-    // 2. The sentence vector.
-    s = step(list, `Turned it into ${embedder.dim} numbers`);
-    await wait(STEP_MS);
-    s.done(vectorStrip(top.vector));
-
-    // 3. The comparison.
-    s = step(list, `Compared it with ${matcher.size} phrasings`);
-    await wait(STEP_MS);
-    s.done(el('span', 'detail', `${entries.length} answers · cosine similarity`));
-
-    // 4. The ranked matches.
-    s = step(list, 'Ranked the closest answers');
-    await wait(STEP_MS);
-    const table = el('ul', 'matches');
-    for (const r of ranked.slice(0, 3)) {
-      const li = el('li', r === best ? 'is-best' : '');
-      const bar = el('span', 'bar');
-      bar.style.setProperty('--w', `${Math.max(0, Math.min(1, r.score)) * 100}%`);
-      li.append(el('span', 'm-text', `“${r.matched}”`), bar, el('span', 'm-score', r.score.toFixed(2)));
-      table.append(li);
-    }
-    s.done(table);
-
-    // 5. The confidence check against the threshold (small talk needs a higher one).
-    s = step(list, best ? 'Confident in the best match' : 'Not confident enough to answer');
-    await wait(STEP_MS * 0.8);
-    s.done(el('span', 'detail', best
-      ? `${best.score.toFixed(2)} clears the ${best.entry.chat ? CHAT_MIN : THRESHOLD} bar${best.entry.chat ? ' for small talk' : ''}`
-      : `${top.score.toFixed(2)} is under the ${top.entry.chat ? CHAT_MIN : THRESHOLD} bar, so I won't guess`));
+    const pace = Math.min(STEP_MS, TRACE_MS / turn.steps.length);
+    for (const st of turn.steps) {
+      const s = step(list, st.title);
+      await wait(pace);
+      s.done(stepDetail(st, embedder));
     }
     await wait(STEP_MS * 0.7);
 
     trace.open = false;
     trace.classList.add('is-done');
-    sumText.textContent = `Searched ${matcher.size} phrasings · ${ms < 1 ? '<1' : ms.toFixed(1)} ms`;
+    sumText.textContent = `Searched ${matcher.size} phrasings · ${turn.ms < 1 ? '<1' : turn.ms.toFixed(1)} ms`;
 
-    const entry = best ? best.entry : null;
-    // Conversation awareness: say so when continuing a thread or repeating an answer, and vary
-    // the "I don't know" line instead of repeating one.
-    const aside = followUp ? "Here's more on that." : entry && answered.has(entry.id) ? 'Like I said a moment ago:' : null;
-    if (aside) bubble.append(el('p', 'aside', aside));
-    const fallbacks = bank.fallbacks?.length ? bank.fallbacks : [bank.fallback];
-    const fallback = fallbacks[Math.floor(Math.random() * fallbacks.length)];
-    const { box, words: n } = answerBlock(entry ? entry.answer : fallback, entry?.points, entry?.detail);
-    if (entry) { answered.add(entry.id); lastEntry = entry; }
-    box.style.setProperty('--wms', `${WORD_MS}ms`);
-    bubble.append(box);
+    // The answer: one part, or two for a two-part question; a part can be a single line of an
+    // answer (a follow-up). With no part, the "did you mean" line or a fallback.
+    let n = 0;
+    /** @type {[HTMLElement, string][]} each answer's "read more" link, added once its words are in */
+    const links = [];
+    for (const part of turn.parts) {
+      if (part.aside) bubble.append(el('p', 'aside', part.aside));
+      const e = part.entry;
+      const { box, words: end } = part.lines ? answerBlock(part.lines.join(' '), [], [], n) : answerBlock(e.answer, e.points, e.detail, n);
+      box.style.setProperty('--wms', `${WORD_MS}ms`);
+      bubble.append(box);
+      n = end;
+      if (e.link) links.push([box, e.link]);
+    }
+    if (!turn.parts.length && turn.message) {
+      const { box, words: end } = answerBlock(turn.message, [], [], 0);
+      box.style.setProperty('--wms', `${WORD_MS}ms`);
+      bubble.append(box);
+      n = end;
+    }
     scrollDown();
     await wait(n * WORD_MS + 250);
-    if (entry?.link) bubble.append(moreLink(entry.link));
-    // Follow-ups: the two Sam picked for this answer, else the next-closest matches.
-    const picked = /** @type {Entry[]} */ ((entry?.next ?? []).map((id) => byId.get(id)).filter(Boolean));
-    bubble.append(chipRow(entry ? (picked.length ? picked : ranked.slice(1, 3).map((r) => r.entry)) : starters, ask));
+    for (const [box, link] of links) box.after(moreLink(link));
+    bubble.append(chipRow(turn.suggest, ask));
     scrollDown();
 
     log.setAttribute('aria-busy', 'false');
