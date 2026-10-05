@@ -37,21 +37,28 @@ export function createMatcher(entries, embedder, { idf = true, answers = true } 
     const n = entries.length;
     weight = (id) => Math.log((n + 1) / ((df.get(id) ?? 0) + 1));
   }
-  const index = entries.map((e) => ({
-    entry: e,
-    vecs: [...e.asks, ...(answers ? [e.answer] : [])].map((t) => embedder.embed(t, weight)),
-  }));
+  const index = entries.map((e) => {
+    const texts = [...e.asks, ...(answers ? [e.answer] : [])];
+    return { entry: e, texts, vecs: texts.map((t) => embedder.embed(t, weight)) };
+  });
 
   return {
+    /** How many texts a question is compared against. */
+    size: index.reduce((n, { vecs }) => n + vecs.length, 0),
     /**
-     * Entries ranked by score, best first.
+     * Entries ranked by score, best first, each with the phrasing that scored it.
      * @param {string} question
-     * @returns {{ entry: Entry, score: number }[]}
+     * @returns {{ entry: Entry, score: number, matched: string, vector: Float32Array }[]}
      */
     rank(question) {
       const q = embedder.embed(question, weight);
       return index
-        .map(({ entry, vecs }) => ({ entry, score: Math.max(...vecs.map((v) => dot(q, v))) }))
+        .map(({ entry, texts, vecs }) => {
+          let best = 0;
+          const scores = vecs.map((v) => dot(q, v));
+          scores.forEach((s, i) => { if (s > scores[best]) best = i; });
+          return { entry, score: scores[best], matched: texts[best], vector: q };
+        })
         .sort((x, y) => y.score - x.score);
     },
   };

@@ -26,6 +26,10 @@ export function createEmbedder(weights, vocabText) {
       // model2vec drops [UNK] before pooling, so gibberish embeds to nothing instead of to [UNK].
       return tokenizer.encode(text).filter((id) => id !== tokenizer.unkId && id < rows);
     },
+    /** Every word piece the tokenizer produced, with whether the model knows it. @param {string} text */
+    pieces(text) {
+      return tokenizer.encode(text).map((id) => ({ text: tokenizer.piece(id), known: id !== tokenizer.unkId && id < rows }));
+    },
     /**
      * @param {string} text
      * @param {(id: number) => number} [weight] per-token pooling weight (default 1)

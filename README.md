@@ -16,8 +16,13 @@ ready in well under a second, matching in under a millisecond.
   checks it id-for-id against the reference tokenizer on every bank string plus edge cases.
 - **Matching:** `js/match.js`. An entry scores as its best-matching sample phrasing. Below the
   threshold (0.45) the box shows the fallback, which points to email.
-- **UI:** `index.html`, `css/ask.css` (the portfolio Lab's night-room tokens), `js/app.js`. Answers
-  go in with `textContent`. Every answer shows two related questions as chips.
+- **UI:** a chat thread: `index.html`, `css/ask.css` (the portfolio Lab's night-room tokens),
+  `js/app.js`. Under each question a trace shows what the model actually did: the word pieces it
+  read, its 128-number vector, the comparison against every phrasing, and the top three matches
+  with their scores. Matching takes under a millisecond, so the trace is paced (~1.5 s) to be
+  readable, and its summary line reports the real compute time. `prefers-reduced-motion` skips the
+  pacing. Answers go in with `textContent`, and every answer offers two related questions as chips.
+  `?embed=1` is the mode the portfolio's Lab card uses.
 
 ## The answer bank
 

@@ -1,26 +1,163 @@
-// The answer finder UI. Every word shown comes from data/bank.json (built from the reviewed qa.md);
-// nothing is generated. Text goes in via textContent, never innerHTML.
+// The chat UI. Every answer comes from data/bank.json (built from the reviewed qa.md); nothing is
+// generated. The trace under each question shows what the model really did (its word pieces, its
+// vector, the comparison, the top matches and their scores), paced so a person can read it; the
+// summary line reports the real compute time. Text goes in via textContent, never innerHTML.
 
 import { createEmbedder } from './embed.js';
 import { createMatcher } from './match.js';
 import { MODEL, MODEL_MB, THRESHOLD, MATCH_OPTIONS, PORTFOLIO, STARTERS } from './config.js';
 
-const $ = (sel) => /** @type {HTMLElement} */ (document.querySelector(sel));
-const form = /** @type {HTMLFormElement} */ ($('#ask'));
-const input = /** @type {HTMLInputElement} */ ($('#q'));
-const button = /** @type {HTMLButtonElement} */ ($('#ask button'));
-const status = $('#status');
-const result = $('#result');
-const chips = $('#chips');
-const chipsLabel = $('#chips-label');
-const meta = $('#meta');
-
 /** @typedef {{ id: string, asks: string[], answer: string, link: string | null }} Entry */
 
-/** @param {string} url */
-async function fetchBytes(url, onProgress) {
-  const res = await fetch(url);
-  if (!res.ok || !res.body) throw new Error(`${url}: ${res.status}`);
+const $ = (sel) => /** @type {HTMLElement} */ (document.querySelector(sel));
+const log = $('#log');
+const form = /** @type {HTMLFormElement} */ ($('#ask'));
+const input = /** @type {HTMLInputElement} */ ($('#q'));
+const send = /** @type {HTMLButtonElement} */ ($('#send'));
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const STEP_MS = 340;
+const WORD_MS = 16;
+
+if (new URLSearchParams(location.search).has('embed')) document.body.classList.add('is-embed');
+
+const wait = (ms) => new Promise((r) => setTimeout(r, reduced ? 0 : ms));
+
+/** @param {string} tag @param {string} [cls] @param {string} [text] */
+function el(tag, cls, text) {
+  const node = document.createElement(tag);
+  if (cls) node.className = cls;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+function scrollDown() {
+  log.scrollTo({ top: log.scrollHeight, behavior: reduced ? 'auto' : 'smooth' });
+}
+
+/** A bot message row: avatar + bubble. Returns the bubble. */
+function botRow() {
+  const row = el('div', 'msg bot');
+  row.append(el('span', 'avatar'));
+  const bubble = el('div', 'bubble');
+  row.append(bubble);
+  log.append(row);
+  return bubble;
+}
+
+/** @param {string} text */
+function userRow(text) {
+  const row = el('div', 'msg me');
+  row.append(el('div', 'bubble', text));
+  log.append(row);
+}
+
+/**
+ * Answer text, word by word (CSS staggers them in), with the email address as a mailto link.
+ * @param {string} text
+ */
+function answerText(text) {
+  const p = el('p', 'answer');
+  let i = 0;
+  for (const [k, part] of text.split(/([\w.+-]+@[\w-]+\.[\w.]+)/).entries()) {
+    if (k % 2) {
+      const a = /** @type {HTMLAnchorElement} */ (el('a', 'w', part));
+      a.href = `mailto:${part}`;
+      a.style.setProperty('--i', String(i++));
+      p.append(a);
+      continue;
+    }
+    for (const word of part.split(/(\s+)/)) {
+      if (!word) continue;
+      if (/^\s+$/.test(word)) { p.append(word); continue; }
+      const s = el('span', 'w', word);
+      s.style.setProperty('--i', String(i++));
+      p.append(s);
+    }
+  }
+  return { p, words: i };
+}
+
+/** @param {string} link */
+function moreLink(link) {
+  const external = /^https?:/.test(link) && !link.startsWith(PORTFOLIO);
+  const a = /** @type {HTMLAnchorElement} */ (el('a', 'more', external ? 'Open ' : 'Read more on the site '));
+  a.href = new URL(link, PORTFOLIO).href;
+  a.target = external ? '_blank' : '_top';
+  if (external) a.rel = 'noopener';
+  const arrow = el('span', '', external ? '↗' : '→');
+  arrow.setAttribute('aria-hidden', 'true');
+  a.append(arrow);
+  return a;
+}
+
+/** @param {Entry[]} entries @param {(q: string) => void} ask */
+function chipRow(entries, ask) {
+  const row = el('div', 'chips');
+  for (const e of entries) {
+    const b = /** @type {HTMLButtonElement} */ (el('button', 'chip', e.asks[0]));
+    b.type = 'button';
+    b.addEventListener('click', () => ask(e.asks[0]));
+    row.append(b);
+  }
+  return row;
+}
+
+/** The query vector as a strip of bars, one per dimension. @param {Float32Array} v */
+function vectorStrip(v) {
+  const ns = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(ns, 'svg');
+  // Scale to ~2.5x the RMS, not the max: one large dimension would otherwise flatten the rest.
+  const rms = Math.sqrt(v.reduce((s, x) => s + x * x, 0) / v.length) || 1;
+  const max = rms * 2.5;
+  svg.setAttribute('viewBox', `0 0 ${v.length * 2} 24`);
+  svg.setAttribute('preserveAspectRatio', 'none');
+  svg.setAttribute('class', 'vec');
+  svg.setAttribute('aria-hidden', 'true');
+  v.forEach((x, i) => {
+    const h = Math.max(0.6, Math.min(1, Math.abs(x) / max) * 11);
+    const r = document.createElementNS(ns, 'rect');
+    r.setAttribute('x', String(i * 2));
+    r.setAttribute('width', '1.4');
+    r.setAttribute('y', String(x >= 0 ? 12 - h : 12));
+    r.setAttribute('height', String(h));
+    r.setAttribute('class', x >= 0 ? 'pos' : 'neg');
+    svg.append(r);
+  });
+  return svg;
+}
+
+/** One trace step: spinner while running, tick when done. @param {HTMLElement} list @param {string} title */
+function step(list, title) {
+  const li = el('li', 'step is-running');
+  li.append(el('span', 'tick'), el('span', 'step-title', title));
+  list.append(li);
+  scrollDown();
+  return {
+    li,
+    /** @param {Node} [detail] */
+    done(detail) {
+      if (detail) li.append(detail);
+      li.classList.replace('is-running', 'is-done');
+    },
+  };
+}
+
+async function main() {
+  const bank = await (await fetch('data/bank.json')).json();
+  /** @type {Entry[]} */
+  const entries = bank.entries;
+  const byId = new Map(entries.map((e) => [e.id, e]));
+  const starters = /** @type {Entry[]} */ (STARTERS.map((id) => byId.get(id)).filter(Boolean));
+
+  // Greeting, with the load progress until the model is ready.
+  const hello = botRow();
+  hello.append(el('p', 'answer', `Hi! I'm a ${MODEL_MB} MB model running right here in your browser. Ask me anything about Sam's work, his AI projects or his background.`));
+  const loading = el('p', 'loading', 'Loading the model…');
+  hello.append(loading);
+  setBusy(true);
+
+  const res = await fetch(`models/${MODEL}.bin`);
+  if (!res.ok || !res.body) throw new Error(`model: ${res.status}`);
   const total = Number(res.headers.get('Content-Length')) || 0;
   const reader = res.body.getReader();
   const parts = [];
@@ -30,119 +167,125 @@ async function fetchBytes(url, onProgress) {
     if (done) break;
     parts.push(value);
     got += value.length;
-    onProgress(got, total);
+    loading.textContent = total
+      ? `Loading the model… ${Math.min(100, Math.round((got / total) * 100))}%`
+      : `Loading the model… ${(got / 1e6).toFixed(1)} MB`;
   }
-  const out = new Uint8Array(got);
+  const bytes = new Uint8Array(got);
   let at = 0;
-  for (const p of parts) { out.set(p, at); at += p.length; }
-  return out.buffer;
-}
+  for (const p of parts) { bytes.set(p, at); at += p.length; }
 
-/** Answer text with the email address as a mailto link. @param {string} text */
-function renderAnswer(text) {
-  const p = document.createElement('p');
-  p.className = 'answer';
-  for (const [i, part] of text.split(/([\w.+-]+@[\w-]+\.[\w.]+)/).entries()) {
-    if (i % 2) {
-      const a = document.createElement('a');
-      a.href = `mailto:${part}`;
-      a.textContent = part;
-      p.append(a);
-    } else {
-      p.append(part);
-    }
-  }
-  return p;
-}
-
-/** @param {string} link */
-function renderLink(link) {
-  const external = /^https?:/.test(link) && !link.startsWith(PORTFOLIO);
-  const a = document.createElement('a');
-  a.className = 'more';
-  a.href = new URL(link, PORTFOLIO).href;
-  a.target = external ? '_blank' : '_top';
-  if (external) a.rel = 'noopener';
-  a.textContent = external ? 'Open ' : 'Read more on the site ';
-  const arrow = document.createElement('span');
-  arrow.setAttribute('aria-hidden', 'true');
-  arrow.textContent = external ? '↗' : '→';
-  a.append(arrow);
-  return a;
-}
-
-/** @param {string} label @param {Entry[]} entries @param {(e: Entry) => void} onPick */
-function setChips(label, entries, onPick) {
-  chipsLabel.textContent = label;
-  chips.replaceChildren(...entries.map((e) => {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'chip';
-    b.textContent = e.asks[0];
-    b.addEventListener('click', () => onPick(e));
-    return b;
-  }));
-}
-
-async function main() {
-  const bank = await (await fetch('data/bank.json')).json();
-  /** @type {Entry[]} */
-  const entries = bank.entries;
-  const byId = new Map(entries.map((e) => [e.id, e]));
-  const starters = STARTERS.map((id) => byId.get(id)).filter(Boolean);
-
-  /** @param {Entry | null} entry @param {Entry[]} related */
-  const show = (entry, related) => {
-    const card = document.createElement('div');
-    card.className = 'card' + (entry ? '' : ' is-fallback');
-    card.append(renderAnswer(entry ? entry.answer : bank.fallback));
-    if (entry?.link) card.append(renderLink(entry.link));
-    result.replaceChildren(card);
-    if (entry) setChips('Related', related, pick);
-    else setChips('Try one of these', starters, pick);
-  };
-  /** @param {Entry} entry */
-  const pick = (entry) => {
-    input.value = entry.asks[0];
-    meta.textContent = '';
-    show(entry, related(entry.id));
-  };
-  // Related chips for a picked entry: its nearest neighbours by its own first phrasing.
-  let related = (/** @type {string} */ _id) => /** @type {Entry[]} */ ([]);
-
-  setChips('Try asking', starters, pick);
-  input.disabled = true;
-  button.disabled = true;
-
-  const weights = await fetchBytes(`models/${MODEL}.bin`, (got, total) => {
-    status.textContent = `Loading a ${MODEL_MB} MB model onto your device… ${total ? Math.round((got / total) * 100) : Math.round(got / 1e5) / 10}${total ? '%' : ' MB'}`;
-  });
-  const vocab = await (await fetch('models/vocab.txt')).text();
-  const embedder = createEmbedder(weights, vocab);
+  const embedder = createEmbedder(bytes.buffer, await (await fetch('models/vocab.txt')).text());
   const matcher = createMatcher(entries, embedder, MATCH_OPTIONS);
-  related = (id) => matcher.rank(/** @type {Entry} */ (byId.get(id)).asks[0]).map((r) => r.entry).filter((e) => e.id !== id).slice(0, 2);
-
-  status.textContent = 'Ready. Nothing you type leaves this page.';
+  loading.remove();
   document.body.classList.add('is-ready');
-  input.disabled = false;
-  button.disabled = false;
 
-  form.addEventListener('submit', (ev) => {
-    ev.preventDefault();
-    const q = input.value.trim();
-    if (!q) return;
+  let asking = false;
+  /** @param {string} q */
+  const ask = async (q) => {
+    if (asking || !q.trim()) return;
+    asking = true;
+    setBusy(true);
+    log.setAttribute('aria-busy', 'true');
+    userRow(q);
+    input.value = '';
+
     const t0 = performance.now();
     const ranked = matcher.rank(q);
     const ms = performance.now() - t0;
     const top = ranked[0];
     const hit = top.score >= THRESHOLD;
-    show(hit ? top.entry : null, ranked.slice(1, 3).map((r) => r.entry));
-    meta.textContent = `Matched in ${ms < 1 ? '<1' : Math.round(ms)} ms · similarity ${top.score.toFixed(2)}${hit ? '' : ` (below ${THRESHOLD})`}`;
+
+    const bubble = botRow();
+    const trace = /** @type {HTMLDetailsElement} */ (el('details', 'trace'));
+    trace.open = true;
+    const summary = el('summary', 'trace-sum');
+    const sumText = el('span', '', 'Searching…');
+    summary.append(el('span', 'spin'), sumText);
+    const list = el('ol', 'steps');
+    trace.append(summary, list);
+    bubble.append(trace);
+    scrollDown();
+
+    // 1. The word pieces the tokenizer produced.
+    let s = step(list, 'Read your question');
+    await wait(STEP_MS);
+    const pieces = embedder.pieces(q);
+    const chips = el('div', 'pieces');
+    // A "##" piece continues the word before it ("emt" is em + ##t), so it is drawn joined to it.
+    for (const p of pieces.slice(0, 14)) {
+      const cont = p.text.startsWith('##');
+      chips.append(el('code', [p.known ? '' : 'unk', cont ? 'cont' : ''].join(' ').trim(), cont ? p.text.slice(2) : p.text));
+    }
+    if (pieces.length > 14) chips.append(el('span', 'more-pieces', `+${pieces.length - 14}`));
+    s.done(pieces.length ? chips : el('span', 'detail', 'No words the model knows.'));
+
+    // 2. The sentence vector.
+    s = step(list, `Turned it into ${embedder.dim} numbers`);
+    await wait(STEP_MS);
+    s.done(vectorStrip(top.vector));
+
+    // 3. The comparison.
+    s = step(list, `Compared it with ${matcher.size} phrasings`);
+    await wait(STEP_MS);
+    s.done(el('span', 'detail', `${entries.length} answers · cosine similarity`));
+
+    // 4. The top matches.
+    s = step(list, hit ? 'Closest matches' : 'Nothing close enough');
+    await wait(STEP_MS);
+    const table = el('ul', 'matches');
+    for (const r of ranked.slice(0, 3)) {
+      const li = el('li', r === top && hit ? 'is-best' : '');
+      const bar = el('span', 'bar');
+      bar.style.setProperty('--w', `${Math.max(0, Math.min(1, r.score)) * 100}%`);
+      li.append(el('span', 'm-text', `“${r.matched}”`), bar, el('span', 'm-score', r.score.toFixed(2)));
+      table.append(li);
+    }
+    if (!hit) table.append(el('li', 'm-note', `The best score is under the ${THRESHOLD} bar, so I won't guess.`));
+    s.done(table);
+    await wait(STEP_MS * 0.6);
+
+    trace.open = false;
+    trace.classList.add('is-done');
+    sumText.textContent = `Searched ${matcher.size} phrasings · ${ms < 1 ? '<1' : ms.toFixed(1)} ms`;
+
+    const entry = hit ? top.entry : null;
+    const { p, words } = answerText(entry ? entry.answer : bank.fallback);
+    p.style.setProperty('--wms', `${WORD_MS}ms`);
+    bubble.append(p);
+    scrollDown();
+    await wait(words * WORD_MS + 200);
+    if (entry?.link) bubble.append(moreLink(entry.link));
+    bubble.append(chipRow(entry ? ranked.slice(1, 3).map((r) => r.entry) : starters, ask));
+    scrollDown();
+
+    log.setAttribute('aria-busy', 'false');
+    asking = false;
+    setBusy(false);
+    if (matchMedia('(pointer: fine)').matches) input.focus();
+  };
+
+  hello.append(chipRow(starters, ask));
+  setBusy(false);
+  form.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    ask(input.value);
   });
+}
+
+/** @param {boolean} busy */
+function setBusy(busy) {
+  input.disabled = busy && !document.body.classList.contains('is-ready');
+  send.disabled = busy;
 }
 
 main().catch((err) => {
   console.error(err);
-  status.textContent = 'The model could not load here. Email Sam instead: batessambates@gmail.com';
   document.body.classList.add('is-error');
+  const bubble = botRow();
+  const p = el('p', 'answer', 'The model could not load here. You can reach Sam directly: ');
+  const a = /** @type {HTMLAnchorElement} */ (el('a', '', 'batessambates@gmail.com'));
+  a.href = 'mailto:batessambates@gmail.com';
+  p.append(a);
+  bubble.append(p);
 });

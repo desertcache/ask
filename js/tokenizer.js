@@ -68,7 +68,8 @@ function preTokenize(text) {
 export function createTokenizer(vocabText) {
   /** @type {Map<string, number>} */
   const vocab = new Map();
-  vocabText.split(/\r?\n/).forEach((tok, i) => { if (tok && !vocab.has(tok)) vocab.set(tok, i); });
+  const lines = vocabText.split(/\r?\n/);
+  lines.forEach((tok, i) => { if (tok && !vocab.has(tok)) vocab.set(tok, i); });
   const unkId = vocab.get('[UNK]') ?? -1;
 
   /** @param {string} word */
@@ -99,6 +100,10 @@ export function createTokenizer(vocabText) {
     /** Token ids without [CLS]/[SEP]. @param {string} text */
     encode(text) {
       return preTokenize(normalize(text)).flatMap(wordPiece);
+    },
+    /** The vocabulary string for a token id ("code", "##ing", "[UNK]"). @param {number} id */
+    piece(id) {
+      return lines[id] ?? '[UNK]';
     },
   };
 }
