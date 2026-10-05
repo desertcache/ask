@@ -91,6 +91,8 @@ a { color: var(--accent-ink); text-underline-offset: 3px; }
   scrollbar-color: var(--line-strong) transparent;
   overscroll-behavior: contain;
 }
+/* Embedded in the portfolio, a log that hits its end hands the scroll back to the page. */
+.is-embed .log { overscroll-behavior: auto; }
 .msg { display: flex; gap: 10px; animation: rise 0.35s var(--ease); }
 .msg.me { justify-content: flex-end; }
 .bubble { min-width: 0; max-width: min(560px, 88%); }
