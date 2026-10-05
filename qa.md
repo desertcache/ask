@@ -369,7 +369,7 @@ It's the orb in this bar: it idles while you read, turns violet while it searche
 
 ### 40. arcade
 **Asks like:** What's the arcade? · Pac-Man? · Can I play a game? · Games · Pac-Man · Arcade games · Canvas games · Can I watch an AI play? · Four in a Row
-**Answer:** Ten games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild and three titles where you can watch an AI think.
+**Answer:** Twelve games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild, a pinball table with real physics, and four titles where you can watch an AI think.
 **Detail:**
 The Pac-Man has the original ghost targeting, overflow bug included, and it went from first commit to live in a day.
 **Next:** starship, claude-code

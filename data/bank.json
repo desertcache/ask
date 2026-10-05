@@ -944,7 +944,7 @@
     "Can I watch an AI play?",
     "Four in a Row"
    ],
-   "answer": "Ten games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild and three titles where you can watch an AI think.",
+   "answer": "Twelve games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild, a pinball table with real physics, and four titles where you can watch an AI think.",
    "points": [],
    "detail": [
     "The Pac-Man has the original ghost targeting, overflow bug included, and it went from first commit to live in a day."
