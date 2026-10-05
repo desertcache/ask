@@ -8,7 +8,7 @@ import { createEmbedder } from './embed.js';
 import { createMatcher } from './match.js';
 import { MODEL, MODEL_MB, THRESHOLD, MATCH_OPTIONS, PORTFOLIO, STARTERS } from './config.js';
 
-/** @typedef {{ id: string, asks: string[], answer: string, points?: string[], next?: string[], link: string | null }} Entry */
+/** @typedef {{ id: string, asks: string[], answer: string, points?: string[], detail?: string[], next?: string[], link: string | null }} Entry */
 
 const $ = (sel) => /** @type {HTMLElement} */ (document.querySelector(sel));
 const log = $('#log');
@@ -52,12 +52,21 @@ function userRow(text) {
   log.append(row);
 }
 
-/** The answer: its lead, then its highlights as a list. @param {string} lead @param {string[]} [points] */
-function answerBlock(lead, points = []) {
+/**
+ * The answer: its lead, then either prose paragraphs (detail) or a list (points), whichever shape
+ * the bank gives it. Most answers are prose; lists are only for content that is a list.
+ * @param {string} lead @param {string[]} [points] @param {string[]} [detail]
+ */
+function answerBlock(lead, points = [], detail = []) {
   const box = el('div', 'answer-block');
   const p = el('p', 'answer');
   let i = words(p, lead, 0);
   box.append(p);
+  for (const para of detail) {
+    const more = el('p', 'answer');
+    i = words(more, para, i);
+    box.append(more);
+  }
   if (points.length) {
     const ul = el('ul', 'points');
     for (const pt of points) {
@@ -274,7 +283,7 @@ async function main() {
     sumText.textContent = `Searched ${matcher.size} phrasings · ${ms < 1 ? '<1' : ms.toFixed(1)} ms`;
 
     const entry = hit ? top.entry : null;
-    const { box, words: n } = answerBlock(entry ? entry.answer : bank.fallback, entry?.points);
+    const { box, words: n } = answerBlock(entry ? entry.answer : bank.fallback, entry?.points, entry?.detail);
     box.style.setProperty('--wms', `${WORD_MS}ms`);
     bubble.append(box);
     scrollDown();

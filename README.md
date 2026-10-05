@@ -30,7 +30,8 @@ The portfolio's glass ask bar (desertcache/portfolio, `js/ask.js`) imports `js/e
 `js/match.js` and `js/config.js` from the deployed site and fetches `data/bank.json`,
 `models/vocab.txt` and `models/<MODEL>.bin`. Treat those as a public API: keep
 `createEmbedder(...).{dim, pieces, embed}`, `createMatcher(...).{size, rank}` (each result with
-`entry`, `score`, `matched`, `vector`) and the config exports compatible, or update the portfolio in
+`entry`, `score`, `matched`, `vector`), the bank entry fields (`answer`, then `detail` paragraphs or
+`points`, `next`, `link`) and the config exports compatible, or update the portfolio in
 step. A push here deploys there too.
 
 ## The answer bank

@@ -15,11 +15,10 @@
     "Overview of Sam"
    ],
    "answer": "Sam Bates is an AI Solutions Manager at DoorDash, based in Phoenix. He builds production AI for operations teams, leads the people who run it, and teaches organizations to adopt it.",
-   "points": [
-    "Built an AI support copilot that an outsourced support team now works live cases in.",
-    "Trained 800+ people to put AI to work, and counts adoption, not attendance.",
-    "Merged 200+ pull requests in 2026, every one of them built with AI coding agents.",
-    "Came up through operations and emergency medicine, where he led a 12-person crisis-response team as a volunteer EMT."
+   "points": [],
+   "detail": [
+    "He built an AI support copilot that an outsourced support team now works live cases in, and he has trained 800+ people to put AI to work, counting adoption rather than attendance. He merged 200+ pull requests in 2026, every one of them built with AI coding agents.",
+    "Before tech, he came up through operations and emergency medicine, where he led a 12-person crisis-response team as a volunteer EMT."
    ],
    "next": [
     "career-path",
@@ -41,10 +40,9 @@
     "Job title"
    ],
    "answer": "He's an AI Solutions Manager in DoorDash Merchant Ops, promoted in September 2026 to lead AI solutions for merchant-integration support.",
-   "points": [
-    "Owns the AI support workspace's roadmap and access model.",
-    "Coaches the outsourced support team working live cases inside it.",
-    "Consultative partner and primary PR approver for 5 builders, on top of his own build work."
+   "points": [],
+   "detail": [
+    "He owns the AI support workspace's roadmap and access model, and he coaches the outsourced support team working live cases inside it. On top of his own build work, he's the consultative partner and primary PR approver for 5 builders."
    ],
    "next": [
     "copilot",
@@ -66,6 +64,7 @@
    ],
    "answer": "Phoenix, Arizona. That's UTC−7 all year, since Arizona skips daylight saving.",
    "points": [],
+   "detail": [],
    "next": [
     "remote",
     "contact"
@@ -93,6 +92,7 @@
     "2022 to 2025: DoorDash merchant services, then executive escalations, then technical integrations, where he wrote his first production code.",
     "September 2026: promoted to AI Solutions Manager."
    ],
+   "detail": [],
    "next": [
     "emt",
     "doordash-history"
@@ -114,10 +114,9 @@
     "Scribe"
    ],
    "answer": "Yes. He was a volunteer EMT and Behavioral Health Team Lead with the Phoenix Fire Department.",
-   "points": [
-    "Led a 12-person crisis-response team, coordinating fire, medical and law-enforcement units on scene.",
-    "Before that, a master emergency medical scribe across four Banner Health emergency departments, including the Level I trauma centers at Banner Desert.",
-    "Interviewed, hired and trained the new scribes."
+   "points": [],
+   "detail": [
+    "He led a 12-person crisis-response team, coordinating fire, medical and law-enforcement units on scene. Before that he was a master emergency medical scribe across four Banner Health emergency departments, including the Level I trauma centers at Banner Desert, where he also interviewed, hired and trained the new scribes."
    ],
    "next": [
     "career-path",
@@ -140,7 +139,8 @@
     "Biology"
    ],
    "answer": "Coursework toward a B.S. in Cell & Molecular Biology at Western New Mexico University, and an NREMT-B (EMT) certification from Estrella Mountain Community College.",
-   "points": [
+   "points": [],
+   "detail": [
     "He moved into engineering on the job at DoorDash, writing his first production code in 2025."
    ],
    "next": [
@@ -167,6 +167,7 @@
     "Technical Integrations Associate: wrote his first production code and built the AI copilot.",
     "Promoted to AI Solutions Manager in September 2026."
    ],
+   "detail": [],
    "next": [
     "current-role",
     "awards"
@@ -186,9 +187,9 @@
     "Personal interests"
    ],
    "answer": "Rock climbing, hiking, plants, and building AI tools.",
-   "points": [
-    "His side projects live on this site: a walkable starship, a dot-for-dot Pac-Man arcade, and a congressional-trading digest.",
-    "Even his skincare regimen is run like an ops program."
+   "points": [],
+   "detail": [
+    "His side projects live on this site: a walkable starship, a dot-for-dot Pac-Man arcade, and a congressional-trading digest. Even his skincare regimen is run like an ops program."
    ],
    "next": [
     "side-projects",
@@ -211,10 +212,9 @@
     "Developer?"
    ],
    "answer": "Yes. He writes production code: full-stack TypeScript apps, an AI copilot, and production Go in DoorDash's backend monorepo.",
-   "points": [
-    "200+ pull requests merged in 2026, every one of them built with AI coding agents.",
-    "211 pull requests reviewed from 33 authors.",
-    "Works in TypeScript, JavaScript, Go, Python and SQL."
+   "points": [],
+   "detail": [
+    "He merged 200+ pull requests in 2026, every one of them built with AI coding agents, and reviewed 211 from 33 authors. He works in TypeScript, JavaScript, Go, Python and SQL."
    ],
    "next": [
     "tech-stack",
@@ -236,10 +236,9 @@
     "Does he do code review?"
    ],
    "answer": "Both. His title is manager, and he still ships code.",
-   "points": [
-    "200+ of his own pull requests merged in 2026, and 211 reviewed from 33 authors.",
-    "Consultative partner and primary PR approver for 5 builders.",
-    "Leads the outsourced support team working live cases in the AI workspace he built."
+   "points": [],
+   "detail": [
+    "He merged 200+ of his own pull requests in 2026 and reviewed 211 from 33 authors. He's also the consultative partner and primary PR approver for 5 builders, and he leads the outsourced support team working live cases in the AI workspace he built."
    ],
    "next": [
     "leadership",
@@ -269,6 +268,7 @@
     "AI: retrieval (RAG) design and evaluation, AI gateways, MCP servers, the Claude API and Agent SDK, local models.",
     "Data: Snowflake, SQL, Python, Bayesian analysis, A/B design."
    ],
+   "detail": [],
    "next": [
     "can-he-code",
     "ai-experience"
@@ -288,11 +288,10 @@
     "LLM projects"
    ],
    "answer": "He ships production AI and gets people to actually use it.",
-   "points": [
-    "An AI copilot grounded in the support playbook, with cited sources, now used live by an outsourced team.",
-    "A production support chatbot he rebuilt so agents act on its answers instead of abandoning them.",
-    "800+ people trained to put AI to work.",
-    "Recognized by Anthropic's Claude Code team as one of Claude Code's top users."
+   "points": [],
+   "detail": [
+    "He built an AI copilot grounded in the support playbook, with cited sources, that an outsourced team now uses on live cases. He also rebuilt a production support chatbot so agents act on its answers instead of abandoning them.",
+    "He has trained 800+ people to put AI to work, and Anthropic's Claude Code team recognized him as one of Claude Code's top users."
    ],
    "next": [
     "copilot",
@@ -313,10 +312,10 @@
     "Vector search"
    ],
    "answer": "Yes. His copilot answers from the playbook support agents are graded against, and every citation comes from retrieval, not from the model.",
-   "points": [
-    "Retrieval lives on the server: the playbook never ships to the browser, and the backend returns matching sections with their provenance.",
-    "Testing on the real playbook instead of a fixture exposed four defects, including a rare-term scoring rule that is backwards for a support corpus.",
-    "Retrieval changes are judged by displacement: rescue the questions that used to return nothing without pushing down the answers that already worked."
+   "points": [],
+   "detail": [
+    "Retrieval lives on the server: the playbook never ships to the browser, and the backend returns the matching sections with their provenance.",
+    "Testing on the real playbook instead of a fixture exposed four defects, including a rare-term scoring rule that is backwards for a support corpus. Retrieval changes are judged by displacement: they have to rescue the questions that used to return nothing without pushing down the answers that already worked."
    ],
    "next": [
     "ai-quality",
@@ -338,10 +337,10 @@
     "agent-os"
    ],
    "answer": "He runs Claude Code like a team: a playbook, shared memory, the right tools, and a review before anything ships.",
-   "points": [
+   "points": [],
+   "detail": [
     "Big builds run as a fleet of agents in parallel lanes, merged only after a reviewer signs off on types, tests, real-GPU screenshots and a frame-time budget.",
-    "Work he repeats becomes a skill, and hooks handle what nobody should have to remember.",
-    "A mistake that shows up three times becomes a written rule. The core is open source as agent-os."
+    "Work he repeats becomes a skill, hooks handle what nobody should have to remember, and a mistake that shows up three times becomes a written rule. The core is open source as agent-os."
    ],
    "next": [
     "power-user",
@@ -360,9 +359,9 @@
     "Top user"
    ],
    "answer": "In 2026, Anthropic's Claude Code team recognized him as one of Claude Code's top users.",
-   "points": [
-    "Their card reads: \"You're one of Claude Code's top users, and we wouldn't be here without you. Thank you for building with us.\"",
-    "It came with a plush, a pin, stickers and a cap."
+   "points": [],
+   "detail": [
+    "Their card reads: \"You're one of Claude Code's top users, and we wouldn't be here without you. Thank you for building with us.\" It came with a plush, a pin, stickers and a cap."
    ],
    "next": [
     "claude-code",
@@ -380,8 +379,9 @@
     "Tool servers for agents"
    ],
    "answer": "Yes. He uses MCP servers to give agents real tools instead of guesses, and builds the server when nothing fits.",
-   "points": [
-    "A browser to test in, current library docs, and the data a task needs."
+   "points": [],
+   "detail": [
+    "That means a browser to test in, current library docs, and the data a task needs."
    ],
    "next": [
     "claude-code",
@@ -402,10 +402,9 @@
     "Portfolio code"
    ],
    "answer": "His public work is on GitHub as @desertcache.",
-   "points": [
-    "agent-os: his Claude Code setup of hooks, skills, memory and a session lifecycle.",
-    "Starship Explorer and Samantha UI, both of which run right here in the browser.",
-    "His DoorDash work is internal, so the site shows it as case studies."
+   "points": [],
+   "detail": [
+    "That includes agent-os, his Claude Code setup of hooks, skills, memory and a session lifecycle, plus Starship Explorer and Samantha UI, both of which run right here in the browser. His DoorDash work is internal, so the site shows it as case studies."
    ],
    "next": [
     "side-projects",
@@ -427,10 +426,9 @@
     "Statistics"
    ],
    "answer": "Yes. He builds on Snowflake and SQL, from production data apps to the org's first cost model.",
-   "points": [
-    "The org's first cost-per-task model, on live warehouse data.",
-    "A workforce platform with Erlang C staffing math on live Snowflake data.",
-    "Bayesian analysis, A/B design and ETL."
+   "points": [],
+   "detail": [
+    "He built the org's first cost-per-task model on live warehouse data, and a workforce platform with Erlang C staffing math on live Snowflake data. He also works in Bayesian analysis, A/B design and ETL."
    ],
    "next": [
     "cost-model",
@@ -451,11 +449,10 @@
     "Featured work"
    ],
    "answer": "An AI copilot for support agents who diagnose point-of-sale integration cases, answering from the same playbook they are graded on.",
-   "points": [
-    "First prototype to internal pilot in 4 weeks.",
-    "One workspace that gathers a case's context from half a dozen internal systems, so agents stop hopping between tools.",
-    "Other teams now run their own AI agents inside it, and an outsourced team works live cases in it.",
-    "Usage grew well past the pre-pilot baseline."
+   "points": [],
+   "detail": [
+    "It went from first prototype to internal pilot in 4 weeks. One workspace gathers a case's context from half a dozen internal systems, so agents stop hopping between tools.",
+    "Other teams now run their own AI agents inside it, an outsourced team works live cases in it, and usage grew well past the pre-pilot baseline."
    ],
    "next": [
     "rollout",
@@ -478,11 +475,10 @@
     "Forward deployed"
    ],
    "answer": "The first outsourced team couldn't get in, and every failure looked like the same generic error, so he proved their access one layer at a time.",
-   "points": [
-    "Identity, then device and network trust, then app permissions, then an internal call that was blocked and showed up as a network error.",
-    "Each layer got its own check, so the next cohort wouldn't repeat the hunt.",
-    "Training is generated from one source module, with a verifier that checks every copy.",
-    "He now coaches the team's live cases against a resolution-time target."
+   "points": [],
+   "detail": [
+    "He checked identity first, then device and network trust, then app permissions, and finally found an internal call that was blocked and showed up as a network error. Each layer got its own check, so the next cohort wouldn't repeat the hunt.",
+    "Training is generated from one source module, with a verifier that checks every copy, and he now coaches the team's live cases against a resolution-time target."
    ],
    "next": [
     "copilot",
@@ -505,11 +501,10 @@
     "Upskilling"
    ],
    "answer": "800+ people trained to put AI to work, with adoption counted instead of attendance.",
-   "points": [
-    "It started as a workshop for senior leaders at a leadership summit, built on a reusable four-step framework, and won a Merchant Services Excellence Award.",
-    "It grew into an org-wide series of 70 to 100+ people a session, each ending with something people keep using: a skill, a template or a shared team setup.",
-    "When access turned out to be the real blocker, he split one session into four parts and started with five words: repository, branch, commit, pull request, merge.",
-    "He also wrote the org's AI builder playbook."
+   "points": [],
+   "detail": [
+    "It started as a workshop for senior leaders at a leadership summit, built on a reusable four-step framework, and it won a Merchant Services Excellence Award. It grew into an org-wide series of 70 to 100+ people a session, each ending with something people keep using: a skill, a template or a shared team setup.",
+    "When access turned out to be the real blocker, he split one session into four parts and started with five words: repository, branch, commit, pull request, merge. He also wrote the org's AI builder playbook."
    ],
    "next": [
     "non-technical",
@@ -532,9 +527,9 @@
     "Vendor pod"
    ],
    "answer": "A POS partner sunset its API with a large base of active stores still on it. He ran the 8-month program that kept nearly all of the at-risk revenue, under budget.",
-   "points": [
-    "Co-wrote the funding case and modeled four investment options, putting white-glove vendor help only on the highest-revenue stores.",
-    "Built the dashboard that ran the program, with the full funnel and the revenue at every stage.",
+   "points": [],
+   "detail": [
+    "He co-wrote the funding case and modeled four investment options, putting white-glove vendor help only on the highest-revenue stores, and he built the dashboard that ran the program, with the full funnel and the revenue at every stage.",
     "Escalations fell from daily to a few a week, and the training behind it won a Merchant Services Excellence Award."
    ],
    "next": [
@@ -555,9 +550,9 @@
     "Package owner"
    ],
    "answer": "He turned a multi-day spreadsheet workflow into a real-time product on React, Fastify and Snowflake, and he's its declared package owner.",
-   "points": [
-    "Fixed the driver-level bugs teams lose weeks to: a browser-auth race that opened multiple tabs, a callback that silently dropped the warehouse connection, and a silent row cap.",
-    "It now lives inside the broader workforce platform."
+   "points": [],
+   "detail": [
+    "He fixed the driver-level bugs teams lose weeks to: a browser-auth race that opened multiple tabs, a callback that silently dropped the warehouse connection, and a silent row cap. It now lives inside the broader workforce platform."
    ],
    "next": [
     "workforce-platform",
@@ -578,11 +573,10 @@
     "Outsourced vendors"
    ],
    "answer": "One real-time view of queues, service levels and staffing across outsourced vendors, replacing a legacy SaaS tool.",
-   "points": [
-    "Live Snowflake data and Erlang C staffing math.",
-    "An operations lead outside the team validated the numbers against the legacy system.",
-    "A column-by-column parity check caught a \"fresher\" table that would have silently pushed a metric to 100%. It now runs before any table swap.",
-    "Shipped on a weekly release cadence through 2026."
+   "points": [],
+   "detail": [
+    "It runs on live Snowflake data with Erlang C staffing math, and an operations lead outside the team validated the numbers against the legacy system.",
+    "A column-by-column parity check once caught a \"fresher\" table that would have silently pushed a metric to 100%, so it now runs before any table swap. It has shipped on a weekly release cadence through 2026."
    ],
    "next": [
     "mapping-engine",
@@ -604,10 +598,9 @@
     "Agent adoption"
    ],
    "answer": "He was tech lead on a production AI agent for merchant support specialists, and it had an adoption problem: \"wall of text, then abandon.\"",
-   "points": [
-    "He rebuilt the prompt around six fixed sections that lead with what to do next.",
-    "Answers shrank to a fraction of their old length with accuracy held.",
-    "It led adoption among the internal AI agents, and other agents now reuse the template."
+   "points": [],
+   "detail": [
+    "He rebuilt the prompt around six fixed sections that lead with what to do next. Answers shrank to a fraction of their old length with accuracy held, it led adoption among the internal AI agents, and other agents now reuse the template."
    ],
    "next": [
     "ai-quality",
@@ -627,9 +620,9 @@
     "Business modeling"
    ],
    "answer": "The org's first model of what a unit of support work costs, in-house and at vendors, so automation gets judged against real money.",
-   "points": [
-    "Built on live warehouse data, with a lineage tab that shows the exact query and a worked example.",
-    "Validated with the senior director, then turned into a dashboard with a weekly refresh.",
+   "points": [],
+   "detail": [
+    "It's built on live warehouse data, with a lineage tab that shows the exact query and a worked example, and it was validated with the senior director before becoming a dashboard with a weekly refresh.",
     "The inputs are compensation data, so only pre-aggregated figures leave the warehouse, small groups are suppressed, and each refresh has to reconcile before it publishes."
    ],
    "next": [
@@ -651,9 +644,9 @@
     "Can I see it?"
    ],
    "answer": "His DoorDash work is internal, so the site shows it as schematics and case studies instead of screenshots.",
-   "points": [
-    "Two public write-ups go deeper: the AI copilot rollout and the AI adoption program.",
-    "For things you can open yourself, try the Lab demos and his GitHub."
+   "points": [],
+   "detail": [
+    "Two public write-ups go deeper: the AI copilot rollout and the AI adoption program. For things you can open yourself, try the Lab demos and his GitHub."
    ],
    "next": [
     "copilot",
@@ -680,6 +673,7 @@
     "Led a 12-person crisis-response team as a volunteer EMT.",
     "At AZ Pain Doctors, hired and trained 16 coordinators."
    ],
+   "detail": [],
    "next": [
     "engineer-or-manager",
     "executives"
@@ -703,6 +697,7 @@
     "Promoted three times in four years at DoorDash, most recently to AI Solutions Manager in September 2026.",
     "Recognized in 2026 as one of Claude Code's top users."
    ],
+   "detail": [],
    "next": [
     "power-user",
     "enablement"
@@ -729,6 +724,7 @@
     "\"The code exists\" isn't \"the user can do it\": list the actions an AI can actually reach before promising what it can resolve.",
     "Count adoption, not attendance. And a fix is done only when every copy is fixed."
    ],
+   "detail": [],
    "next": [
     "ai-quality",
     "measurement"
@@ -748,10 +744,9 @@
     "Influence"
    ],
    "answer": "Directors and senior engineers across the org come to him for AI tooling guidance.",
-   "points": [
-    "New requests from adjacent orgs follow most of his workshops and live demos.",
-    "He built the AI workshop for senior leaders at an org leadership summit.",
-    "His cost model was validated with the senior director."
+   "points": [],
+   "detail": [
+    "New requests from adjacent orgs follow most of his workshops and live demos. He built the AI workshop for senior leaders at an org leadership summit, and his cost model was validated with the senior director."
    ],
    "next": [
     "enablement",
@@ -770,9 +765,9 @@
     "Problem solving"
    ],
    "answer": "Getting the first outsourced team into the AI workspace, when every failure looked like the same generic error.",
-   "points": [
-    "He proved access one layer at a time: identity, device and network trust, app permissions, and finally an internal call that was blocked and showed up as a network error.",
-    "Each layer got its own check, so the next cohort wouldn't repeat the hunt.",
+   "points": [],
+   "detail": [
+    "He proved access one layer at a time: identity, device and network trust, app permissions, and finally an internal call that was blocked and showed up as a network error. Each layer got its own check, so the next cohort wouldn't repeat the hunt.",
     "In data work he fixes problems at the driver level, like a browser-auth race that looped and opened multiple tabs."
    ],
    "next": [
@@ -797,6 +792,7 @@
     "The copilot's usage is tracked against the pre-pilot baseline, and its team is coached against a resolution-time target.",
     "Retrieval changes are judged by displacement: rescue the misses without pushing down the answers that already worked."
    ],
+   "detail": [],
    "next": [
     "ai-quality",
     "enablement"
@@ -813,11 +809,10 @@
     "Testing AI systems"
    ],
    "answer": "He tests AI on real data, against gates it has to pass, not on demos.",
-   "points": [
-    "Retrieval is measured on the real playbook, where it exposed four defects a test fixture had hidden.",
-    "Model changes are proven through the company's AI gateway with a control, the new setting, and a request that should fail.",
-    "Citations come from retrieval, so the model never invents a source.",
-    "This box has to hold its score on questions it never saw while being tuned before any change goes live."
+   "points": [],
+   "detail": [
+    "Retrieval is measured on the real playbook, where it exposed four defects a test fixture had hidden. Model changes are proven through the company's AI gateway with a control, the new setting, and a request that should fail, and citations come from retrieval, so the model never invents a source.",
+    "This box works the same way: it has to hold its score on questions it never saw while being tuned before any change goes live."
    ],
    "next": [
     "rag",
@@ -835,10 +830,10 @@
     "Communication skills"
    ],
    "answer": "Yes. He teaches non-engineers to build with AI, in sessions of 70 to 100+ people.",
-   "points": [
+   "points": [],
+   "detail": [
     "With non-technical rooms he leads with five words (repository, branch, commit, pull request, merge) and one promise: everything can be undone, and you're not an admin.",
-    "When the first attendee hit a wall in the access flow, he fixed the path with screenshots that afternoon, and every access request was granted by the next morning.",
-    "He came up through operations and emergency medicine, coordinating fire, medical and police on scene."
+    "When the first attendee hit a wall in the access flow, he fixed the path with screenshots that afternoon, and every access request was granted by the next morning. He came up through operations and emergency medicine, coordinating fire, medical and police on scene."
    ],
    "next": [
     "enablement",
@@ -856,9 +851,9 @@
     "High-pressure situations"
    ],
    "answer": "Yes. Pressure is where he started.",
-   "points": [
-    "At DoorDash he was one of a small team on executive-level merchant escalations, 50+ cases a day, leading incident response across engineering, operations and vendor teams.",
-    "He built the SQL tooling, Salesforce reports and prevention playbooks that cut repeat incidents.",
+   "points": [],
+   "detail": [
+    "At DoorDash he was one of a small team on executive-level merchant escalations, 50+ cases a day, leading incident response across engineering, operations and vendor teams, and he built the SQL tooling, Salesforce reports and prevention playbooks that cut repeat incidents.",
     "Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-response team."
    ],
    "next": [
@@ -885,6 +880,7 @@
     "AI Radio: local models through Ollama, voiced with F5-TTS.",
     "Starship Explorer, the arcade, and agent-os, his Claude Code setup."
    ],
+   "detail": [],
    "next": [
     "starship",
     "github"
@@ -903,9 +899,9 @@
     "Procedural generation"
    ],
    "answer": "A first-person walkable starship in Three.js with zero asset files: every panel, texture and planet outside the windows is generated at runtime.",
-   "points": [
-    "Built with a fleet of Claude Code agents he directed, gated by an automated screenshot-verify pipeline.",
-    "Runs in a desktop browser."
+   "points": [],
+   "detail": [
+    "He built it with a fleet of Claude Code agents he directed, gated by an automated screenshot-verify pipeline. It runs in a desktop browser."
    ],
    "next": [
     "claude-code",
@@ -925,9 +921,9 @@
     "Her movie"
    ],
    "answer": "A Her-inspired soul orb: one GPU-displaced sphere with custom GLSL shaders, audio-reactive at 60fps.",
-   "points": [
-    "It's the orb in this bar: it idles while you read, turns violet while it searches, and glows coral while the answer appears.",
-    "Built with React 19, Three.js and GLSL."
+   "points": [],
+   "detail": [
+    "It's the orb in this bar: it idles while you read, turns violet while it searches, and glows coral while the answer appears. It's built with React 19, Three.js and GLSL."
    ],
    "next": [
     "this-box",
@@ -947,9 +943,9 @@
     "Canvas games"
    ],
    "answer": "Five games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild with the authentic ghost AI.",
-   "points": [
-    "The original ghost targeting, overflow bug included.",
-    "It went from first commit to live in a day."
+   "points": [],
+   "detail": [
+    "The original ghost targeting is in there, overflow bug included, and it went from first commit to live in a day."
    ],
    "next": [
     "starship",
@@ -969,9 +965,9 @@
     "Blog"
    ],
    "answer": "A Claude Code skill that sweeps congressional trading disclosures, writes a digest, and publishes it through a validation step that rejects anything that breaks the contract.",
-   "points": [
-    "It reports the gap between trade and filing dates.",
-    "It never says in its own voice that anyone broke the law."
+   "points": [],
+   "detail": [
+    "It reports the gap between trade and filing dates, and it never says in its own voice that anyone broke the law."
    ],
    "next": [
     "claude-code",
@@ -993,9 +989,9 @@
     "What model is this?"
    ],
    "answer": "A small AI model (about 4 MB) runs on your device and matches your question by meaning to answers Sam approved. It doesn't generate text, so it can't make anything up, and your question never leaves your browser.",
-   "points": [
-    "It reads your question as word pieces, turns it into 128 numbers, and compares those with every phrasing in its bank.",
-    "The trace above each answer is that real work, slowed down so you can follow it.",
+   "points": [],
+   "detail": [
+    "It reads your question as word pieces, turns it into 128 numbers, and compares those with every phrasing in its bank. The trace above each answer is that real work, slowed down so you can follow it.",
     "On questions it never saw while being tuned, it puts the right answer first about four times in five."
    ],
    "next": [
@@ -1016,9 +1012,9 @@
     "Elevation map"
    ],
    "answer": "Plain HTML, CSS and a little JavaScript, with no framework and no build step.",
-   "points": [
-    "The contour map up top and the mountains above the footer are real: Camelback and the Phoenix Mountains, drawn from USGS elevation data.",
-    "Press the ` key to warp to the starship."
+   "points": [],
+   "detail": [
+    "The contour map up top and the mountains above the footer are real: Camelback and the Phoenix Mountains, drawn from USGS elevation data. Press the ` key to warp to the starship."
    ],
    "next": [
     "starship",
@@ -1038,11 +1034,9 @@
     "Email address",
     "Message him"
    ],
-   "answer": "Email is fastest: batessambates@gmail.com.",
-   "points": [
-    "LinkedIn: samuel-b-343205133.",
-    "GitHub: @desertcache."
-   ],
+   "answer": "Email is fastest: batessambates@gmail.com. He's also on LinkedIn as samuel-b-343205133 and on GitHub as @desertcache.",
+   "points": [],
+   "detail": [],
    "next": [
     "resume",
     "why-hire"
@@ -1060,6 +1054,7 @@
    ],
    "answer": "His résumé is a PDF linked at the top and bottom of this page.",
    "points": [],
+   "detail": [],
    "next": [
     "contact",
     "career-path"
@@ -1082,6 +1077,7 @@
    ],
    "answer": "That's a question for Sam directly: batessambates@gmail.com.",
    "points": [],
+   "detail": [],
    "next": [
     "contact",
     "why-hire"
@@ -1100,6 +1096,7 @@
    ],
    "answer": "That's a conversation for Sam directly: batessambates@gmail.com.",
    "points": [],
+   "detail": [],
    "next": [
     "contact",
     "why-hire"
@@ -1122,6 +1119,7 @@
    ],
    "answer": "He's based in Phoenix. For anything about work arrangements, email Sam directly: batessambates@gmail.com.",
    "points": [],
+   "detail": [],
    "next": [
     "contact",
     "location"
@@ -1141,10 +1139,9 @@
     "Selling points"
    ],
    "answer": "He builds production AI, takes it live with the people who use it, and teaches organizations to adopt it.",
-   "points": [
-    "Most engineers don't have his path: every role he held ran the operations the next one automated.",
-    "The copilot program shows the whole loop in one project: build it, prove it, roll it out, measure it.",
-    "He measures on the real thing and counts adoption, not attendance."
+   "points": [],
+   "detail": [
+    "Most engineers don't have his path: every role he held ran the operations the next one automated. The copilot program shows the whole loop in one project (build it, prove it, roll it out, measure it), and he measures on the real thing, counting adoption, not attendance."
    ],
    "next": [
     "copilot",
@@ -1167,6 +1164,7 @@
    ],
    "answer": "This box only answers questions about Sam's work. For anything else, reach out to him directly.",
    "points": [],
+   "detail": [],
    "next": [
     "hobbies",
     "contact"

@@ -5,8 +5,8 @@ Facts come only from Sam's public pages: the portfolio at https://desertcache.gi
 two work samples, and the public CV.
 
 Each entry: **Asks like** = sample phrasings the model matches a question against (the first one is
-also the entry's chip label). **Answer** = the lead the visitor sees first. **Highlights** = the
-specifics under it. **Next** = the two follow-up questions offered after it. **Link** = where the
+also the entry's chip label). **Answer** = the lead the visitor sees first. **Detail** = what follows
+as prose, one line per paragraph, or **Highlights** = a list, only where the content is one. **Next** = the two follow-up questions offered after it. **Link** = where the
 answer points on the portfolio. Edit this file, then run `npm run build` to regenerate data/bank.json.
 
 ---
@@ -16,21 +16,17 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 ### 1. who-is-sam
 **Asks like:** Who is Sam? · Who is this? · Tell me about him · What does Sam do? · Give me the short version · Who is Sam Bates? · Introduce Sam · Summarize Sam in a sentence · What's Sam's story? · Overview of Sam
 **Answer:** Sam Bates is an AI Solutions Manager at DoorDash, based in Phoenix. He builds production AI for operations teams, leads the people who run it, and teaches organizations to adopt it.
-**Highlights:**
-- Built an AI support copilot that an outsourced support team now works live cases in.
-- Trained 800+ people to put AI to work, and counts adoption, not attendance.
-- Merged 200+ pull requests in 2026, every one of them built with AI coding agents.
-- Came up through operations and emergency medicine, where he led a 12-person crisis-response team as a volunteer EMT.
+**Detail:**
+He built an AI support copilot that an outsourced support team now works live cases in, and he has trained 800+ people to put AI to work, counting adoption rather than attendance. He merged 200+ pull requests in 2026, every one of them built with AI coding agents.
+Before tech, he came up through operations and emergency medicine, where he led a 12-person crisis-response team as a volunteer EMT.
 **Next:** career-path, copilot
 **Link:** #top
 
 ### 2. current-role
 **Asks like:** What's his job? · What's his title? · What does he do at DoorDash now? · What is an AI Solutions Manager? · What's his role right now? · Current job · Where does he work? · What company is he at? · Job title
 **Answer:** He's an AI Solutions Manager in DoorDash Merchant Ops, promoted in September 2026 to lead AI solutions for merchant-integration support.
-**Highlights:**
-- Owns the AI support workspace's roadmap and access model.
-- Coaches the outsourced support team working live cases inside it.
-- Consultative partner and primary PR approver for 5 builders, on top of his own build work.
+**Detail:**
+He owns the AI support workspace's roadmap and access model, and he coaches the outsourced support team working live cases inside it. On top of his own build work, he's the consultative partner and primary PR approver for 5 builders.
 **Next:** copilot, leadership
 **Link:** #about
 
@@ -54,18 +50,16 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 ### 5. emt
 **Asks like:** Was he an EMT? · Tell me about the fire department · What's the crisis team? · Medical background? · Firefighter? · Emergency medicine background · Healthcare experience · Paramedic · First responder · Scribe
 **Answer:** Yes. He was a volunteer EMT and Behavioral Health Team Lead with the Phoenix Fire Department.
-**Highlights:**
-- Led a 12-person crisis-response team, coordinating fire, medical and law-enforcement units on scene.
-- Before that, a master emergency medical scribe across four Banner Health emergency departments, including the Level I trauma centers at Banner Desert.
-- Interviewed, hired and trained the new scribes.
+**Detail:**
+He led a 12-person crisis-response team, coordinating fire, medical and law-enforcement units on scene. Before that he was a master emergency medical scribe across four Banner Health emergency departments, including the Level I trauma centers at Banner Desert, where he also interviewed, hired and trained the new scribes.
 **Next:** career-path, pressure
 **Link:** #about
 
 ### 6. education
 **Asks like:** Where did he go to school? · Does he have a degree? · What did he study? · Education? · Certifications? · College? · University · Schooling · Did he go to college? · Biology
 **Answer:** Coursework toward a B.S. in Cell & Molecular Biology at Western New Mexico University, and an NREMT-B (EMT) certification from Estrella Mountain Community College.
-**Highlights:**
-- He moved into engineering on the job at DoorDash, writing his first production code in 2025.
+**Detail:**
+He moved into engineering on the job at DoorDash, writing his first production code in 2025.
 **Next:** career-path, can-he-code
 **Link:** #about
 
@@ -83,9 +77,8 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 ### 8. hobbies
 **Asks like:** What does he do for fun? · Hobbies? · What's he like outside work? · Interests · Free time · Rock climbing · Hiking · Personal interests
 **Answer:** Rock climbing, hiking, plants, and building AI tools.
-**Highlights:**
-- His side projects live on this site: a walkable starship, a dot-for-dot Pac-Man arcade, and a congressional-trading digest.
-- Even his skincare regimen is run like an ops program.
+**Detail:**
+His side projects live on this site: a walkable starship, a dot-for-dot Pac-Man arcade, and a congressional-trading digest. Even his skincare regimen is run like an ops program.
 **Next:** side-projects, starship
 **Link:** #lab
 
@@ -94,20 +87,16 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 ### 9. can-he-code
 **Asks like:** Can he code? · Is he technical? · Does he write code himself? · Is he hands-on? · Does he actually build things? · Is he a programmer? · Software development skills · Does he write production code? · Coding ability · Developer?
 **Answer:** Yes. He writes production code: full-stack TypeScript apps, an AI copilot, and production Go in DoorDash's backend monorepo.
-**Highlights:**
-- 200+ pull requests merged in 2026, every one of them built with AI coding agents.
-- 211 pull requests reviewed from 33 authors.
-- Works in TypeScript, JavaScript, Go, Python and SQL.
+**Detail:**
+He merged 200+ pull requests in 2026, every one of them built with AI coding agents, and reviewed 211 from 33 authors. He works in TypeScript, JavaScript, Go, Python and SQL.
 **Next:** tech-stack, github
 **Link:** #about
 
 ### 10. engineer-or-manager
 **Asks like:** Is he an engineer or a manager? · Is he a builder or a people manager? · Does he still code as a manager? · PM or engineer? · Individual contributor or manager? · IC? · Technical manager · Player-coach · Does he do code review?
 **Answer:** Both. His title is manager, and he still ships code.
-**Highlights:**
-- 200+ of his own pull requests merged in 2026, and 211 reviewed from 33 authors.
-- Consultative partner and primary PR approver for 5 builders.
-- Leads the outsourced support team working live cases in the AI workspace he built.
+**Detail:**
+He merged 200+ of his own pull requests in 2026 and reviewed 211 from 33 authors. He's also the consultative partner and primary PR approver for 5 builders, and he leads the outsourced support team working live cases in the AI workspace he built.
 **Next:** leadership, can-he-code
 **Link:** #about
 
@@ -125,68 +114,59 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 ### 12. ai-experience
 **Asks like:** What AI work has he done? · AI experience? · Has he shipped AI to production? · LLM experience? · Generative AI · Large language models · AI products he's shipped · LLM projects
 **Answer:** He ships production AI and gets people to actually use it.
-**Highlights:**
-- An AI copilot grounded in the support playbook, with cited sources, now used live by an outsourced team.
-- A production support chatbot he rebuilt so agents act on its answers instead of abandoning them.
-- 800+ people trained to put AI to work.
-- Recognized by Anthropic's Claude Code team as one of Claude Code's top users.
+**Detail:**
+He built an AI copilot grounded in the support playbook, with cited sources, that an outsourced team now uses on live cases. He also rebuilt a production support chatbot so agents act on its answers instead of abandoning them.
+He has trained 800+ people to put AI to work, and Anthropic's Claude Code team recognized him as one of Claude Code's top users.
 **Next:** copilot, ai-quality
 **Link:** #featured
 
 ### 13. rag
 **Asks like:** Has he built RAG? · Retrieval experience? · How does he stop hallucinations? · Grounded answers? · Citations · Grounding · Knowledge base answers · Vector search
 **Answer:** Yes. His copilot answers from the playbook support agents are graded against, and every citation comes from retrieval, not from the model.
-**Highlights:**
-- Retrieval lives on the server: the playbook never ships to the browser, and the backend returns matching sections with their provenance.
-- Testing on the real playbook instead of a fixture exposed four defects, including a rare-term scoring rule that is backwards for a support corpus.
-- Retrieval changes are judged by displacement: rescue the questions that used to return nothing without pushing down the answers that already worked.
+**Detail:**
+Retrieval lives on the server: the playbook never ships to the browser, and the backend returns the matching sections with their provenance.
+Testing on the real playbook instead of a fixture exposed four defects, including a rare-term scoring rule that is backwards for a support corpus. Retrieval changes are judged by displacement: they have to rescue the questions that used to return nothing without pushing down the answers that already worked.
 **Next:** ai-quality, copilot
 **Link:** work/ai-copilot-rollout.html
 
 ### 14. claude-code
 **Asks like:** How does he use Claude Code? · How does he build with AI agents? · What's his AI workflow? · Agent fleet? · Coding agents · AI pair programming · Agentic coding · Skills and hooks · agent-os
 **Answer:** He runs Claude Code like a team: a playbook, shared memory, the right tools, and a review before anything ships.
-**Highlights:**
-- Big builds run as a fleet of agents in parallel lanes, merged only after a reviewer signs off on types, tests, real-GPU screenshots and a frame-time budget.
-- Work he repeats becomes a skill, and hooks handle what nobody should have to remember.
-- A mistake that shows up three times becomes a written rule. The core is open source as agent-os.
+**Detail:**
+Big builds run as a fleet of agents in parallel lanes, merged only after a reviewer signs off on types, tests, real-GPU screenshots and a frame-time budget.
+Work he repeats becomes a skill, hooks handle what nobody should have to remember, and a mistake that shows up three times becomes a written rule. The core is open source as agent-os.
 **Next:** power-user, mcp
 **Link:** #build
 
 ### 15. power-user
 **Asks like:** What's the Claude Code power user thing? · Did Anthropic recognize him? · Top Claude Code user? · Anthropic card · Anthropic recognition · Top user
 **Answer:** In 2026, Anthropic's Claude Code team recognized him as one of Claude Code's top users.
-**Highlights:**
-- Their card reads: "You're one of Claude Code's top users, and we wouldn't be here without you. Thank you for building with us."
-- It came with a plush, a pin, stickers and a cap.
+**Detail:**
+Their card reads: "You're one of Claude Code's top users, and we wouldn't be here without you. Thank you for building with us." It came with a plush, a pin, stickers and a cap.
 **Next:** claude-code, awards
 **Link:** #build
 
 ### 16. mcp
 **Asks like:** Does he know MCP? · Has he built MCP servers? · Model Context Protocol? · MCP tools · Tool servers for agents
 **Answer:** Yes. He uses MCP servers to give agents real tools instead of guesses, and builds the server when nothing fits.
-**Highlights:**
-- A browser to test in, current library docs, and the data a task needs.
+**Detail:**
+That means a browser to test in, current library docs, and the data a task needs.
 **Next:** claude-code, tech-stack
 **Link:** #build
 
 ### 17. github
 **Asks like:** Where's his code? · GitHub? · Open source? · Can I see his code? · Repositories · Public projects · Source code · Portfolio code
 **Answer:** His public work is on GitHub as @desertcache.
-**Highlights:**
-- agent-os: his Claude Code setup of hooks, skills, memory and a session lifecycle.
-- Starship Explorer and Samantha UI, both of which run right here in the browser.
-- His DoorDash work is internal, so the site shows it as case studies.
+**Detail:**
+That includes agent-os, his Claude Code setup of hooks, skills, memory and a session lifecycle, plus Starship Explorer and Samantha UI, both of which run right here in the browser. His DoorDash work is internal, so the site shows it as case studies.
 **Next:** side-projects, claude-code
 **Link:** https://github.com/desertcache
 
 ### 18. data
 **Asks like:** Does he know SQL? · Data skills? · Snowflake? · Analytics experience? · Analytics · Databases · Data engineering · Dashboards · Statistics
 **Answer:** Yes. He builds on Snowflake and SQL, from production data apps to the org's first cost model.
-**Highlights:**
-- The org's first cost-per-task model, on live warehouse data.
-- A workforce platform with Erlang C staffing math on live Snowflake data.
-- Bayesian analysis, A/B design and ETL.
+**Detail:**
+He built the org's first cost-per-task model on live warehouse data, and a workforce platform with Erlang C staffing math on live Snowflake data. He also works in Bayesian analysis, A/B design and ETL.
 **Next:** cost-model, workforce-platform
 **Link:** #stack
 
@@ -195,92 +175,78 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 ### 19. copilot
 **Asks like:** What's his best work? · What's the featured project? · Tell me about the AI copilot · What's he most proud of? · Flagship project · Support copilot · Most impressive work · Featured work
 **Answer:** An AI copilot for support agents who diagnose point-of-sale integration cases, answering from the same playbook they are graded on.
-**Highlights:**
-- First prototype to internal pilot in 4 weeks.
-- One workspace that gathers a case's context from half a dozen internal systems, so agents stop hopping between tools.
-- Other teams now run their own AI agents inside it, and an outsourced team works live cases in it.
-- Usage grew well past the pre-pilot baseline.
+**Detail:**
+It went from first prototype to internal pilot in 4 weeks. One workspace gathers a case's context from half a dozen internal systems, so agents stop hopping between tools.
+Other teams now run their own AI agents inside it, an outsourced team works live cases in it, and usage grew well past the pre-pilot baseline.
 **Next:** rollout, rag
 **Link:** work/ai-copilot-rollout.html
 
 ### 20. rollout
 **Asks like:** How did he roll it out? · Tell me about the outsourced team · Forward deployed experience? · Deployment story? · Vendor onboarding · Going live · Pilot to production · Access problems · Training kit · Forward deployed
 **Answer:** The first outsourced team couldn't get in, and every failure looked like the same generic error, so he proved their access one layer at a time.
-**Highlights:**
-- Identity, then device and network trust, then app permissions, then an internal call that was blocked and showed up as a network error.
-- Each layer got its own check, so the next cohort wouldn't repeat the hunt.
-- Training is generated from one source module, with a verifier that checks every copy.
-- He now coaches the team's live cases against a resolution-time target.
+**Detail:**
+He checked identity first, then device and network trust, then app permissions, and finally found an internal call that was blocked and showed up as a network error. Each layer got its own check, so the next cohort wouldn't repeat the hunt.
+Training is generated from one source module, with a verifier that checks every copy, and he now coaches the team's live cases against a resolution-time target.
 **Next:** copilot, hardest-problem
 **Link:** work/ai-copilot-rollout.html
 
 ### 21. enablement
 **Asks like:** Tell me about the AI training · How many people has he trained? · Workshops? · AI enablement? · Teaching? · Training program · Teaching AI · How many people trained · Sessions · Upskilling
 **Answer:** 800+ people trained to put AI to work, with adoption counted instead of attendance.
-**Highlights:**
-- It started as a workshop for senior leaders at a leadership summit, built on a reusable four-step framework, and won a Merchant Services Excellence Award.
-- It grew into an org-wide series of 70 to 100+ people a session, each ending with something people keep using: a skill, a template or a shared team setup.
-- When access turned out to be the real blocker, he split one session into four parts and started with five words: repository, branch, commit, pull request, merge.
-- He also wrote the org's AI builder playbook.
+**Detail:**
+It started as a workshop for senior leaders at a leadership summit, built on a reusable four-step framework, and it won a Merchant Services Excellence Award. It grew into an org-wide series of 70 to 100+ people a session, each ending with something people keep using: a skill, a template or a shared team setup.
+When access turned out to be the real blocker, he split one session into four parts and started with five words: repository, branch, commit, pull request, merge. He also wrote the org's AI builder playbook.
 **Next:** non-technical, measurement
 **Link:** work/ai-adoption-program.html
 
 ### 22. api-migration
 **Asks like:** Tell me about the API migration · Program management experience? · Business case? · Partner migration? · POS migration · API sunset · Revenue retention · Budget · Program management · Vendor pod
 **Answer:** A POS partner sunset its API with a large base of active stores still on it. He ran the 8-month program that kept nearly all of the at-risk revenue, under budget.
-**Highlights:**
-- Co-wrote the funding case and modeled four investment options, putting white-glove vendor help only on the highest-revenue stores.
-- Built the dashboard that ran the program, with the full funnel and the revenue at every stage.
-- Escalations fell from daily to a few a week, and the training behind it won a Merchant Services Excellence Award.
+**Detail:**
+He co-wrote the funding case and modeled four investment options, putting white-glove vendor help only on the highest-revenue stores, and he built the dashboard that ran the program, with the full funnel and the revenue at every stage.
+Escalations fell from daily to a few a week, and the training behind it won a Merchant Services Excellence Award.
 **Next:** leadership, cost-model
 **Link:** #work
 
 ### 23. mapping-engine
 **Asks like:** What's the mapping engine? · Full-stack product? · Snowflake app? · Spreadsheet replacement · Fastify · React and Snowflake app · Package owner
 **Answer:** He turned a multi-day spreadsheet workflow into a real-time product on React, Fastify and Snowflake, and he's its declared package owner.
-**Highlights:**
-- Fixed the driver-level bugs teams lose weeks to: a browser-auth race that opened multiple tabs, a callback that silently dropped the warehouse connection, and a silent row cap.
-- It now lives inside the broader workforce platform.
+**Detail:**
+He fixed the driver-level bugs teams lose weeks to: a browser-auth race that opened multiple tabs, a callback that silently dropped the warehouse connection, and a silent row cap. It now lives inside the broader workforce platform.
 **Next:** workforce-platform, hardest-problem
 **Link:** #work
 
 ### 24. workforce-platform
 **Asks like:** What's the workforce platform? · Staffing tool? · Dashboards? · Erlang C? · Staffing · Service levels · SLA · Outsourced vendors
 **Answer:** One real-time view of queues, service levels and staffing across outsourced vendors, replacing a legacy SaaS tool.
-**Highlights:**
-- Live Snowflake data and Erlang C staffing math.
-- An operations lead outside the team validated the numbers against the legacy system.
-- A column-by-column parity check caught a "fresher" table that would have silently pushed a metric to 100%. It now runs before any table swap.
-- Shipped on a weekly release cadence through 2026.
+**Detail:**
+It runs on live Snowflake data with Erlang C staffing math, and an operations lead outside the team validated the numbers against the legacy system.
+A column-by-column parity check once caught a "fresher" table that would have silently pushed a metric to 100%, so it now runs before any table swap. It has shipped on a weekly release cadence through 2026.
 **Next:** mapping-engine, data
 **Link:** #work
 
 ### 25. chatbot
 **Asks like:** Tell me about the chatbot · Prompt engineering? · How did he fix adoption? · AI agent he built? · Support bot · Answer format · Wall of text · Prompt redesign · Agent adoption
 **Answer:** He was tech lead on a production AI agent for merchant support specialists, and it had an adoption problem: "wall of text, then abandon."
-**Highlights:**
-- He rebuilt the prompt around six fixed sections that lead with what to do next.
-- Answers shrank to a fraction of their old length with accuracy held.
-- It led adoption among the internal AI agents, and other agents now reuse the template.
+**Detail:**
+He rebuilt the prompt around six fixed sections that lead with what to do next. Answers shrank to a fraction of their old length with accuracy held, it led adoption among the internal AI agents, and other agents now reuse the template.
 **Next:** ai-quality, copilot
 **Link:** #work
 
 ### 26. cost-model
 **Asks like:** Cost-per-task model? · Financial modeling? · Does he do finance or business cases? · Cost per task · Support costs · Finance · Business modeling
 **Answer:** The org's first model of what a unit of support work costs, in-house and at vendors, so automation gets judged against real money.
-**Highlights:**
-- Built on live warehouse data, with a lineage tab that shows the exact query and a worked example.
-- Validated with the senior director, then turned into a dashboard with a weekly refresh.
-- The inputs are compensation data, so only pre-aggregated figures leave the warehouse, small groups are suppressed, and each refresh has to reconcile before it publishes.
+**Detail:**
+It's built on live warehouse data, with a lineage tab that shows the exact query and a worked example, and it was validated with the senior director before becoming a dashboard with a weekly refresh.
+The inputs are compensation data, so only pre-aggregated figures leave the warehouse, small groups are suppressed, and each refresh has to reconcile before it publishes.
 **Next:** data, api-migration
 **Link:** #work
 
 ### 27. screenshots
 **Asks like:** Can I see screenshots? · Why are there no screenshots? · Can I see the DoorDash code? · Demo of his work? · Pictures of his work · Internal tools · Confidential · Can I see it?
 **Answer:** His DoorDash work is internal, so the site shows it as schematics and case studies instead of screenshots.
-**Highlights:**
-- Two public write-ups go deeper: the AI copilot rollout and the AI adoption program.
-- For things you can open yourself, try the Lab demos and his GitHub.
+**Detail:**
+Two public write-ups go deeper: the AI copilot rollout and the AI adoption program. For things you can open yourself, try the Lab demos and his GitHub.
 **Next:** copilot, github
 **Link:** #work
 
@@ -321,20 +287,17 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 ### 31. executives
 **Asks like:** Does he work with executives? · Stakeholder management? · Who comes to him? · Senior leadership · Directors · Executive stakeholders · Advisor · Influence
 **Answer:** Directors and senior engineers across the org come to him for AI tooling guidance.
-**Highlights:**
-- New requests from adjacent orgs follow most of his workshops and live demos.
-- He built the AI workshop for senior leaders at an org leadership summit.
-- His cost model was validated with the senior director.
+**Detail:**
+New requests from adjacent orgs follow most of his workshops and live demos. He built the AI workshop for senior leaders at an org leadership summit, and his cost model was validated with the senior director.
 **Next:** enablement, leadership
 **Link:** #about
 
 ### 32. hardest-problem
 **Asks like:** What's the hardest problem he's solved? · Biggest challenge? · Toughest bug? · Tell me about a time something went wrong · How does he debug? · Problem solving
 **Answer:** Getting the first outsourced team into the AI workspace, when every failure looked like the same generic error.
-**Highlights:**
-- He proved access one layer at a time: identity, device and network trust, app permissions, and finally an internal call that was blocked and showed up as a network error.
-- Each layer got its own check, so the next cohort wouldn't repeat the hunt.
-- In data work he fixes problems at the driver level, like a browser-auth race that looped and opened multiple tabs.
+**Detail:**
+He proved access one layer at a time: identity, device and network trust, app permissions, and finally an internal call that was blocked and showed up as a network error. Each layer got its own check, so the next cohort wouldn't repeat the hunt.
+In data work he fixes problems at the driver level, like a browser-auth race that looped and opened multiple tabs.
 **Next:** rollout, mapping-engine
 **Link:** work/ai-copilot-rollout.html
 
@@ -351,31 +314,27 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 ### 34. ai-quality
 **Asks like:** How does he evaluate AI? · How does he know the AI is accurate? · AI evals? · Evaluation · Testing AI systems
 **Answer:** He tests AI on real data, against gates it has to pass, not on demos.
-**Highlights:**
-- Retrieval is measured on the real playbook, where it exposed four defects a test fixture had hidden.
-- Model changes are proven through the company's AI gateway with a control, the new setting, and a request that should fail.
-- Citations come from retrieval, so the model never invents a source.
-- This box has to hold its score on questions it never saw while being tuned before any change goes live.
+**Detail:**
+Retrieval is measured on the real playbook, where it exposed four defects a test fixture had hidden. Model changes are proven through the company's AI gateway with a control, the new setting, and a request that should fail, and citations come from retrieval, so the model never invents a source.
+This box works the same way: it has to hold its score on questions it never saw while being tuned before any change goes live.
 **Next:** rag, this-box
 **Link:** work/ai-copilot-rollout.html
 
 ### 35. non-technical
 **Asks like:** Can he work with non-technical people? · Is he a good communicator? · Can he make technical topics simple for others? · Does he teach beginners? · Communication skills
 **Answer:** Yes. He teaches non-engineers to build with AI, in sessions of 70 to 100+ people.
-**Highlights:**
-- With non-technical rooms he leads with five words (repository, branch, commit, pull request, merge) and one promise: everything can be undone, and you're not an admin.
-- When the first attendee hit a wall in the access flow, he fixed the path with screenshots that afternoon, and every access request was granted by the next morning.
-- He came up through operations and emergency medicine, coordinating fire, medical and police on scene.
+**Detail:**
+With non-technical rooms he leads with five words (repository, branch, commit, pull request, merge) and one promise: everything can be undone, and you're not an admin.
+When the first attendee hit a wall in the access flow, he fixed the path with screenshots that afternoon, and every access request was granted by the next morning. He came up through operations and emergency medicine, coordinating fire, medical and police on scene.
 **Next:** enablement, executives
 **Link:** work/ai-adoption-program.html
 
 ### 36. pressure
 **Asks like:** Has he handled escalations? · Incident response experience? · Can he work under pressure? · Crisis management? · High-pressure situations
 **Answer:** Yes. Pressure is where he started.
-**Highlights:**
-- At DoorDash he was one of a small team on executive-level merchant escalations, 50+ cases a day, leading incident response across engineering, operations and vendor teams.
-- He built the SQL tooling, Salesforce reports and prevention playbooks that cut repeat incidents.
-- Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-response team.
+**Detail:**
+At DoorDash he was one of a small team on executive-level merchant escalations, 50+ cases a day, leading incident response across engineering, operations and vendor teams, and he built the SQL tooling, Salesforce reports and prevention playbooks that cut repeat incidents.
+Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-response team.
 **Next:** emt, hardest-problem
 **Link:** #about
 
@@ -395,55 +354,49 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 ### 38. starship
 **Asks like:** What's the starship? · Starship Explorer? · Three.js game? · Spaceship · Starship game · Three.js · Procedural generation
 **Answer:** A first-person walkable starship in Three.js with zero asset files: every panel, texture and planet outside the windows is generated at runtime.
-**Highlights:**
-- Built with a fleet of Claude Code agents he directed, gated by an automated screenshot-verify pipeline.
-- Runs in a desktop browser.
+**Detail:**
+He built it with a fleet of Claude Code agents he directed, gated by an automated screenshot-verify pipeline. It runs in a desktop browser.
 **Next:** claude-code, arcade
 **Link:** starship.html
 
 ### 39. orb
 **Asks like:** What's the orb? · Samantha UI? · What's the glowing sphere? · Samantha · Shader orb · GLSL · Her movie
 **Answer:** A Her-inspired soul orb: one GPU-displaced sphere with custom GLSL shaders, audio-reactive at 60fps.
-**Highlights:**
-- It's the orb in this bar: it idles while you read, turns violet while it searches, and glows coral while the answer appears.
-- Built with React 19, Three.js and GLSL.
+**Detail:**
+It's the orb in this bar: it idles while you read, turns violet while it searches, and glows coral while the answer appears. It's built with React 19, Three.js and GLSL.
 **Next:** this-box, side-projects
 **Link:** #lab
 
 ### 40. arcade
 **Asks like:** What's the arcade? · Pac-Man? · Can I play a game? · Games · Pac-Man · Arcade games · Canvas games
 **Answer:** Five games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild with the authentic ghost AI.
-**Highlights:**
-- The original ghost targeting, overflow bug included.
-- It went from first commit to live in a day.
+**Detail:**
+The original ghost targeting is in there, overflow bug included, and it went from first commit to live in a day.
 **Next:** starship, claude-code
 **Link:** arcade.html
 
 ### 41. hill-money-watch
 **Asks like:** What's Hill Money Watch? · Congress stock trades? · The blog? · Congress trades · Politician trading · STOCK Act · Blog
 **Answer:** A Claude Code skill that sweeps congressional trading disclosures, writes a digest, and publishes it through a validation step that rejects anything that breaks the contract.
-**Highlights:**
-- It reports the gap between trade and filing dates.
-- It never says in its own voice that anyone broke the law.
+**Detail:**
+It reports the gap between trade and filing dates, and it never says in its own voice that anyone broke the law.
 **Next:** claude-code, hobbies
 **Link:** blog/index.html
 
 ### 42. this-box
 **Asks like:** How does this work? · Is this AI? · Is this Sam? · Is this ChatGPT? · Does my question get sent anywhere? · Is this a chatbot? · Privacy · Is this an AI model? · What model is this?
 **Answer:** A small AI model (about 4 MB) runs on your device and matches your question by meaning to answers Sam approved. It doesn't generate text, so it can't make anything up, and your question never leaves your browser.
-**Highlights:**
-- It reads your question as word pieces, turns it into 128 numbers, and compares those with every phrasing in its bank.
-- The trace above each answer is that real work, slowed down so you can follow it.
-- On questions it never saw while being tuned, it puts the right answer first about four times in five.
+**Detail:**
+It reads your question as word pieces, turns it into 128 numbers, and compares those with every phrasing in its bank. The trace above each answer is that real work, slowed down so you can follow it.
+On questions it never saw while being tuned, it puts the right answer first about four times in five.
 **Next:** orb, ai-quality
 **Link:** https://github.com/desertcache/ask
 
 ### 43. this-site
 **Asks like:** How was this site built? · What's the site made with? · Is the map real? · Website tech · How was this website made? · Framework used for this site · Elevation map
 **Answer:** Plain HTML, CSS and a little JavaScript, with no framework and no build step.
-**Highlights:**
-- The contour map up top and the mountains above the footer are real: Camelback and the Phoenix Mountains, drawn from USGS elevation data.
-- Press the ` key to warp to the starship.
+**Detail:**
+The contour map up top and the mountains above the footer are real: Camelback and the Phoenix Mountains, drawn from USGS elevation data. Press the ` key to warp to the starship.
 **Next:** starship, this-box
 **Link:** #top
 
@@ -451,10 +404,7 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 
 ### 44. contact
 **Asks like:** How do I contact him? · Email? · LinkedIn? · How do I reach Sam? · Reach out · Get in touch · Email address · Message him
-**Answer:** Email is fastest: batessambates@gmail.com.
-**Highlights:**
-- LinkedIn: samuel-b-343205133.
-- GitHub: @desertcache.
+**Answer:** Email is fastest: batessambates@gmail.com. He's also on LinkedIn as samuel-b-343205133 and on GitHub as @desertcache.
 **Next:** resume, why-hire
 **Link:** #contact
 
@@ -485,10 +435,8 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 ### 49. why-hire
 **Asks like:** Why should I hire him? · What makes him different? · What's his edge? · Why him? · Strengths · Why him over others · Unique value · Selling points
 **Answer:** He builds production AI, takes it live with the people who use it, and teaches organizations to adopt it.
-**Highlights:**
-- Most engineers don't have his path: every role he held ran the operations the next one automated.
-- The copilot program shows the whole loop in one project: build it, prove it, roll it out, measure it.
-- He measures on the real thing and counts adoption, not attendance.
+**Detail:**
+Most engineers don't have his path: every role he held ran the operations the next one automated. The copilot program shows the whole loop in one project (build it, prove it, roll it out, measure it), and he measures on the real thing, counting adoption, not attendance.
 **Next:** copilot, how-he-works
 **Link:** #featured
 

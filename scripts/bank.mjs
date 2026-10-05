@@ -2,7 +2,7 @@
 // run `npm run build` to regenerate data/bank.json.
 
 /**
- * @typedef {{ id: string, asks: string[], answer: string, points: string[], next: string[], link: string | null }} Entry
+ * @typedef {{ id: string, asks: string[], answer: string, points: string[], detail: string[], next: string[], link: string | null }} Entry
  * @param {string} md
  * @returns {{ entries: Entry[], fallback: string }}
  */
@@ -23,6 +23,10 @@ export function parseBank(md) {
     // Highlights: the "- " lines under **Highlights:**, up to the next **Field:** line.
     const hl = block.match(/^\*\*Highlights:\*\*\s*\n((?:- .+\n?)+)/m);
     const points = hl ? hl[1].split('\n').map((l) => l.replace(/^- /, '').trim()).filter(Boolean) : [];
+    // Detail: prose under **Detail:**, one line per paragraph, up to the next **Field:** line.
+    const dt = block.match(/^\*\*Detail:\*\*\s*\n((?:(?!\*\*)[^\n]+\n?)+)/m);
+    const detail = dt ? dt[1].split('\n').map((l) => l.trim()).filter(Boolean) : [];
+    if (points.length && detail.length) throw new Error(`qa.md: ${id} has both Highlights and Detail; pick one shape`);
     const next = (field('Next') ?? '').split(',').map((s) => s.trim()).filter(Boolean);
     const link = field('Link');
     entries.push({
@@ -30,6 +34,7 @@ export function parseBank(md) {
       asks: asks.split(' · ').map((s) => s.trim()).filter(Boolean),
       answer,
       points,
+      detail,
       next,
       link: !link || link === 'none' ? null : link,
     });
