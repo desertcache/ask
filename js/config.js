@@ -6,6 +6,8 @@ export const MODEL = 'potion-base-4M';
 export const MODEL_MB = 3.9;
 export const THRESHOLD = 0.45;
 export const MATCH_OPTIONS = { idf: false, answers: false };
+// Small talk (bank entries with Kind: chat) needs a stronger match to win: see bestMatch in match.js.
+export const CHAT_MIN = 0.6;
 
 // Bank links are written relative to the portfolio, and they open there (in the top window when
 // the box is embedded), never inside the box.

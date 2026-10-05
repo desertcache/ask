@@ -107,6 +107,7 @@ a { color: var(--accent-ink); text-underline-offset: 3px; }
 }
 .answer { font-size: 0.9688rem; line-height: 1.62; color: var(--ink); text-wrap: pretty; }
 .answer + .answer { margin-top: 8px; }
+.aside { margin-bottom: 4px; font-size: 0.875rem; font-style: italic; color: var(--ink-3); }
 .loading { margin-top: 10px; font: 400 0.75rem/1.4 var(--mono); color: var(--ink-3); }
 .w { animation: word 0.32s var(--ease) both; animation-delay: calc(var(--i) * var(--wms, 16ms)); }
 .more { display: inline-flex; gap: 6px; margin-top: 10px; font-weight: 500; font-size: 0.9063rem; text-decoration: none; animation: rise 0.35s var(--ease); }

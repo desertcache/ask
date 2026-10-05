@@ -2,13 +2,15 @@
 // run `npm run build` to regenerate data/bank.json.
 
 /**
- * @typedef {{ id: string, asks: string[], answer: string, points: string[], detail: string[], next: string[], link: string | null }} Entry
+ * @typedef {{ id: string, chat?: true, asks: string[], answer: string, points: string[], detail: string[], next: string[], link: string | null }} Entry
  * @param {string} md
- * @returns {{ entries: Entry[], fallback: string }}
+ * @returns {{ entries: Entry[], fallback: string, fallbacks: string[] }}
  */
 export function parseBank(md) {
   const entries = [];
   let fallback = '';
+  /** @type {string[]} */
+  let fallbacks = [];
   for (const block of md.replace(/\r\n/g, '\n').split(/^### /m).slice(1)) {
     const id = (block.match(/^\d+\.\s+([a-z0-9-]+)/) || [])[1];
     const field = (name) => (block.match(new RegExp(`^\\*\\*${name}:\\*\\*\\s*(.+)$`, 'm')) || [])[1]?.trim();
@@ -18,6 +20,9 @@ export function parseBank(md) {
     if (!asks) {
       if (id !== 'no-match') throw new Error(`qa.md: ${id} has no "Asks like" line`);
       fallback = answer;
+      // **Also:** alternate fallback lines, one per line; the UI picks one at random.
+      const also = block.match(/^\*\*Also:\*\*\s*\n((?:(?!\*\*)[^\n]+\n?)+)/m);
+      fallbacks = [answer, ...(also ? also[1].split('\n').map((l) => l.trim()).filter(Boolean) : [])];
       continue;
     }
     // Highlights: the "- " lines under **Highlights:**, up to the next **Field:** line.
@@ -29,8 +34,11 @@ export function parseBank(md) {
     if (points.length && detail.length) throw new Error(`qa.md: ${id} has both Highlights and Detail; pick one shape`);
     const next = (field('Next') ?? '').split(',').map((s) => s.trim()).filter(Boolean);
     const link = field('Link');
+    // **Kind:** chat marks small talk, which needs a stronger match before it wins (js/match.js).
+    const chat = field('Kind') === 'chat';
     entries.push({
       id,
+      ...(chat ? { chat: true } : {}),
       asks: asks.split(' · ').map((s) => s.trim()).filter(Boolean),
       answer,
       points,
@@ -48,5 +56,5 @@ export function parseBank(md) {
       if (n === e.id || !ids.includes(n)) throw new Error(`qa.md: ${e.id} has a bad Next id "${n}"`);
     }
   }
-  return { entries, fallback };
+  return { entries, fallback, fallbacks };
 }

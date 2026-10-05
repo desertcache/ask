@@ -390,7 +390,7 @@ It reports the gap between trade and filing dates, and it never says in its own 
 It reads your question as word pieces, turns it into 128 numbers, and compares those with every phrasing in its bank. The trace above each answer is that real work, slowed down so you can follow it.
 On questions it never saw while being tuned, it puts the right answer first about four times in five.
 **Next:** orb, ai-quality
-**Link:** https://github.com/desertcache/ask
+**Link:** work/answer-finder.html
 
 ### 43. this-site
 **Asks like:** How was this site built? · What's the site made with? · Is the map real? · Website tech · How was this website made? · Framework used for this site · Elevation map
@@ -446,5 +446,75 @@ Most engineers don't have his path: every role he held ran the operations the ne
 **Next:** hobbies, contact
 **Link:** #contact
 
-### 51. no-match (fallback, shown when nothing scores above the threshold)
+## G. Small talk
+
+### 51. greeting
+**Kind:** chat
+**Asks like:** Hi · Hello · Hey · Hey there · Good morning · Good afternoon · Howdy · Yo
+**Answer:** Hi! I'm the little model behind this chat. Ask me anything about Sam's work: what he's built, how he leads, or how he got from the ER to production code.
+**Next:** who-is-sam, copilot
+**Link:** none
+
+### 52. how-are-you
+**Kind:** chat
+**Asks like:** How are you? · How's it going? · What's up? · How are you doing today? · How's your day?
+**Answer:** Running at about 4 MB and under a millisecond a question, so honestly, great. What would you like to know about Sam?
+**Next:** who-is-sam, this-box
+**Link:** none
+
+### 53. capabilities
+**Kind:** chat
+**Asks like:** What can you do? · What do you know? · What can I ask you? · Help · What topics do you cover? · What should I ask?
+**Answer:** I know Sam's work inside out: his AI projects, his DoorDash programs, how he leads and builds with AI agents, his background, and the demos on this site.
+**Detail:**
+What I don't know is everything else. No weather, no sports, no trivia, and I never make anything up: every answer I give is one Sam approved.
+**Next:** copilot, career-path
+**Link:** none
+
+### 54. creator
+**Kind:** chat
+**Asks like:** Who built you? · Who made this bot? · Who programmed you? · Where did you come from?
+**Answer:** Sam built me with his fleet of AI coding agents, and every answer I can give is one he approved.
+**Detail:**
+There's a build note in the Lab if you want the whole story: how the model was chosen, how it was tested, and how it's kept honest.
+**Next:** this-box, claude-code
+**Link:** work/answer-finder.html
+
+### 55. joke
+**Kind:** chat
+**Asks like:** Got any jokes? · Say something funny · Make me laugh · Joke please · Are you funny?
+**Answer:** I'd tell you one, but I can only say things Sam approved, and he's still workshopping the material.
+**Detail:**
+Here's something fun instead: there's a dot-for-dot Pac-Man down in the Lab, original ghost AI and its overflow bug included.
+**Next:** arcade, starship
+**Link:** arcade.html
+
+### 56. compliment
+**Kind:** chat
+**Asks like:** This is cool · Impressive · Love it · Very cool · This is awesome · Wow · Well done
+**Answer:** Thank you! I'll pass that along.
+**Detail:**
+If you want the story behind it, the starship and this bar both have build notes in the Lab, and Sam's always happy to talk shop: batessambates@gmail.com.
+**Next:** starship, this-box
+**Link:** none
+
+### 57. thanks
+**Kind:** chat
+**Asks like:** Thanks · Thank you · Appreciate it · Thanks a lot · Cheers · Helpful
+**Answer:** Anytime. If something here caught your eye, Sam's always happy to talk it through: batessambates@gmail.com.
+**Next:** contact, why-hire
+**Link:** none
+
+### 58. goodbye
+**Kind:** chat
+**Asks like:** Bye · Goodbye · See you · That's all · I'm done · Gotta go
+**Answer:** Thanks for stopping by. If you want to keep the conversation going, email Sam: batessambates@gmail.com.
+**Next:** contact, resume
+**Link:** none
+
+### 59. no-match (fallback, shown when nothing scores above the threshold; one is picked at random)
 **Answer:** No answer for that one yet. Try asking about his work, his AI projects or his background, or email Sam: batessambates@gmail.com.
+**Also:**
+That one's outside what I know. I only know Sam's work, but I know it well. Try one of these:
+I'm a small model with one job, Sam's work, and that question is beyond it. These aren't:
+Good question, wrong model: I only know Sam's work. Here's where I'd start:

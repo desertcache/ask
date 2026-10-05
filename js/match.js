@@ -8,10 +8,29 @@
 // An entry scores as its best-matching phrasing, or its answer when `answers` is on.
 
 /**
- * @typedef {{ id: string, asks: string[], answer: string, link: string | null }} Entry
+ * @typedef {{ id: string, chat?: boolean, asks: string[], answer: string, link: string | null }} Entry
  * @typedef {{ tokens(text: string): number[], embed(text: string, weight?: (id: number) => number): Float32Array }} Embedder
  * @typedef {{ idf?: boolean, answers?: boolean }} MatchOptions
  */
+
+/**
+ * The answer to show, or null to decline. A real answer needs `threshold`; small talk (entries
+ * marked chat) needs the stronger `chatMin`, so "translate hello" doesn't get a greeting. A chat
+ * entry that falls short steps aside for the next real answer instead of blocking it.
+ * The eval scorer uses this same rule, so the held-out scores measure what visitors see.
+ * @template {{ entry: Entry, score: number }} R
+ * @param {R[]} ranked
+ * @param {number} threshold
+ * @param {number} [chatMin]
+ * @returns {R | null}
+ */
+export function bestMatch(ranked, threshold, chatMin = 0.6) {
+  for (const r of ranked) {
+    if (r.score < threshold) return null;
+    if (!r.entry.chat || r.score >= chatMin) return r;
+  }
+  return null;
+}
 
 /** @param {Float32Array} a @param {Float32Array} b */
 function dot(a, b) {

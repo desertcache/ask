@@ -5,8 +5,11 @@
 // never innerHTML.
 
 import { createEmbedder } from './embed.js';
-import { createMatcher } from './match.js';
-import { MODEL, MODEL_MB, THRESHOLD, MATCH_OPTIONS, PORTFOLIO, STARTERS } from './config.js';
+import { createMatcher, bestMatch } from './match.js';
+import { MODEL, MODEL_MB, THRESHOLD, CHAT_MIN, MATCH_OPTIONS, PORTFOLIO, STARTERS } from './config.js';
+
+// Phrases that mean "keep going": they continue the last answer through its first follow-up.
+const MORE = /^(?:tell me more|more|go on|keep going|continue|elaborate|what else|anything else|and then|say more)\W*$/i;
 
 /** @typedef {{ id: string, asks: string[], answer: string, points?: string[], detail?: string[], next?: string[], link: string | null }} Entry */
 
@@ -208,6 +211,10 @@ async function main() {
   document.body.classList.add('is-ready');
 
   let asking = false;
+  /** @type {Set<string>} answers already given in this conversation */
+  const answered = new Set();
+  /** @type {Entry | null} the last answer given, for "tell me more" */
+  let lastEntry = null;
   /** @param {string} q */
   const ask = async (q) => {
     if (asking || !q.trim()) return;
@@ -217,11 +224,14 @@ async function main() {
     userRow(q);
     input.value = '';
 
+    // "Tell me more" and friends continue the last answer through its first follow-up.
+    const followUp = MORE.test(q.trim()) && lastEntry?.next?.length ? byId.get(lastEntry.next[0]) ?? null : null;
+
     const t0 = performance.now();
-    const ranked = matcher.rank(q);
+    const ranked = matcher.rank(followUp ? followUp.asks[0] : q);
     const ms = performance.now() - t0;
     const top = ranked[0];
-    const hit = top.score >= THRESHOLD;
+    const best = followUp ? ranked.find((r) => r.entry.id === followUp.id) ?? null : bestMatch(ranked, THRESHOLD, CHAT_MIN);
 
     const bubble = botRow();
     const trace = /** @type {HTMLDetailsElement} */ (el('details', 'trace'));
@@ -234,8 +244,17 @@ async function main() {
     bubble.append(trace);
     scrollDown();
 
+    let s;
+    if (followUp && lastEntry) {
+      s = step(list, 'Picked up the thread');
+      await wait(STEP_MS);
+      s.done(el('span', 'detail', `continuing from “${lastEntry.asks[0]}”`));
+      s = step(list, 'Found the next part of the story');
+      await wait(STEP_MS);
+      s.done(el('span', 'detail', `“${followUp.asks[0]}”`));
+    } else {
     // 1. The word pieces the tokenizer produced.
-    let s = step(list, 'Read your question');
+    s = step(list, 'Read your question');
     await wait(STEP_MS);
     const pieces = embedder.pieces(q);
     const chips = el('div', 'pieces');
@@ -262,7 +281,7 @@ async function main() {
     await wait(STEP_MS);
     const table = el('ul', 'matches');
     for (const r of ranked.slice(0, 3)) {
-      const li = el('li', r === top && hit ? 'is-best' : '');
+      const li = el('li', r === best ? 'is-best' : '');
       const bar = el('span', 'bar');
       bar.style.setProperty('--w', `${Math.max(0, Math.min(1, r.score)) * 100}%`);
       li.append(el('span', 'm-text', `“${r.matched}”`), bar, el('span', 'm-score', r.score.toFixed(2)));
@@ -270,20 +289,28 @@ async function main() {
     }
     s.done(table);
 
-    // 5. The confidence check against the threshold.
-    s = step(list, hit ? 'Confident in the best match' : 'Not confident enough to answer');
+    // 5. The confidence check against the threshold (small talk needs a higher one).
+    s = step(list, best ? 'Confident in the best match' : 'Not confident enough to answer');
     await wait(STEP_MS * 0.8);
-    s.done(el('span', 'detail', hit
-      ? `${top.score.toFixed(2)} clears the ${THRESHOLD} bar`
-      : `${top.score.toFixed(2)} is under the ${THRESHOLD} bar, so I won't guess`));
+    s.done(el('span', 'detail', best
+      ? `${best.score.toFixed(2)} clears the ${best.entry.chat ? CHAT_MIN : THRESHOLD} bar${best.entry.chat ? ' for small talk' : ''}`
+      : `${top.score.toFixed(2)} is under the ${top.entry.chat ? CHAT_MIN : THRESHOLD} bar, so I won't guess`));
+    }
     await wait(STEP_MS * 0.7);
 
     trace.open = false;
     trace.classList.add('is-done');
     sumText.textContent = `Searched ${matcher.size} phrasings · ${ms < 1 ? '<1' : ms.toFixed(1)} ms`;
 
-    const entry = hit ? top.entry : null;
-    const { box, words: n } = answerBlock(entry ? entry.answer : bank.fallback, entry?.points, entry?.detail);
+    const entry = best ? best.entry : null;
+    // Conversation awareness: say so when continuing a thread or repeating an answer, and vary
+    // the "I don't know" line instead of repeating one.
+    const aside = followUp ? "Here's more on that." : entry && answered.has(entry.id) ? 'Like I said a moment ago:' : null;
+    if (aside) bubble.append(el('p', 'aside', aside));
+    const fallbacks = bank.fallbacks?.length ? bank.fallbacks : [bank.fallback];
+    const fallback = fallbacks[Math.floor(Math.random() * fallbacks.length)];
+    const { box, words: n } = answerBlock(entry ? entry.answer : fallback, entry?.points, entry?.detail);
+    if (entry) { answered.add(entry.id); lastEntry = entry; }
     box.style.setProperty('--wms', `${WORD_MS}ms`);
     bubble.append(box);
     scrollDown();
