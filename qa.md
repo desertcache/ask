@@ -19,7 +19,7 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 **Highlights:**
 - Built an AI support copilot that an outsourced support team now works live cases in.
 - Trained 800+ people to put AI to work, and counts adoption, not attendance.
-- Merged 200+ pull requests in 2026, about three quarters of them built with AI coding agents.
+- Merged 200+ pull requests in 2026, every one of them built with AI coding agents.
 - Came up through operations and emergency medicine, where he led a 12-person crisis-response team as a volunteer EMT.
 **Next:** career-path, copilot
 **Link:** #top
@@ -95,7 +95,7 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 **Asks like:** Can he code? · Is he technical? · Does he write code himself? · Is he hands-on? · Does he actually build things? · Is he a programmer? · Software development skills · Does he write production code? · Coding ability · Developer?
 **Answer:** Yes. He writes production code: full-stack TypeScript apps, an AI copilot, and production Go in DoorDash's backend monorepo.
 **Highlights:**
-- 200+ pull requests merged in 2026, about three quarters of them built with AI coding agents.
+- 200+ pull requests merged in 2026, every one of them built with AI coding agents.
 - 211 pull requests reviewed from 33 authors.
 - Works in TypeScript, JavaScript, Go, Python and SQL.
 **Next:** tech-stack, github

@@ -18,7 +18,7 @@
    "points": [
     "Built an AI support copilot that an outsourced support team now works live cases in.",
     "Trained 800+ people to put AI to work, and counts adoption, not attendance.",
-    "Merged 200+ pull requests in 2026, about three quarters of them built with AI coding agents.",
+    "Merged 200+ pull requests in 2026, every one of them built with AI coding agents.",
     "Came up through operations and emergency medicine, where he led a 12-person crisis-response team as a volunteer EMT."
    ],
    "next": [
@@ -212,7 +212,7 @@
    ],
    "answer": "Yes. He writes production code: full-stack TypeScript apps, an AI copilot, and production Go in DoorDash's backend monorepo.",
    "points": [
-    "200+ pull requests merged in 2026, about three quarters of them built with AI coding agents.",
+    "200+ pull requests merged in 2026, every one of them built with AI coding agents.",
     "211 pull requests reviewed from 33 authors.",
     "Works in TypeScript, JavaScript, Go, Python and SQL."
    ],
