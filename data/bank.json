@@ -655,6 +655,29 @@
    "link": "#work"
   },
   {
+   "id": "customers",
+   "asks": [
+    "Has he worked with customers?",
+    "Customer-facing experience?",
+    "Does he deal with clients?",
+    "Client work",
+    "External stakeholders",
+    "Has he run an implementation for someone outside his team?"
+   ],
+   "answer": "Yes. His customers have been merchants, point-of-sale partners and outsourced vendor teams, all outside DoorDash.",
+   "points": [
+    "Onboarded 9,000+ stores and ran partner discovery sessions to clear POS onboarding blockers.",
+    "Handled executive-level merchant escalations, 50+ cases a day.",
+    "Built and led two outsourced support teams, including the one working live cases in his AI workspace."
+   ],
+   "detail": [],
+   "next": [
+    "rollout",
+    "api-migration"
+   ],
+   "link": "#about"
+  },
+  {
    "id": "leadership",
    "asks": [
     "Does he manage people?",
@@ -666,7 +689,7 @@
     "People management",
     "Mentoring"
    ],
-   "answer": "Yes, in three very different settings: builders, outsourced support teams and emergency response.",
+   "answer": "He leads in three very different settings: builders, outsourced support teams and emergency response.",
    "points": [
     "Consultative partner and primary PR approver for 5 builders.",
     "Built and led two outsourced support teams, including the one working live cases in the AI workspace today.",
@@ -786,7 +809,7 @@
     "Does he track outcomes?",
     "Results"
    ],
-   "answer": "He measures the outcome, not the activity.",
+   "answer": "He measures the outcome, not the activity. DoorDash's numbers stay internal, so this is how each result is measured.",
    "points": [
     "Training counts who reaches each step, starting with the last access step, not who showed up.",
     "The copilot's usage is tracked against the pre-pilot baseline, and its team is coached against a resolution-time target.",

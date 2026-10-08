@@ -250,11 +250,21 @@ Two public write-ups go deeper: the AI copilot rollout and the AI adoption progr
 **Next:** copilot, github
 **Link:** #work
 
+### 28. customers
+**Asks like:** Has he worked with customers? · Customer-facing experience? · Does he deal with clients? · Client work · External stakeholders · Has he run an implementation for someone outside his team?
+**Answer:** Yes. His customers have been merchants, point-of-sale partners and outsourced vendor teams, all outside DoorDash.
+**Highlights:**
+- Onboarded 9,000+ stores and ran partner discovery sessions to clear POS onboarding blockers.
+- Handled executive-level merchant escalations, 50+ cases a day.
+- Built and led two outsourced support teams, including the one working live cases in his AI workspace.
+**Next:** rollout, api-migration
+**Link:** #about
+
 ## D. Leadership and how he works
 
-### 28. leadership
+### 29. leadership
 **Asks like:** Does he manage people? · Leadership experience? · How many reports does he have? · Has he led teams? · Team lead · Led teams · People management · Mentoring
-**Answer:** Yes, in three very different settings: builders, outsourced support teams and emergency response.
+**Answer:** He leads in three very different settings: builders, outsourced support teams and emergency response.
 **Highlights:**
 - Consultative partner and primary PR approver for 5 builders.
 - Built and led two outsourced support teams, including the one working live cases in the AI workspace today.
@@ -263,7 +273,7 @@ Two public write-ups go deeper: the AI copilot rollout and the AI adoption progr
 **Next:** engineer-or-manager, executives
 **Link:** #about
 
-### 29. awards
+### 30. awards
 **Asks like:** Awards? · Recognition? · Achievements? · What has he won? · Honors · Recognition · Promotions
 **Answer:** Two Merchant Services Excellence Awards, three promotions in four years, and recognition from Anthropic's Claude Code team.
 **Highlights:**
@@ -273,7 +283,7 @@ Two public write-ups go deeper: the AI copilot rollout and the AI adoption progr
 **Next:** power-user, enablement
 **Link:** #about
 
-### 30. how-he-works
+### 31. how-he-works
 **Asks like:** How does he work? · Work style? · Principles? · What's his approach? · Philosophy · Values · Working principles · Approach · Methodology
 **Answer:** Five rules he works by.
 **Highlights:**
@@ -284,7 +294,7 @@ Two public write-ups go deeper: the AI copilot rollout and the AI adoption progr
 **Next:** ai-quality, measurement
 **Link:** #about
 
-### 31. executives
+### 32. executives
 **Asks like:** Does he work with executives? · Stakeholder management? · Who comes to him? · Senior leadership · Directors · Executive stakeholders · Advisor · Influence
 **Answer:** Directors and senior engineers across the org come to him for AI tooling guidance.
 **Detail:**
@@ -292,7 +302,7 @@ New requests from adjacent orgs follow most of his workshops and live demos. He 
 **Next:** enablement, leadership
 **Link:** #about
 
-### 32. hardest-problem
+### 33. hardest-problem
 **Asks like:** What's the hardest problem he's solved? · Biggest challenge? · Toughest bug? · Tell me about a time something went wrong · How does he debug? · Problem solving
 **Answer:** Getting the first outsourced team into the AI workspace, when every failure looked like the same generic error.
 **Detail:**
@@ -301,9 +311,9 @@ In data work he fixes problems at the driver level, like a browser-auth race tha
 **Next:** rollout, mapping-engine
 **Link:** work/ai-copilot-rollout.html
 
-### 33. measurement
+### 34. measurement
 **Asks like:** How does he measure success? · What metrics does he use? · How does he prove impact? · KPIs? · Does he track outcomes? · Results
-**Answer:** He measures the outcome, not the activity.
+**Answer:** He measures the outcome, not the activity. DoorDash's numbers stay internal, so this is how each result is measured.
 **Highlights:**
 - Training counts who reaches each step, starting with the last access step, not who showed up.
 - The copilot's usage is tracked against the pre-pilot baseline, and its team is coached against a resolution-time target.
@@ -311,7 +321,7 @@ In data work he fixes problems at the driver level, like a browser-auth race tha
 **Next:** ai-quality, enablement
 **Link:** work/ai-adoption-program.html
 
-### 34. ai-quality
+### 35. ai-quality
 **Asks like:** How does he evaluate AI? · How does he know the AI is accurate? · AI evals? · Evaluation · Testing AI systems
 **Answer:** He tests AI on real data, against gates it has to pass, not on demos.
 **Detail:**
@@ -320,7 +330,7 @@ This box works the same way: it has to hold its score on questions it never saw 
 **Next:** rag, this-box
 **Link:** work/ai-copilot-rollout.html
 
-### 35. non-technical
+### 36. non-technical
 **Asks like:** Can he work with non-technical people? · Is he a good communicator? · Can he make technical topics simple for others? · Does he teach beginners? · Communication skills
 **Answer:** Yes. He teaches non-engineers to build with AI, in sessions of 70 to 100+ people.
 **Detail:**
@@ -329,7 +339,7 @@ When the first attendee hit a wall in the access flow, he fixed the path with sc
 **Next:** enablement, executives
 **Link:** work/ai-adoption-program.html
 
-### 36. pressure
+### 37. pressure
 **Asks like:** Has he handled escalations? · Incident response experience? · Can he work under pressure? · Crisis management? · High-pressure situations
 **Answer:** Yes. Pressure is where he started.
 **Detail:**
@@ -340,7 +350,7 @@ Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-r
 
 ## E. The Lab and this site
 
-### 37. side-projects
+### 38. side-projects
 **Asks like:** What side projects has he built? · Side projects? · Personal projects? · What does he build for fun? · Local AI tools · Velvet · AI Radio
 **Answer:** Local-first AI tools and playable demos, mostly built with a fleet of AI coding agents.
 **Highlights:**
@@ -351,7 +361,7 @@ Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-r
 **Next:** starship, github
 **Link:** #lab
 
-### 38. starship
+### 39. starship
 **Asks like:** What's the starship? · Starship Explorer? · Three.js game? · Spaceship · Starship game · Three.js · Procedural generation
 **Answer:** A first-person walkable starship in Three.js with zero asset files: every panel, texture and planet outside the windows is generated at runtime.
 **Detail:**
@@ -359,7 +369,7 @@ He built it with a fleet of Claude Code agents he directed, gated by an automate
 **Next:** claude-code, arcade
 **Link:** starship.html
 
-### 39. orb
+### 40. orb
 **Asks like:** What's the orb? · Samantha UI? · What's the glowing sphere? · Samantha · Shader orb · GLSL · Her movie
 **Answer:** A Her-inspired soul orb: one GPU-displaced sphere with custom GLSL shaders, audio-reactive at 60fps.
 **Detail:**
@@ -367,7 +377,7 @@ It's the orb in this bar: it idles while you read, turns violet while it searche
 **Next:** this-box, side-projects
 **Link:** #lab
 
-### 40. arcade
+### 41. arcade
 **Asks like:** What's the arcade? · Pac-Man? · Can I play a game? · Games · Pac-Man · Arcade games · Canvas games · Can I watch an AI play? · Four in a Row
 **Answer:** Twelve games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild, a pinball table with real physics, and four titles where you can watch an AI think.
 **Detail:**
@@ -375,7 +385,7 @@ The Pac-Man has the original ghost targeting, overflow bug included, and it went
 **Next:** starship, claude-code
 **Link:** arcade.html
 
-### 41. hill-money-watch
+### 42. hill-money-watch
 **Asks like:** What's Hill Money Watch? · Congress stock trades? · The blog? · Congress trades · Politician trading · STOCK Act · Blog
 **Answer:** A Claude Code skill that sweeps congressional trading disclosures, writes a digest, and publishes it through a validation step that rejects anything that breaks the contract.
 **Detail:**
@@ -383,7 +393,7 @@ It reports the gap between trade and filing dates, and it never says in its own 
 **Next:** claude-code, hobbies
 **Link:** blog/index.html
 
-### 42. this-box
+### 43. this-box
 **Asks like:** How does this work? · Is this AI? · Is this Sam? · Is this ChatGPT? · Does my question get sent anywhere? · Is this a chatbot? · Privacy · Is this an AI model? · What model is this?
 **Answer:** A small AI model (about 4 MB) runs on your device and matches your question by meaning to answers Sam approved. It doesn't generate text, so it can't make anything up, and your question never leaves your browser.
 **Detail:**
@@ -392,7 +402,7 @@ On questions it never saw while being tuned, it puts the right answer first abou
 **Next:** orb, ai-quality
 **Link:** work/answer-finder.html
 
-### 43. this-site
+### 44. this-site
 **Asks like:** How was this site built? · What's the site made with? · Is the map real? · Website tech · How was this website made? · Framework used for this site · Elevation map
 **Answer:** Plain HTML, CSS and a little JavaScript, with no framework and no build step.
 **Detail:**
@@ -400,7 +410,7 @@ The contour map up top and the mountains above the footer are real: Camelback an
 **Next:** starship, this-box
 **Link:** #top
 
-### 44. start-here
+### 45. start-here
 **Asks like:** Where should I start? · What should I look at first? · Give me the highlights · Quick tour of the site · Where do I begin on this site? · What's worth seeing here? · Show me the best stuff · I only have two minutes · What matters most here? · Best place to start · Walk me through this site · What shouldn't I miss? · Is there a recommended order? · Help me get oriented · What should I click first? · Greatest hits · Top three things to see · First time here
 **Answer:** If you only have a few minutes, see these three, in this order.
 **Highlights:**
@@ -412,37 +422,37 @@ The contour map up top and the mountains above the footer are real: Camelback an
 
 ## F. Contact and logistics
 
-### 45. contact
+### 46. contact
 **Asks like:** How do I contact him? · Email? · LinkedIn? · How do I reach Sam? · Reach out · Get in touch · Email address · Message him
 **Answer:** Email is fastest: batessambates@gmail.com. He's also on LinkedIn as samuel-b-343205133 and on GitHub as @desertcache.
 **Next:** resume, why-hire
 **Link:** #contact
 
-### 46. resume
+### 47. resume
 **Asks like:** Resume? · CV? · Can I download his resume? · Résumé PDF · Curriculum vitae
 **Answer:** His résumé is a PDF linked at the top and bottom of this page.
 **Next:** contact, career-path
 **Link:** Samuel_Bates_CV.pdf
 
-### 47. availability
+### 48. availability
 **Asks like:** Is he looking for a job? · Is he open to work? · Is he hiring? · Can we interview him? · Open to opportunities? · Job search · Hiring him · Recruiting · New job · Interested in roles
 **Answer:** That's a question for Sam directly: batessambates@gmail.com.
 **Next:** contact, why-hire
 **Link:** #contact
 
-### 48. salary
+### 49. salary
 **Asks like:** What's his salary? · Compensation expectations? · How much does he make? · Pay · Salary expectations · Money
 **Answer:** That's a conversation for Sam directly: batessambates@gmail.com.
 **Next:** contact, why-hire
 **Link:** #contact
 
-### 49. remote
+### 50. remote
 **Asks like:** Is he open to remote? · Would he move? · Would he relocate? · Can he work on-site? · Remote work · Hybrid · In-office · Relocate · Move for a job · Work location
 **Answer:** He's based in Phoenix. For anything about work arrangements, email Sam directly: batessambates@gmail.com.
 **Next:** contact, location
 **Link:** #contact
 
-### 50. why-hire
+### 51. why-hire
 **Asks like:** Why should I hire him? · What makes him different? · What's his edge? · Why him? · Strengths · Why him over others · Unique value · Selling points
 **Answer:** He builds production AI, takes it live with the people who use it, and teaches organizations to adopt it.
 **Detail:**
@@ -450,7 +460,7 @@ Most engineers don't have his path: every role he held ran the operations the ne
 **Next:** copilot, how-he-works
 **Link:** #featured
 
-### 51. personal
+### 52. personal
 **Asks like:** How old is he? · Is he married? · Politics? · Personal life? · Age · Married · Family · Religion · Girlfriend
 **Answer:** This box only answers questions about Sam's work. For anything else, reach out to him directly.
 **Next:** hobbies, contact
@@ -458,21 +468,21 @@ Most engineers don't have his path: every role he held ran the operations the ne
 
 ## G. Small talk
 
-### 52. greeting
+### 53. greeting
 **Kind:** chat
 **Asks like:** Hi · Hello · Hey · Hey there · Good morning · Good afternoon · Howdy · Yo
 **Answer:** Hi! I'm the little model behind this chat. Ask me anything about Sam's work: what he's built, how he leads, or how he got from the ER to production code.
 **Next:** who-is-sam, copilot
 **Link:** none
 
-### 53. how-are-you
+### 54. how-are-you
 **Kind:** chat
 **Asks like:** How are you? · How's it going? · What's up? · How are you doing today? · How's your day?
 **Answer:** Running at about 4 MB and under a millisecond a question, so honestly, great. What would you like to know about Sam?
 **Next:** who-is-sam, this-box
 **Link:** none
 
-### 54. capabilities
+### 55. capabilities
 **Kind:** chat
 **Asks like:** What can you do? · What do you know? · What can I ask you? · Help · What topics do you cover? · What should I ask?
 **Answer:** I know Sam's work inside out: his AI projects, his DoorDash programs, how he leads and builds with AI agents, his background, and the demos on this site.
@@ -481,7 +491,7 @@ What I don't know is everything else. No weather, no sports, no trivia, and I ne
 **Next:** copilot, career-path
 **Link:** none
 
-### 55. creator
+### 56. creator
 **Kind:** chat
 **Asks like:** Who built you? · Who made this bot? · Who programmed you? · Where did you come from?
 **Answer:** Sam built me with his fleet of AI coding agents, and every answer I can give is one he approved.
@@ -490,7 +500,7 @@ There's a build note in the Lab if you want the whole story: how the model was c
 **Next:** this-box, claude-code
 **Link:** work/answer-finder.html
 
-### 56. joke
+### 57. joke
 **Kind:** chat
 **Asks like:** Got any jokes? · Say something funny · Make me laugh · Joke please · Are you funny?
 **Answer:** I'd tell you one, but I can only say things Sam approved, and he's still workshopping the material.
@@ -499,7 +509,7 @@ Here's something fun instead: there's a dot-for-dot Pac-Man down in the Lab, ori
 **Next:** arcade, starship
 **Link:** arcade.html
 
-### 57. compliment
+### 58. compliment
 **Kind:** chat
 **Asks like:** This is cool · Impressive · Love it · Very cool · This is awesome · Wow · Well done
 **Answer:** Thank you! I'll pass that along.
@@ -508,21 +518,21 @@ If you want the story behind it, the starship and this bar both have build notes
 **Next:** starship, this-box
 **Link:** none
 
-### 58. thanks
+### 59. thanks
 **Kind:** chat
 **Asks like:** Thanks · Thank you · Appreciate it · Thanks a lot · Cheers · Helpful
 **Answer:** Anytime. If something here caught your eye, Sam's always happy to talk it through: batessambates@gmail.com.
 **Next:** contact, why-hire
 **Link:** none
 
-### 59. goodbye
+### 60. goodbye
 **Kind:** chat
 **Asks like:** Bye · Goodbye · See you · That's all · I'm done · Gotta go
 **Answer:** Thanks for stopping by. If you want to keep the conversation going, email Sam: batessambates@gmail.com.
 **Next:** contact, resume
 **Link:** none
 
-### 60. no-match (fallback, shown when nothing scores above the threshold; one is picked at random)
+### 61. no-match (fallback, shown when nothing scores above the threshold; one is picked at random)
 **Answer:** No answer for that one yet. Try asking about his work, his AI projects or his background, or email Sam: batessambates@gmail.com.
 **Also:**
 That one's outside what I know. I only know Sam's work, but I know it well. Try one of these:
