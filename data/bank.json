@@ -829,7 +829,13 @@
     "How does he know the AI is accurate?",
     "AI evals?",
     "Evaluation",
-    "Testing AI systems"
+    "Testing AI systems",
+    "How does he test AI before it ships?",
+    "How does he test an AI agent?",
+    "How does he know a model change is safe to ship?",
+    "Does he build eval sets?",
+    "Held-out test questions",
+    "Eval harness"
    ],
    "answer": "He tests AI on real data, against gates it has to pass, not on demos.",
    "points": [],

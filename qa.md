@@ -322,7 +322,7 @@ In data work he fixes problems at the driver level, like a browser-auth race tha
 **Link:** work/ai-adoption-program.html
 
 ### 35. ai-quality
-**Asks like:** How does he evaluate AI? · How does he know the AI is accurate? · AI evals? · Evaluation · Testing AI systems
+**Asks like:** How does he evaluate AI? · How does he know the AI is accurate? · AI evals? · Evaluation · Testing AI systems · How does he test AI before it ships? · How does he test an AI agent? · How does he know a model change is safe to ship? · Does he build eval sets? · Held-out test questions · Eval harness
 **Answer:** He tests AI on real data, against gates it has to pass, not on demos.
 **Detail:**
 Retrieval is measured on the real playbook, where it exposed four defects a test fixture had hidden. Model changes are proven through the company's AI gateway with a control, the new setting, and a request that should fail, and citations come from retrieval, so the model never invents a source.
