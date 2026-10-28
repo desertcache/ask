@@ -24,7 +24,7 @@ Before tech, he came up through operations and emergency medicine, where he led 
 
 ### 2. current-role
 **Asks like:** What's his job? · What's his title? · What does he do at DoorDash now? · What is an AI Solutions Manager? · What's his role right now? · Current job · Where does he work? · What company is he at? · Job title
-**Answer:** He's an AI Solutions Manager in DoorDash Merchant Ops, promoted in September 2026 to lead AI solutions for merchant-integration support.
+**Answer:** He's an AI Solutions Manager in DoorDash Merchant Ops, promoted in October 2026 to lead AI solutions for merchant-integration support.
 **Detail:**
 He owns the AI support workspace's roadmap and access model, and he coaches the outsourced support team working live cases inside it. On top of his own build work, he's the consultative partner and primary PR approver for 5 builders.
 **Next:** copilot, leadership
@@ -43,7 +43,7 @@ He owns the AI support workspace's roadmap and access model, and he coaches the 
 - 2015: emergency medical scribe on the pre-med track, and volunteer EMT with the Phoenix Fire Department.
 - 2019: lead patient care coordinator at AZ Pain Doctors, where he hired and trained 16 coordinators.
 - 2022 to 2025: DoorDash merchant services, then executive escalations, then technical integrations, where he wrote his first production code.
-- September 2026: promoted to AI Solutions Manager.
+- October 2026: promoted to AI Solutions Manager.
 **Next:** emt, doordash-history
 **Link:** #about
 
@@ -70,7 +70,7 @@ He moved into engineering on the job at DoorDash, writing his first production c
 - Merchant Services Senior Specialist: onboarded 9,000+ stores and wrote the SOPs that expanded POS provider coverage.
 - Disaster Prevention Specialist: one of a small team on executive-level escalations, 50+ cases a day.
 - Technical Integrations Associate: wrote his first production code and built the AI copilot.
-- Promoted to AI Solutions Manager in September 2026.
+- Promoted to AI Solutions Manager in October 2026.
 **Next:** current-role, awards
 **Link:** #about
 
@@ -278,7 +278,7 @@ Two public write-ups go deeper: the AI copilot rollout and the AI adoption progr
 **Answer:** Two Merchant Services Excellence Awards, three promotions in four years, and recognition from Anthropic's Claude Code team.
 **Highlights:**
 - 2025 Excellence Awards from senior leadership: one for the AI leadership workshop, one for the POS migration training.
-- Promoted three times in four years at DoorDash, most recently to AI Solutions Manager in September 2026.
+- Promoted three times in four years at DoorDash, most recently to AI Solutions Manager in October 2026.
 - Recognized in 2026 as one of Claude Code's top users.
 **Next:** power-user, enablement
 **Link:** #about
