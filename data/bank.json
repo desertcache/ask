@@ -48,7 +48,7 @@
     "copilot",
     "leadership"
    ],
-   "link": "#about"
+   "link": null
   },
   {
    "id": "location",
@@ -122,7 +122,7 @@
     "career-path",
     "pressure"
    ],
-   "link": "#about"
+   "link": null
   },
   {
    "id": "education",
@@ -147,7 +147,7 @@
     "career-path",
     "can-he-code"
    ],
-   "link": "#about"
+   "link": null
   },
   {
    "id": "doordash-history",
@@ -172,7 +172,7 @@
     "current-role",
     "awards"
    ],
-   "link": "#about"
+   "link": null
   },
   {
    "id": "hobbies",
@@ -189,7 +189,7 @@
    "answer": "Rock climbing, hiking, plants, and building AI tools.",
    "points": [],
    "detail": [
-    "His side projects live on this site: a walkable starship, the model behind this box, and a congressional-trading digest on his blog. Even his skincare regimen is run like an ops program."
+    "His side projects live on this site: a walkable starship, an arcade where you can watch an AI think, and a congressional-trading digest on his blog. Even his skincare regimen is run like an ops program."
    ],
    "next": [
     "side-projects",
@@ -676,7 +676,7 @@
     "rollout",
     "api-migration"
    ],
-   "link": "#about"
+   "link": null
   },
   {
    "id": "leadership",
@@ -702,7 +702,7 @@
     "engineer-or-manager",
     "executives"
    ],
-   "link": "#about"
+   "link": null
   },
   {
    "id": "awards",
@@ -726,7 +726,7 @@
     "power-user",
     "enablement"
    ],
-   "link": "#about"
+   "link": null
   },
   {
    "id": "how-he-works",
@@ -776,7 +776,7 @@
     "enablement",
     "leadership"
    ],
-   "link": "#about"
+   "link": null
   },
   {
    "id": "hardest-problem",
@@ -890,7 +890,7 @@
     "emt",
     "hardest-problem"
    ],
-   "link": "#about"
+   "link": null
   },
   {
    "id": "side-projects",
@@ -908,7 +908,7 @@
     "Velvet: Electron, Three.js and GLSL, with on-device Whisper speech-to-text.",
     "Samantha: the audio-reactive orb in this bar, in React 19 and Three.js.",
     "AI Radio: local models through Ollama, voiced with F5-TTS.",
-    "Starship Explorer, agent-os (his Claude Code setup), training wheels for a first pull request, and an eval harness on a made-up field guide."
+    "Starship Explorer, the arcade, agent-os (his Claude Code setup), training wheels for a first pull request, and an eval harness on a made-up field guide."
    ],
    "detail": [],
    "next": [
@@ -935,7 +935,7 @@
    ],
    "next": [
     "claude-code",
-    "github"
+    "arcade"
    ],
    "link": "starship.html"
   },
@@ -959,28 +959,32 @@
     "this-box",
     "side-projects"
    ],
-   "link": "#lab"
+   "link": "https://github.com/desertcache/samantha-ui"
   },
   {
    "id": "arcade",
    "asks": [
-    "Can I play a game?",
-    "Games",
     "What's the arcade?",
     "Pac-Man?",
+    "Can I play a game?",
+    "Games",
     "Pac-Man",
-    "Arcade games"
+    "Arcade games",
+    "Canvas games",
+    "Can I watch an AI play?",
+    "Four in a Row"
    ],
-   "answer": "The playable build on this site is Starship Explorer: a first-person starship you can walk through in a desktop browser.",
+   "answer": "The Lab's arcade has four titles where you can watch an AI think: one plays a maze game and shows its reasoning, one plays you at Four in a Row and shows its search, a flock of UFOs learns to fly, and a lander teaches itself to touch down on a mesa.",
    "points": [],
    "detail": [
-    "Two more demos in the Lab run right in the page: an orb you can wake, and this box."
+    "Every game is a module on one small engine in vanilla JS on raw canvas: a fixed 60-step loop, a fixed screen scaled to yours, and sound synthesized live, with no libraries, no sound files and no build step.",
+    "The bar at the bottom of the page holds an orb you can wake and this box."
    ],
    "next": [
     "starship",
-    "orb"
+    "claude-code"
    ],
-   "link": "starship.html"
+   "link": "arcade.html"
   },
   {
    "id": "hill-money-watch",
@@ -1377,13 +1381,13 @@
    "answer": "I'd tell you one, but I can only say things Sam approved, and he's still workshopping the material.",
    "points": [],
    "detail": [
-    "Here's something fun instead: there's a walkable starship down in the Lab, and every panel, texture and planet outside its windows is generated as it runs."
+    "Here's something fun instead: the arcade down in the Lab has an AI that plays you at Four in a Row and shows its search."
    ],
    "next": [
-    "starship",
-    "this-box"
+    "arcade",
+    "starship"
    ],
-   "link": "starship.html"
+   "link": "arcade.html"
   },
   {
    "id": "compliment",

@@ -63,9 +63,10 @@ for (const [file, floor] of Object.entries(BRAIN_FLOORS)) {
 // The conversation sets (2026-10-05), each written blind from the answer text only (README.md,
 // Evaluation). v1 and v2 were each scored once and then looked at to find the next fix, so they are
 // floors, not numbers to quote. v3 was scored once on the shipped code: the number to quote.
-// 2026-10-27: the portfolio dropped its arcade, so the bank no longer says the Pac-Man went live in
-// a day (v1) or kept its overflow bug (v2). One follow-up in each set asked for exactly that line, so
-// those two follow-up floors are one lower (12 to 11, 19 to 18). Nothing else moved.
+// 2026-10-27: the homepage's Arcade card now shows only its four AI titles and no longer names the
+// Pac-Man, so the bank no longer says it went live in a day (v1) or kept its overflow bug (v2). One
+// follow-up in each set asked for exactly that line, so those two follow-up floors are one lower
+// (12 to 11, 19 to 18). Nothing else moved.
 const CONVERSE_FLOORS = {
   'eval/questions-converse.json': { followups: 11, sameLine: 5, two: 10, singles: 8, typos: 17, declined: 3, maxSplit: 0 },
   'eval/questions-converse-v2.json': { followups: 18, sameLine: 8, two: 13, singles: 6, typos: 16, declined: 3, maxSplit: 0 },

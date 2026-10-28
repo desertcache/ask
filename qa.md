@@ -28,7 +28,7 @@ Before tech, he came up through operations and emergency medicine, where he led 
 **Detail:**
 He owns the AI support workspace's roadmap and access model, and he coaches the outsourced support team working live cases inside it. On top of his own build work, he's the consultative partner and primary PR approver for 5 builders.
 **Next:** copilot, leadership
-**Link:** #about
+**Link:** none
 
 ### 3. location
 **Asks like:** Where is he based? · Where does he live? · What time zone is he in? · Is he in Arizona? · Where's he located? · Which state? · Phoenix? · Home base
@@ -53,7 +53,7 @@ He owns the AI support workspace's roadmap and access model, and he coaches the 
 **Detail:**
 He led a 12-person crisis-response team, coordinating fire, medical and law-enforcement units on scene. Before that he was a master emergency medical scribe across four Banner Health emergency departments, including the Level I trauma centers at Banner Desert, where he also interviewed, hired and trained the new scribes.
 **Next:** career-path, pressure
-**Link:** #about
+**Link:** none
 
 ### 6. education
 **Asks like:** Where did he go to school? · Does he have a degree? · What did he study? · Education? · Certifications? · College? · University · Schooling · Did he go to college? · Biology
@@ -61,7 +61,7 @@ He led a 12-person crisis-response team, coordinating fire, medical and law-enfo
 **Detail:**
 He moved into engineering on the job at DoorDash, writing his first production code in 2025.
 **Next:** career-path, can-he-code
-**Link:** #about
+**Link:** none
 
 ### 7. doordash-history
 **Asks like:** How long has he been at DoorDash? · What roles has he had at DoorDash? · Has he been promoted? · DoorDash timeline · Years at DoorDash · Earlier DoorDash jobs · Tenure
@@ -72,13 +72,13 @@ He moved into engineering on the job at DoorDash, writing his first production c
 - Technical Integrations Associate: wrote his first production code and built the AI copilot.
 - Promoted to AI Solutions Manager in October 2026.
 **Next:** current-role, awards
-**Link:** #about
+**Link:** none
 
 ### 8. hobbies
 **Asks like:** What does he do for fun? · Hobbies? · What's he like outside work? · Interests · Free time · Rock climbing · Hiking · Personal interests
 **Answer:** Rock climbing, hiking, plants, and building AI tools.
 **Detail:**
-His side projects live on this site: a walkable starship, the model behind this box, and a congressional-trading digest on his blog. Even his skincare regimen is run like an ops program.
+His side projects live on this site: a walkable starship, an arcade where you can watch an AI think, and a congressional-trading digest on his blog. Even his skincare regimen is run like an ops program.
 **Next:** side-projects, starship
 **Link:** #lab
 
@@ -258,7 +258,7 @@ Two public write-ups go deeper: the AI copilot rollout and the AI adoption progr
 - Handled executive-level merchant escalations, 50+ cases a day.
 - Built and led two outsourced support teams, including the one working live cases in his AI workspace.
 **Next:** rollout, api-migration
-**Link:** #about
+**Link:** none
 
 ## D. Leadership and how he works
 
@@ -271,7 +271,7 @@ Two public write-ups go deeper: the AI copilot rollout and the AI adoption progr
 - Led a 12-person crisis-response team as a volunteer EMT.
 - At AZ Pain Doctors, hired and trained 16 coordinators.
 **Next:** engineer-or-manager, executives
-**Link:** #about
+**Link:** none
 
 ### 30. awards
 **Asks like:** Awards? · Recognition? · Achievements? · What has he won? · Honors · Recognition · Promotions
@@ -281,7 +281,7 @@ Two public write-ups go deeper: the AI copilot rollout and the AI adoption progr
 - Promoted three times in four years at DoorDash, most recently to AI Solutions Manager in October 2026.
 - Recognized in 2026 as one of Claude Code's top users.
 **Next:** power-user, enablement
-**Link:** #about
+**Link:** none
 
 ### 31. how-he-works
 **Asks like:** How does he work? · Work style? · Principles? · What's his approach? · Philosophy · Values · Working principles · Approach · Methodology
@@ -300,7 +300,7 @@ Two public write-ups go deeper: the AI copilot rollout and the AI adoption progr
 **Detail:**
 New requests from adjacent orgs follow most of his workshops and live demos. He built the AI workshop for senior leaders at an org leadership summit, and his cost model was validated with the senior director.
 **Next:** enablement, leadership
-**Link:** #about
+**Link:** none
 
 ### 33. hardest-problem
 **Asks like:** What's the hardest problem he's solved? · Biggest challenge? · Toughest bug? · Tell me about a time something went wrong · How does he debug? · Problem solving
@@ -346,7 +346,7 @@ When the first attendee hit a wall in the access flow, he fixed the path with sc
 At DoorDash he was one of a small team on executive-level merchant escalations, 50+ cases a day, leading incident response across engineering, operations and vendor teams, and he built the SQL tooling, Salesforce reports and prevention playbooks that cut repeat incidents.
 Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-response team.
 **Next:** emt, hardest-problem
-**Link:** #about
+**Link:** none
 
 ## E. The Lab and this site
 
@@ -357,7 +357,7 @@ Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-r
 - Velvet: Electron, Three.js and GLSL, with on-device Whisper speech-to-text.
 - Samantha: the audio-reactive orb in this bar, in React 19 and Three.js.
 - AI Radio: local models through Ollama, voiced with F5-TTS.
-- Starship Explorer, agent-os (his Claude Code setup), training wheels for a first pull request, and an eval harness on a made-up field guide.
+- Starship Explorer, the arcade, agent-os (his Claude Code setup), training wheels for a first pull request, and an eval harness on a made-up field guide.
 **Next:** training-wheels, field-guide-evals
 **Link:** #lab
 
@@ -366,7 +366,7 @@ Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-r
 **Answer:** A first-person walkable starship in Three.js with zero asset files: every panel, texture and planet outside the windows is generated at runtime.
 **Detail:**
 He built it with a fleet of Claude Code agents he directed, gated by an automated screenshot-verify pipeline. It runs in a desktop browser.
-**Next:** claude-code, github
+**Next:** claude-code, arcade
 **Link:** starship.html
 
 ### 40. orb
@@ -375,15 +375,16 @@ He built it with a fleet of Claude Code agents he directed, gated by an automate
 **Detail:**
 It's the orb in this bar: it idles while you read, turns violet while it searches, and glows coral while the answer appears. It's built with React 19, Three.js and GLSL.
 **Next:** this-box, side-projects
-**Link:** #lab
+**Link:** https://github.com/desertcache/samantha-ui
 
-### 41. arcade (the games answer; the id stays because the eval sets file game questions under it)
-**Asks like:** Can I play a game? · Games · What's the arcade? · Pac-Man? · Pac-Man · Arcade games
-**Answer:** The playable build on this site is Starship Explorer: a first-person starship you can walk through in a desktop browser.
+### 41. arcade
+**Asks like:** What's the arcade? · Pac-Man? · Can I play a game? · Games · Pac-Man · Arcade games · Canvas games · Can I watch an AI play? · Four in a Row
+**Answer:** The Lab's arcade has four titles where you can watch an AI think: one plays a maze game and shows its reasoning, one plays you at Four in a Row and shows its search, a flock of UFOs learns to fly, and a lander teaches itself to touch down on a mesa.
 **Detail:**
-Two more demos in the Lab run right in the page: an orb you can wake, and this box.
-**Next:** starship, orb
-**Link:** starship.html
+Every game is a module on one small engine in vanilla JS on raw canvas: a fixed 60-step loop, a fixed screen scaled to yours, and sound synthesized live, with no libraries, no sound files and no build step.
+The bar at the bottom of the page holds an orb you can wake and this box.
+**Next:** starship, claude-code
+**Link:** arcade.html
 
 ### 42. hill-money-watch
 **Asks like:** What's Hill Money Watch? · Congress stock trades? · The blog? · Congress trades · Politician trading · STOCK Act · Blog
@@ -521,9 +522,9 @@ There's a build note in the Lab if you want the whole story: how the model was c
 **Asks like:** Got any jokes? · Say something funny · Make me laugh · Joke please · Are you funny?
 **Answer:** I'd tell you one, but I can only say things Sam approved, and he's still workshopping the material.
 **Detail:**
-Here's something fun instead: there's a walkable starship down in the Lab, and every panel, texture and planet outside its windows is generated as it runs.
-**Next:** starship, this-box
-**Link:** starship.html
+Here's something fun instead: the arcade down in the Lab has an AI that plays you at Four in a Row and shows its search.
+**Next:** arcade, starship
+**Link:** arcade.html
 
 ### 60. compliment
 **Kind:** chat
