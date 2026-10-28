@@ -1,7 +1,7 @@
 # Ask about my work
 
 An answer finder for [Sam Bates's portfolio](https://desertcache.github.io/portfolio/). A 3.9 MB
-embedding model runs on the visitor's device and matches their question, by meaning, to one of 60
+embedding model runs on the visitor's device and matches their question, by meaning, to one of 62
 answers Sam reviewed and approved (each a lead, 2 to 4 highlights and two curated follow-ups). Nothing is generated, so it cannot invent a fact, and the
 question never leaves the browser. No server, no API key, no inference engine: about 4.3 MB total,
 ready in well under a second, matching in under a millisecond.

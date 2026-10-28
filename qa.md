@@ -78,7 +78,7 @@ He moved into engineering on the job at DoorDash, writing his first production c
 **Asks like:** What does he do for fun? · Hobbies? · What's he like outside work? · Interests · Free time · Rock climbing · Hiking · Personal interests
 **Answer:** Rock climbing, hiking, plants, and building AI tools.
 **Detail:**
-His side projects live on this site: a walkable starship, a dot-for-dot Pac-Man arcade, and a congressional-trading digest. Even his skincare regimen is run like an ops program.
+His side projects live on this site: a walkable starship, the model behind this box, and a congressional-trading digest on his blog. Even his skincare regimen is run like an ops program.
 **Next:** side-projects, starship
 **Link:** #lab
 
@@ -104,10 +104,10 @@ He merged 200+ of his own pull requests in 2026 and reviewed 211 from 33 authors
 **Asks like:** What languages does he know? · What's his tech stack? · What tools does he use? · Does he know React? · Python? Go? · Frameworks · Skills list · Toolkit · Technologies · JavaScript · Node
 **Answer:** TypeScript and React on the front end, Node, Go and Fastify on the back end, Snowflake for data, and Claude Code for building with AI.
 **Highlights:**
-- Frontend: React 18 and 19, TypeScript, Zustand, React Query, Recharts, Vite.
+- Frontend: React 18 and 19, TypeScript, Zustand, Recharts.
 - Backend: Node.js, Go, Fastify, GraphQL, REST, Prometheus.
-- AI: retrieval (RAG) design and evaluation, AI gateways, MCP servers, the Claude API and Agent SDK, local models.
-- Data: Snowflake, SQL, Python, Bayesian analysis, A/B design.
+- AI: retrieval (RAG) design and evaluation, AI gateways, MCP servers, local models.
+- Data: Snowflake, SQL, Python.
 **Next:** can-he-code, ai-experience
 **Link:** #stack
 
@@ -163,10 +163,10 @@ That includes agent-os, his Claude Code setup of hooks, skills, memory and a ses
 **Link:** https://github.com/desertcache
 
 ### 18. data
-**Asks like:** Does he know SQL? · Data skills? · Snowflake? · Analytics experience? · Analytics · Databases · Data engineering · Dashboards · Statistics
+**Asks like:** Does he know SQL? · Data skills? · Snowflake? · Analytics experience? · Analytics · Databases · Data engineering · Dashboards · Statistics · Data analysis
 **Answer:** Yes. He builds on Snowflake and SQL, from production data apps to the org's first cost model.
 **Detail:**
-He built the org's first cost-per-task model on live warehouse data, and a workforce platform with Erlang C staffing math on live Snowflake data. He also works in Bayesian analysis, A/B design and ETL.
+He built the org's first cost-per-task model on live warehouse data, and a workforce platform with Erlang C staffing math on live Snowflake data.
 **Next:** cost-model, workforce-platform
 **Link:** #stack
 
@@ -327,7 +327,7 @@ In data work he fixes problems at the driver level, like a browser-auth race tha
 **Detail:**
 Retrieval is measured on the real playbook, where it exposed four defects a test fixture had hidden. Model changes are proven through the company's AI gateway with a control, the new setting, and a request that should fail, and citations come from retrieval, so the model never invents a source.
 This box works the same way: it has to hold its score on questions it never saw while being tuned before any change goes live.
-**Next:** rag, this-box
+**Next:** field-guide-evals, this-box
 **Link:** work/ai-copilot-rollout.html
 
 ### 36. non-technical
@@ -357,8 +357,8 @@ Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-r
 - Velvet: Electron, Three.js and GLSL, with on-device Whisper speech-to-text.
 - Samantha: the audio-reactive orb in this bar, in React 19 and Three.js.
 - AI Radio: local models through Ollama, voiced with F5-TTS.
-- Starship Explorer, the arcade, and agent-os, his Claude Code setup.
-**Next:** starship, github
+- Starship Explorer, agent-os (his Claude Code setup), training wheels for a first pull request, and an eval harness on a made-up field guide.
+**Next:** training-wheels, field-guide-evals
 **Link:** #lab
 
 ### 39. starship
@@ -366,7 +366,7 @@ Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-r
 **Answer:** A first-person walkable starship in Three.js with zero asset files: every panel, texture and planet outside the windows is generated at runtime.
 **Detail:**
 He built it with a fleet of Claude Code agents he directed, gated by an automated screenshot-verify pipeline. It runs in a desktop browser.
-**Next:** claude-code, arcade
+**Next:** claude-code, github
 **Link:** starship.html
 
 ### 40. orb
@@ -377,13 +377,13 @@ It's the orb in this bar: it idles while you read, turns violet while it searche
 **Next:** this-box, side-projects
 **Link:** #lab
 
-### 41. arcade
-**Asks like:** What's the arcade? · Pac-Man? · Can I play a game? · Games · Pac-Man · Arcade games · Canvas games · Can I watch an AI play? · Four in a Row
-**Answer:** Twelve games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild, a pinball table with real physics, and four titles where you can watch an AI think.
+### 41. arcade (the games answer; the id stays because the eval sets file game questions under it)
+**Asks like:** Can I play a game? · Games · What's the arcade? · Pac-Man? · Pac-Man · Arcade games
+**Answer:** The playable build on this site is Starship Explorer: a first-person starship you can walk through in a desktop browser.
 **Detail:**
-The Pac-Man has the original ghost targeting, overflow bug included, and it went from first commit to live in a day.
-**Next:** starship, claude-code
-**Link:** arcade.html
+Two more demos in the Lab run right in the page: an orb you can wake, and this box.
+**Next:** starship, orb
+**Link:** starship.html
 
 ### 42. hill-money-watch
 **Asks like:** What's Hill Money Watch? · Congress stock trades? · The blog? · Congress trades · Politician trading · STOCK Act · Blog
@@ -393,7 +393,23 @@ It reports the gap between trade and filing dates, and it never says in its own 
 **Next:** claude-code, hobbies
 **Link:** blog/index.html
 
-### 43. this-box
+### 43. training-wheels
+**Asks like:** What's training wheels? · Tell me about the training wheels plugin · How do you keep a beginner from force-pushing? · How does he stop an AI agent from running risky git commands? · Can a beginner make a first pull request with an AI agent safely? · What does the training wheels hook block? · A guard for git commands · First pull request plugin
+**Answer:** A Claude Code plugin for someone making their first pull request: a skill walks them through it in plain words, and a hook blocks the git commands that can't be undone.
+**Detail:**
+The hook reads every shell command before the agent runs it, and git runs only from a short list of allowed commands. A force push or another classic way to lose work gets a one-line reason and a safer command, and anything the hook can't read exactly is refused too.
+**Next:** non-technical, claude-code
+**Link:** https://github.com/desertcache/training-wheels
+
+### 44. field-guide-evals
+**Asks like:** What are the field guide evals? · Tell me about the field guide eval harness · How did you evaluate the field guide answers? · How did he score the field guide answerers? · What's in the failure gallery? · What is the five-check rubric? · Eval harness on a made-up field guide · Fictional field guide
+**Answer:** An eval harness on a made-up field guide for trail volunteers: 40 held-out questions, a five-check rubric scored by code, and a gallery of what failed.
+**Detail:**
+Two answerers each ran once on the held-out questions: one passed all five checks on 15 of 40, the other on 26 of 40. Only scores on questions an answerer was never tuned on get quoted.
+**Next:** ai-quality, this-box
+**Link:** https://github.com/desertcache/field-guide-evals
+
+### 45. this-box
 **Asks like:** How does this work? · Is this AI? · Is this Sam? · Is this ChatGPT? · Does my question get sent anywhere? · Is this a chatbot? · Privacy · Is this an AI model? · What model is this?
 **Answer:** A small AI model (about 4 MB) runs on your device and matches your question by meaning to answers Sam approved. It doesn't generate text, so it can't make anything up, and your question never leaves your browser.
 **Detail:**
@@ -402,7 +418,7 @@ On questions it never saw while being tuned, it puts the right answer first abou
 **Next:** orb, ai-quality
 **Link:** work/answer-finder.html
 
-### 44. this-site
+### 46. this-site
 **Asks like:** How was this site built? · What's the site made with? · Is the map real? · Website tech · How was this website made? · Framework used for this site · Elevation map
 **Answer:** Plain HTML, CSS and a little JavaScript, with no framework and no build step.
 **Detail:**
@@ -410,7 +426,7 @@ The contour map up top and the mountains above the footer are real: Camelback an
 **Next:** starship, this-box
 **Link:** #top
 
-### 45. start-here
+### 47. start-here
 **Asks like:** Where should I start? · What should I look at first? · Give me the highlights · Quick tour of the site · Where do I begin on this site? · What's worth seeing here? · Show me the best stuff · I only have two minutes · What matters most here? · Best place to start · Walk me through this site · What shouldn't I miss? · Is there a recommended order? · Help me get oriented · What should I click first? · Greatest hits · Top three things to see · First time here
 **Answer:** If you only have a few minutes, see these three, in this order.
 **Highlights:**
@@ -422,37 +438,37 @@ The contour map up top and the mountains above the footer are real: Camelback an
 
 ## F. Contact and logistics
 
-### 46. contact
+### 48. contact
 **Asks like:** How do I contact him? · Email? · LinkedIn? · How do I reach Sam? · Reach out · Get in touch · Email address · Message him
 **Answer:** Email is fastest: batessambates@gmail.com. He's also on LinkedIn as samuel-b-343205133 and on GitHub as @desertcache.
 **Next:** resume, why-hire
 **Link:** #contact
 
-### 47. resume
+### 49. resume
 **Asks like:** Resume? · CV? · Can I download his resume? · Résumé PDF · Curriculum vitae
 **Answer:** His résumé is a PDF linked at the top and bottom of this page.
 **Next:** contact, career-path
 **Link:** Samuel_Bates_CV.pdf
 
-### 48. availability
+### 50. availability
 **Asks like:** Is he looking for a job? · Is he open to work? · Is he hiring? · Can we interview him? · Open to opportunities? · Job search · Hiring him · Recruiting · New job · Interested in roles
 **Answer:** That's a question for Sam directly: batessambates@gmail.com.
 **Next:** contact, why-hire
 **Link:** #contact
 
-### 49. salary
+### 51. salary
 **Asks like:** What's his salary? · Compensation expectations? · How much does he make? · Pay · Salary expectations · Money
 **Answer:** That's a conversation for Sam directly: batessambates@gmail.com.
 **Next:** contact, why-hire
 **Link:** #contact
 
-### 50. remote
+### 52. remote
 **Asks like:** Is he open to remote? · Would he move? · Would he relocate? · Can he work on-site? · Remote work · Hybrid · In-office · Relocate · Move for a job · Work location
 **Answer:** He's based in Phoenix. For anything about work arrangements, email Sam directly: batessambates@gmail.com.
 **Next:** contact, location
 **Link:** #contact
 
-### 51. why-hire
+### 53. why-hire
 **Asks like:** Why should I hire him? · What makes him different? · What's his edge? · Why him? · Strengths · Why him over others · Unique value · Selling points
 **Answer:** He builds production AI, takes it live with the people who use it, and teaches organizations to adopt it.
 **Detail:**
@@ -460,7 +476,7 @@ Most engineers don't have his path: every role he held ran the operations the ne
 **Next:** copilot, how-he-works
 **Link:** #featured
 
-### 52. personal
+### 54. personal
 **Asks like:** How old is he? · Is he married? · Politics? · Personal life? · Age · Married · Family · Religion · Girlfriend
 **Answer:** This box only answers questions about Sam's work. For anything else, reach out to him directly.
 **Next:** hobbies, contact
@@ -468,21 +484,21 @@ Most engineers don't have his path: every role he held ran the operations the ne
 
 ## G. Small talk
 
-### 53. greeting
+### 55. greeting
 **Kind:** chat
 **Asks like:** Hi · Hello · Hey · Hey there · Good morning · Good afternoon · Howdy · Yo
 **Answer:** Hi! I'm the little model behind this chat. Ask me anything about Sam's work: what he's built, how he leads, or how he got from the ER to production code.
 **Next:** who-is-sam, copilot
 **Link:** none
 
-### 54. how-are-you
+### 56. how-are-you
 **Kind:** chat
 **Asks like:** How are you? · How's it going? · What's up? · How are you doing today? · How's your day?
 **Answer:** Running at about 4 MB and under a millisecond a question, so honestly, great. What would you like to know about Sam?
 **Next:** who-is-sam, this-box
 **Link:** none
 
-### 55. capabilities
+### 57. capabilities
 **Kind:** chat
 **Asks like:** What can you do? · What do you know? · What can I ask you? · Help · What topics do you cover? · What should I ask?
 **Answer:** I know Sam's work inside out: his AI projects, his DoorDash programs, how he leads and builds with AI agents, his background, and the demos on this site.
@@ -491,7 +507,7 @@ What I don't know is everything else. No weather, no sports, no trivia, and I ne
 **Next:** copilot, career-path
 **Link:** none
 
-### 56. creator
+### 58. creator
 **Kind:** chat
 **Asks like:** Who built you? · Who made this bot? · Who programmed you? · Where did you come from?
 **Answer:** Sam built me with his fleet of AI coding agents, and every answer I can give is one he approved.
@@ -500,16 +516,16 @@ There's a build note in the Lab if you want the whole story: how the model was c
 **Next:** this-box, claude-code
 **Link:** work/answer-finder.html
 
-### 57. joke
+### 59. joke
 **Kind:** chat
 **Asks like:** Got any jokes? · Say something funny · Make me laugh · Joke please · Are you funny?
 **Answer:** I'd tell you one, but I can only say things Sam approved, and he's still workshopping the material.
 **Detail:**
-Here's something fun instead: there's a dot-for-dot Pac-Man down in the Lab, original ghost AI and its overflow bug included.
-**Next:** arcade, starship
-**Link:** arcade.html
+Here's something fun instead: there's a walkable starship down in the Lab, and every panel, texture and planet outside its windows is generated as it runs.
+**Next:** starship, this-box
+**Link:** starship.html
 
-### 58. compliment
+### 60. compliment
 **Kind:** chat
 **Asks like:** This is cool · Impressive · Love it · Very cool · This is awesome · Wow · Well done
 **Answer:** Thank you! I'll pass that along.
@@ -518,21 +534,21 @@ If you want the story behind it, the starship and this bar both have build notes
 **Next:** starship, this-box
 **Link:** none
 
-### 59. thanks
+### 61. thanks
 **Kind:** chat
 **Asks like:** Thanks · Thank you · Appreciate it · Thanks a lot · Cheers · Helpful
 **Answer:** Anytime. If something here caught your eye, Sam's always happy to talk it through: batessambates@gmail.com.
 **Next:** contact, why-hire
 **Link:** none
 
-### 60. goodbye
+### 62. goodbye
 **Kind:** chat
 **Asks like:** Bye · Goodbye · See you · That's all · I'm done · Gotta go
 **Answer:** Thanks for stopping by. If you want to keep the conversation going, email Sam: batessambates@gmail.com.
 **Next:** contact, resume
 **Link:** none
 
-### 61. no-match (fallback, shown when nothing scores above the threshold; one is picked at random)
+### 63. no-match (fallback, shown when nothing scores above the threshold; one is picked at random)
 **Answer:** No answer for that one yet. Try asking about his work, his AI projects or his background, or email Sam: batessambates@gmail.com.
 **Also:**
 That one's outside what I know. I only know Sam's work, but I know it well. Try one of these:

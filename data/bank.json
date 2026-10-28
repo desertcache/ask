@@ -189,7 +189,7 @@
    "answer": "Rock climbing, hiking, plants, and building AI tools.",
    "points": [],
    "detail": [
-    "His side projects live on this site: a walkable starship, a dot-for-dot Pac-Man arcade, and a congressional-trading digest. Even his skincare regimen is run like an ops program."
+    "His side projects live on this site: a walkable starship, the model behind this box, and a congressional-trading digest on his blog. Even his skincare regimen is run like an ops program."
    ],
    "next": [
     "side-projects",
@@ -263,10 +263,10 @@
    ],
    "answer": "TypeScript and React on the front end, Node, Go and Fastify on the back end, Snowflake for data, and Claude Code for building with AI.",
    "points": [
-    "Frontend: React 18 and 19, TypeScript, Zustand, React Query, Recharts, Vite.",
+    "Frontend: React 18 and 19, TypeScript, Zustand, Recharts.",
     "Backend: Node.js, Go, Fastify, GraphQL, REST, Prometheus.",
-    "AI: retrieval (RAG) design and evaluation, AI gateways, MCP servers, the Claude API and Agent SDK, local models.",
-    "Data: Snowflake, SQL, Python, Bayesian analysis, A/B design."
+    "AI: retrieval (RAG) design and evaluation, AI gateways, MCP servers, local models.",
+    "Data: Snowflake, SQL, Python."
    ],
    "detail": [],
    "next": [
@@ -423,12 +423,13 @@
     "Databases",
     "Data engineering",
     "Dashboards",
-    "Statistics"
+    "Statistics",
+    "Data analysis"
    ],
    "answer": "Yes. He builds on Snowflake and SQL, from production data apps to the org's first cost model.",
    "points": [],
    "detail": [
-    "He built the org's first cost-per-task model on live warehouse data, and a workforce platform with Erlang C staffing math on live Snowflake data. He also works in Bayesian analysis, A/B design and ETL."
+    "He built the org's first cost-per-task model on live warehouse data, and a workforce platform with Erlang C staffing math on live Snowflake data."
    ],
    "next": [
     "cost-model",
@@ -844,7 +845,7 @@
     "This box works the same way: it has to hold its score on questions it never saw while being tuned before any change goes live."
    ],
    "next": [
-    "rag",
+    "field-guide-evals",
     "this-box"
    ],
    "link": "work/ai-copilot-rollout.html"
@@ -907,12 +908,12 @@
     "Velvet: Electron, Three.js and GLSL, with on-device Whisper speech-to-text.",
     "Samantha: the audio-reactive orb in this bar, in React 19 and Three.js.",
     "AI Radio: local models through Ollama, voiced with F5-TTS.",
-    "Starship Explorer, the arcade, and agent-os, his Claude Code setup."
+    "Starship Explorer, agent-os (his Claude Code setup), training wheels for a first pull request, and an eval harness on a made-up field guide."
    ],
    "detail": [],
    "next": [
-    "starship",
-    "github"
+    "training-wheels",
+    "field-guide-evals"
    ],
    "link": "#lab"
   },
@@ -934,7 +935,7 @@
    ],
    "next": [
     "claude-code",
-    "arcade"
+    "github"
    ],
    "link": "starship.html"
   },
@@ -963,26 +964,23 @@
   {
    "id": "arcade",
    "asks": [
-    "What's the arcade?",
-    "Pac-Man?",
     "Can I play a game?",
     "Games",
+    "What's the arcade?",
+    "Pac-Man?",
     "Pac-Man",
-    "Arcade games",
-    "Canvas games",
-    "Can I watch an AI play?",
-    "Four in a Row"
+    "Arcade games"
    ],
-   "answer": "Twelve games in vanilla JS on raw canvas, including a dot-for-dot Pac-Man rebuild, a pinball table with real physics, and four titles where you can watch an AI think.",
+   "answer": "The playable build on this site is Starship Explorer: a first-person starship you can walk through in a desktop browser.",
    "points": [],
    "detail": [
-    "The Pac-Man has the original ghost targeting, overflow bug included, and it went from first commit to live in a day."
+    "Two more demos in the Lab run right in the page: an orb you can wake, and this box."
    ],
    "next": [
     "starship",
-    "claude-code"
+    "orb"
    ],
-   "link": "arcade.html"
+   "link": "starship.html"
   },
   {
    "id": "hill-money-watch",
@@ -1005,6 +1003,52 @@
     "hobbies"
    ],
    "link": "blog/index.html"
+  },
+  {
+   "id": "training-wheels",
+   "asks": [
+    "What's training wheels?",
+    "Tell me about the training wheels plugin",
+    "How do you keep a beginner from force-pushing?",
+    "How does he stop an AI agent from running risky git commands?",
+    "Can a beginner make a first pull request with an AI agent safely?",
+    "What does the training wheels hook block?",
+    "A guard for git commands",
+    "First pull request plugin"
+   ],
+   "answer": "A Claude Code plugin for someone making their first pull request: a skill walks them through it in plain words, and a hook blocks the git commands that can't be undone.",
+   "points": [],
+   "detail": [
+    "The hook reads every shell command before the agent runs it, and git runs only from a short list of allowed commands. A force push or another classic way to lose work gets a one-line reason and a safer command, and anything the hook can't read exactly is refused too."
+   ],
+   "next": [
+    "non-technical",
+    "claude-code"
+   ],
+   "link": "https://github.com/desertcache/training-wheels"
+  },
+  {
+   "id": "field-guide-evals",
+   "asks": [
+    "What are the field guide evals?",
+    "Tell me about the field guide eval harness",
+    "How did you evaluate the field guide answers?",
+    "How did he score the field guide answerers?",
+    "What's in the failure gallery?",
+    "What is the five-check rubric?",
+    "Eval harness on a made-up field guide",
+    "Fictional field guide"
+   ],
+   "answer": "An eval harness on a made-up field guide for trail volunteers: 40 held-out questions, a five-check rubric scored by code, and a gallery of what failed.",
+   "points": [],
+   "detail": [
+    "Two answerers each ran once on the held-out questions: one passed all five checks on 15 of 40, the other on 26 of 40. Only scores on questions an answerer was never tuned on get quoted."
+   ],
+   "next": [
+    "ai-quality",
+    "this-box"
+   ],
+   "link": "https://github.com/desertcache/field-guide-evals"
   },
   {
    "id": "this-box",
@@ -1333,13 +1377,13 @@
    "answer": "I'd tell you one, but I can only say things Sam approved, and he's still workshopping the material.",
    "points": [],
    "detail": [
-    "Here's something fun instead: there's a dot-for-dot Pac-Man down in the Lab, original ghost AI and its overflow bug included."
+    "Here's something fun instead: there's a walkable starship down in the Lab, and every panel, texture and planet outside its windows is generated as it runs."
    ],
    "next": [
-    "arcade",
-    "starship"
+    "starship",
+    "this-box"
    ],
-   "link": "arcade.html"
+   "link": "starship.html"
   },
   {
    "id": "compliment",
