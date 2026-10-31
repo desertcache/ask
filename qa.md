@@ -355,7 +355,7 @@ Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-r
 **Answer:** Local-first AI tools and playable demos, mostly built with a fleet of AI coding agents.
 **Highlights:**
 - Velvet: Electron, Three.js and GLSL, with on-device Whisper speech-to-text.
-- Samantha: the audio-reactive orb in this bar, in React 19 and Three.js.
+- Samantha: the audio-reactive orb in this bar on a computer, in React 19 and Three.js.
 - AI Radio: local models through Ollama, voiced with F5-TTS.
 - Starship Explorer, the arcade, agent-os (his Claude Code setup), training wheels for a first pull request, and an eval harness on a made-up field guide.
 **Next:** training-wheels, field-guide-evals
@@ -373,7 +373,7 @@ He built it with a fleet of Claude Code agents he directed, gated by an automate
 **Asks like:** What's the orb? · Samantha UI? · What's the glowing sphere? · Samantha · Shader orb · GLSL · Her movie
 **Answer:** A Her-inspired soul orb: one GPU-displaced sphere with custom GLSL shaders, audio-reactive at 60fps.
 **Detail:**
-It's the orb in this bar: it idles while you read, turns violet while it searches, and glows coral while the answer appears. It's built with React 19, Three.js and GLSL.
+It's the orb in this bar, built with React 19, Three.js and GLSL: it idles while you read, turns violet while it searches, and glows coral while the answer appears. On a phone the bar shows a drawn stand-in with the same moods.
 **Next:** this-box, side-projects
 **Link:** https://github.com/desertcache/samantha-ui
 
@@ -414,7 +414,7 @@ Two answerers each ran once on the held-out questions: one passed all five check
 **Asks like:** How does this work? · Is this AI? · Is this Sam? · Is this ChatGPT? · Does my question get sent anywhere? · Is this a chatbot? · Privacy · Is this an AI model? · What model is this?
 **Answer:** A small AI model (about 4 MB) runs on your device and matches your question by meaning to answers Sam approved. It doesn't generate text, so it can't make anything up, and your question never leaves your browser.
 **Detail:**
-It reads your question as word pieces, turns it into 128 numbers, and compares those with every phrasing in its bank. The trace above each answer is that real work, slowed down so you can follow it.
+It reads your question as word pieces, turns it into 128 numbers, and compares those with every phrasing in its bank. The trace with each answer shows that real work, step by step, and how long it really took.
 On questions it never saw while being tuned, it puts the right answer first about four times in five.
 **Next:** orb, ai-quality
 **Link:** work/answer-finder.html
