@@ -343,7 +343,7 @@ When the first attendee hit a wall in the access flow, he fixed the path with sc
 **Asks like:** Has he handled escalations? · Incident response experience? · Can he work under pressure? · Crisis management? · High-pressure situations
 **Answer:** Yes. Pressure is where he started.
 **Detail:**
-At DoorDash he was one of a small team on executive-level merchant escalations, 50+ cases a day, leading incident response across engineering, operations and vendor teams, and he built the SQL tooling, Salesforce reports and prevention playbooks that cut repeat incidents.
+At DoorDash he was one of a small team on executive-level merchant escalations, 50+ cases a day, and he built the SQL tooling, Salesforce reports and prevention playbooks that cut repeat incidents.
 Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-response team.
 **Next:** emt, hardest-problem
 **Link:** none
