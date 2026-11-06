@@ -238,7 +238,7 @@
    "answer": "Both. His title is manager, and he still ships code.",
    "points": [],
    "detail": [
-    "He merged 200+ of his own pull requests in 2026 and reviewed 211 from 33 authors. He's also the consultative partner and primary PR approver for 5 builders, and he leads the outsourced support team working live cases in the AI workspace he built."
+    "He merged 200+ of his own pull requests in 2026 and reviewed 211 from 33 authors. He's also the consultative partner and primary PR approver for 5 builders, and he took the org's first outsourced support team live inside the AI workspace he built."
    ],
    "next": [
     "leadership",
@@ -669,7 +669,7 @@
    "points": [
     "Onboarded 9,000+ stores and ran partner discovery sessions to clear POS onboarding blockers.",
     "Handled executive-level merchant escalations, 50+ cases a day.",
-    "Built and led two outsourced support teams, including the one working live cases in his AI workspace."
+    "Took the org's first outsourced support team live inside his AI workspace, and stood up a vendor pod for a POS partner's API migration."
    ],
    "detail": [],
    "next": [
@@ -690,10 +690,10 @@
     "People management",
     "Mentoring"
    ],
-   "answer": "He leads in three very different settings: builders, outsourced support teams and emergency response.",
+   "answer": "He has led in three very different settings: as a partner to builders, by standing up outsourced support teams, and in emergency response.",
    "points": [
     "Consultative partner and primary PR approver for 5 builders.",
-    "Built and led two outsourced support teams, including the one working live cases in the AI workspace today.",
+    "Took the org's first outsourced support team live inside the AI workspace, and stood up a vendor pod for a POS partner's API migration.",
     "Led a 12-person crisis-response team as a volunteer EMT.",
     "At AZ Pain Doctors, hired and trained 16 coordinators."
    ],
@@ -883,7 +883,7 @@
    "answer": "Yes. Pressure is where he started.",
    "points": [],
    "detail": [
-    "At DoorDash he was one of a small team on executive-level merchant escalations, 50+ cases a day, leading incident response across engineering, operations and vendor teams, and he built the SQL tooling, Salesforce reports and prevention playbooks that cut repeat incidents.",
+    "At DoorDash he was one of a small team on executive-level merchant escalations, 50+ cases a day, and he built the SQL tooling, Salesforce reports and prevention playbooks that cut repeat incidents.",
     "Before tech, he triaged on scene as a volunteer EMT and led a 12-person crisis-response team."
    ],
    "next": [
