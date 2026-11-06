@@ -96,7 +96,7 @@ He merged 200+ pull requests in 2026, every one of them built with AI coding age
 **Asks like:** Is he an engineer or a manager? · Is he a builder or a people manager? · Does he still code as a manager? · PM or engineer? · Individual contributor or manager? · IC? · Technical manager · Player-coach · Does he do code review?
 **Answer:** Both. His title is manager, and he still ships code.
 **Detail:**
-He merged 200+ of his own pull requests in 2026 and reviewed 211 from 33 authors. He's also the consultative partner and primary PR approver for 5 builders, and he leads the outsourced support team working live cases in the AI workspace he built.
+He merged 200+ of his own pull requests in 2026 and reviewed 211 from 33 authors. He's also the consultative partner and primary PR approver for 5 builders, and he took the org's first outsourced support team live inside the AI workspace he built.
 **Next:** leadership, can-he-code
 **Link:** #about
 
@@ -256,7 +256,7 @@ Two public write-ups go deeper: the AI copilot rollout and the AI adoption progr
 **Highlights:**
 - Onboarded 9,000+ stores and ran partner discovery sessions to clear POS onboarding blockers.
 - Handled executive-level merchant escalations, 50+ cases a day.
-- Built and led two outsourced support teams, including the one working live cases in his AI workspace.
+- Took the org's first outsourced support team live inside his AI workspace, and stood up a vendor pod for a POS partner's API migration.
 **Next:** rollout, api-migration
 **Link:** none
 
@@ -264,10 +264,10 @@ Two public write-ups go deeper: the AI copilot rollout and the AI adoption progr
 
 ### 29. leadership
 **Asks like:** Does he manage people? · Leadership experience? · How many reports does he have? · Has he led teams? · Team lead · Led teams · People management · Mentoring
-**Answer:** He leads in three very different settings: builders, outsourced support teams and emergency response.
+**Answer:** He has led in three very different settings: as a partner to builders, by standing up outsourced support teams, and in emergency response.
 **Highlights:**
 - Consultative partner and primary PR approver for 5 builders.
-- Built and led two outsourced support teams, including the one working live cases in the AI workspace today.
+- Took the org's first outsourced support team live inside the AI workspace, and stood up a vendor pod for a POS partner's API migration.
 - Led a 12-person crisis-response team as a volunteer EMT.
 - At AZ Pain Doctors, hired and trained 16 coordinators.
 **Next:** engineer-or-manager, executives
