@@ -17,7 +17,7 @@
    "answer": "Sam Bates is an AI Solutions Manager at DoorDash, based in Phoenix. He builds production AI for operations teams, leads the people who run it, and teaches organizations to adopt it.",
    "points": [],
    "detail": [
-    "He built an AI support copilot that an outsourced support team now works live cases in, and he has trained 800+ people to put AI to work, counting adoption rather than attendance. He merged 200+ pull requests in 2026, every one of them built with AI coding agents.",
+    "He built an AI support copilot that an outsourced support team now works live cases in, and he has trained 800+ people to put AI to work, counting adoption rather than attendance. He merged 300+ pull requests in 2026, every one of them built with AI coding agents.",
     "Before tech, he came up through operations and emergency medicine, where he led a 12-person crisis-response team as a volunteer EMT."
    ],
    "next": [
@@ -42,7 +42,7 @@
    "answer": "He's an AI Solutions Manager in DoorDash Merchant Ops, promoted in September 2026 to lead AI solutions for merchant-integration support.",
    "points": [],
    "detail": [
-    "He owns the AI support workspace's roadmap and access model, and he coaches the outsourced support team working live cases inside it. On top of his own build work, he's the consultative partner and primary PR approver for 5 builders."
+    "He owns the AI support workspace's roadmap and access model, and he built the measurement that scored the outsourced support team's pilot before handing its operations to the in-house team. On top of his own build work, he's the consultative partner and primary PR approver for 5 builders."
    ],
    "next": [
     "copilot",
@@ -214,7 +214,7 @@
    "answer": "Yes. He writes production code: full-stack TypeScript apps, an AI copilot, and production Go in DoorDash's backend monorepo.",
    "points": [],
    "detail": [
-    "He merged 200+ pull requests in 2026, every one of them built with AI coding agents, and reviewed 211 from 33 authors. He works in TypeScript, JavaScript, Go, Python and SQL."
+    "He merged 300+ pull requests in 2026, every one of them built with AI coding agents, and reviewed 324 from 36 authors. He works in TypeScript, JavaScript, Go, Python and SQL."
    ],
    "next": [
     "tech-stack",
@@ -238,7 +238,7 @@
    "answer": "Both. His title is manager, and he still ships code.",
    "points": [],
    "detail": [
-    "He merged 200+ of his own pull requests in 2026 and reviewed 211 from 33 authors. He's also the consultative partner and primary PR approver for 5 builders, and he took the org's first outsourced support team live inside the AI workspace he built."
+    "He merged 300+ of his own pull requests in 2026 and reviewed 324 from 36 authors. He's also the consultative partner and primary PR approver for 5 builders, and he took the org's first outsourced support team live inside the AI workspace he built."
    ],
    "next": [
     "leadership",
@@ -314,7 +314,7 @@
    "answer": "Yes. His copilot answers from the playbook support agents are graded against, and every citation comes from retrieval, not from the model.",
    "points": [],
    "detail": [
-    "Retrieval lives on the server: the playbook never ships to the browser, and the backend returns the matching sections with their provenance.",
+    "The copilot uses keyword retrieval over the support playbook, and retrieval returns the matching sections with their provenance.",
     "Testing on the real playbook instead of a fixture exposed four defects, including a rare-term scoring rule that is backwards for a support corpus. Retrieval changes are judged by displacement: they have to rescue the questions that used to return nothing without pushing down the answers that already worked."
    ],
    "next": [
@@ -453,7 +453,7 @@
    "points": [],
    "detail": [
     "It went from first prototype to internal pilot in 4 weeks. One workspace gathers a case's context from half a dozen internal systems, so agents stop hopping between tools.",
-    "Other teams now run their own AI agents inside it, an outsourced team works live cases in it, and usage grew well past the pre-pilot baseline."
+    "The copilot fetches live data with its own tools, an outsourced team took over a queue's full web volume inside it, and usage grew well past the pre-pilot baseline."
    ],
    "next": [
     "rollout",
@@ -479,7 +479,7 @@
    "points": [],
    "detail": [
     "He checked identity first, then device and network trust, then app permissions, and finally found an internal call that was blocked and showed up as a network error. Each layer got its own check, so the next cohort wouldn't repeat the hunt.",
-    "Training is generated from one source module, with a verifier that checks every copy, and he now coaches the team's live cases against a resolution-time target."
+    "Training is generated from one source module, with a verifier that checks every copy. He built the measurement that scored the pilot, and when the team took over a queue's full web volume he handed operations to the in-house team."
    ],
    "next": [
     "copilot",
@@ -813,7 +813,7 @@
    "answer": "He measures the outcome, not the activity. DoorDash's numbers stay internal, so this is how each result is measured.",
    "points": [
     "Training counts who reaches each step, starting with the last access step, not who showed up.",
-    "The copilot's usage is tracked against the pre-pilot baseline, and its team is coached against a resolution-time target.",
+    "The copilot's usage is tracked against the pre-pilot baseline, and he built the measurement that scored the outsourced team's pilot.",
     "Retrieval changes are judged by displacement: rescue the misses without pushing down the answers that already worked."
    ],
    "detail": [],
