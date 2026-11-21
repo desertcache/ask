@@ -17,7 +17,7 @@ answer points on the portfolio. Edit this file, then run `npm run build` to rege
 **Asks like:** Who is Sam? · Who is this? · Tell me about him · What does Sam do? · Give me the short version · Who is Sam Bates? · Introduce Sam · Summarize Sam in a sentence · What's Sam's story? · Overview of Sam
 **Answer:** Sam Bates is an AI Solutions Manager at DoorDash, based in Phoenix. He builds production AI for operations teams, leads the people who run it, and teaches organizations to adopt it.
 **Detail:**
-He built an AI support copilot that an outsourced support team now works live cases in, and he has trained 800+ people to put AI to work, counting adoption rather than attendance. He merged 200+ pull requests in 2026, every one of them built with AI coding agents.
+He built an AI support copilot that an outsourced support team now works live cases in, and he has trained 800+ people to put AI to work, counting adoption rather than attendance. He merged 300+ pull requests in 2026, every one of them built with AI coding agents.
 Before tech, he came up through operations and emergency medicine, where he led a 12-person crisis-response team as a volunteer EMT.
 **Next:** career-path, copilot
 **Link:** #top
@@ -26,7 +26,7 @@ Before tech, he came up through operations and emergency medicine, where he led 
 **Asks like:** What's his job? · What's his title? · What does he do at DoorDash now? · What is an AI Solutions Manager? · What's his role right now? · Current job · Where does he work? · What company is he at? · Job title
 **Answer:** He's an AI Solutions Manager in DoorDash Merchant Ops, promoted in September 2026 to lead AI solutions for merchant-integration support.
 **Detail:**
-He owns the AI support workspace's roadmap and access model, and he coaches the outsourced support team working live cases inside it. On top of his own build work, he's the consultative partner and primary PR approver for 5 builders.
+He owns the AI support workspace's roadmap and access model, and he built the measurement that scored the outsourced support team's pilot before handing its operations to the in-house team. On top of his own build work, he's the consultative partner and primary PR approver for 5 builders.
 **Next:** copilot, leadership
 **Link:** none
 
@@ -88,7 +88,7 @@ His side projects live on this site: a walkable starship, an arcade where you ca
 **Asks like:** Can he code? · Is he technical? · Does he write code himself? · Is he hands-on? · Does he actually build things? · Is he a programmer? · Software development skills · Does he write production code? · Coding ability · Developer?
 **Answer:** Yes. He writes production code: full-stack TypeScript apps, an AI copilot, and production Go in DoorDash's backend monorepo.
 **Detail:**
-He merged 200+ pull requests in 2026, every one of them built with AI coding agents, and reviewed 211 from 33 authors. He works in TypeScript, JavaScript, Go, Python and SQL.
+He merged 300+ pull requests in 2026, every one of them built with AI coding agents, and reviewed 324 from 36 authors. He works in TypeScript, JavaScript, Go, Python and SQL.
 **Next:** tech-stack, github
 **Link:** #about
 
@@ -96,7 +96,7 @@ He merged 200+ pull requests in 2026, every one of them built with AI coding age
 **Asks like:** Is he an engineer or a manager? · Is he a builder or a people manager? · Does he still code as a manager? · PM or engineer? · Individual contributor or manager? · IC? · Technical manager · Player-coach · Does he do code review?
 **Answer:** Both. His title is manager, and he still ships code.
 **Detail:**
-He merged 200+ of his own pull requests in 2026 and reviewed 211 from 33 authors. He's also the consultative partner and primary PR approver for 5 builders, and he took the org's first outsourced support team live inside the AI workspace he built.
+He merged 300+ of his own pull requests in 2026 and reviewed 324 from 36 authors. He's also the consultative partner and primary PR approver for 5 builders, and he took the org's first outsourced support team live inside the AI workspace he built.
 **Next:** leadership, can-he-code
 **Link:** #about
 
@@ -124,7 +124,7 @@ He has trained 800+ people to put AI to work, and Anthropic's Claude Code team r
 **Asks like:** Has he built RAG? · Retrieval experience? · How does he stop hallucinations? · Grounded answers? · Citations · Grounding · Knowledge base answers · Vector search
 **Answer:** Yes. His copilot answers from the playbook support agents are graded against, and every citation comes from retrieval, not from the model.
 **Detail:**
-Retrieval lives on the server: the playbook never ships to the browser, and the backend returns the matching sections with their provenance.
+The copilot uses keyword retrieval over the support playbook, and retrieval returns the matching sections with their provenance.
 Testing on the real playbook instead of a fixture exposed four defects, including a rare-term scoring rule that is backwards for a support corpus. Retrieval changes are judged by displacement: they have to rescue the questions that used to return nothing without pushing down the answers that already worked.
 **Next:** ai-quality, copilot
 **Link:** work/ai-copilot-rollout.html
@@ -177,7 +177,7 @@ He built the org's first cost-per-task model on live warehouse data, and a workf
 **Answer:** An AI copilot for support agents who diagnose point-of-sale integration cases, answering from the same playbook they are graded on.
 **Detail:**
 It went from first prototype to internal pilot in 4 weeks. One workspace gathers a case's context from half a dozen internal systems, so agents stop hopping between tools.
-Other teams now run their own AI agents inside it, an outsourced team works live cases in it, and usage grew well past the pre-pilot baseline.
+The copilot fetches live data with its own tools, an outsourced team took over a queue's full web volume inside it, and usage grew well past the pre-pilot baseline.
 **Next:** rollout, rag
 **Link:** work/ai-copilot-rollout.html
 
@@ -186,7 +186,7 @@ Other teams now run their own AI agents inside it, an outsourced team works live
 **Answer:** The first outsourced team couldn't get in, and every failure looked like the same generic error, so he proved their access one layer at a time.
 **Detail:**
 He checked identity first, then device and network trust, then app permissions, and finally found an internal call that was blocked and showed up as a network error. Each layer got its own check, so the next cohort wouldn't repeat the hunt.
-Training is generated from one source module, with a verifier that checks every copy, and he now coaches the team's live cases against a resolution-time target.
+Training is generated from one source module, with a verifier that checks every copy. He built the measurement that scored the pilot, and when the team took over a queue's full web volume he handed operations to the in-house team.
 **Next:** copilot, hardest-problem
 **Link:** work/ai-copilot-rollout.html
 
@@ -316,7 +316,7 @@ In data work he fixes problems at the driver level, like a browser-auth race tha
 **Answer:** He measures the outcome, not the activity. DoorDash's numbers stay internal, so this is how each result is measured.
 **Highlights:**
 - Training counts who reaches each step, starting with the last access step, not who showed up.
-- The copilot's usage is tracked against the pre-pilot baseline, and its team is coached against a resolution-time target.
+- The copilot's usage is tracked against the pre-pilot baseline, and he built the measurement that scored the outsourced team's pilot.
 - Retrieval changes are judged by displacement: rescue the misses without pushing down the answers that already worked.
 **Next:** ai-quality, enablement
 **Link:** work/ai-adoption-program.html
